@@ -73,25 +73,7 @@
                 padding: 5px;
                 object-fit: contain;
             }
-            /* Scroll animations */
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(50px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            .section-animate {
-                opacity: 0;
-                transform: translateY(50px);
-                transition: opacity 0.8s ease, transform 0.8s ease;
-            }
-            .section-animate.animate {
-                animation: fadeInUp 0.8s ease forwards;
-            }
+            /* Scroll animations removed */
             section h1 {
                 color: rgb(0, 150, 255);
                 text-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
@@ -895,7 +877,7 @@
                         <h3>✗ AI CANNOT DO</h3>
                         <ul class="capability-list">
                             <li><strong>True Understanding:</strong> Comprehend meaning, context, or intent</li>
-                            <li><strong>Creativity (True):</strong> Generate truly novel ideas, only remix existing data</li>
+                            <li><strong>Creativity:</strong> create an innovative solution to an unsolved problem</li>
                             <li><strong>Consciousness:</strong> Feel, experience, or have subjective awareness</li>
                             <li><strong>Common Sense:</strong> Apply real-world reasoning outside its training</li>
                             <li><strong>Moral Judgment:</strong> Make ethical decisions independently</li>
@@ -1112,26 +1094,7 @@
             // Add language switching logic here
         }
 
-        // Scroll animation observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                } else {
-                    entry.target.classList.remove('animate');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections with animation class
-        document.querySelectorAll('.section-animate').forEach(section => {
-            observer.observe(section);
-        });
+        // Animations removed
 
         // Enhanced Particle system with connections and pulsing effects
         const canvas = document.getElementById('particleCanvas');

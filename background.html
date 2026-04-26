@@ -31,6 +31,34 @@
                 font-size: 0.9em;
                 max-width: 300px;
                 z-index: 100;
+                transition: all 0.3s ease;
+            }
+            .info-overlay.hidden {
+                transform: translateX(-400px);
+                opacity: 0;
+                pointer-events: none;
+            }
+            .info-toggle {
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                background: rgba(0, 150, 255, 0.1);
+                color: rgb(0, 150, 255);
+                padding: 10px 15px;
+                border: 2px solid rgb(0, 150, 255);
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                z-index: 101;
+                font-weight: bold;
+                display: none;
+            }
+            .info-toggle:hover {
+                background: rgb(0, 150, 255);
+                color: rgb(10, 10, 30);
+            }
+            .info-toggle.show {
+                display: block;
             }
             .info-overlay h3 {
                 color: rgb(0, 150, 255);
@@ -61,7 +89,8 @@
     </head>
     <body>
         <canvas id="particleCanvas"></canvas>
-        <div class="info-overlay">
+        <button class="info-toggle" id="infoToggleBtn">ℹ️ Info</button>
+        <div class="info-overlay" id="infoOverlay">
             <h3>Background Animation</h3>
             <p>The particles respond to your mouse by avoiding it.</p>
             <p>This page demonstrates complex dynamic code that was created with the assistence of AI. While I didn't have full control over what it made, it's something you won't find as an option in a block-based web developing software.</p>
@@ -252,6 +281,19 @@
             resizeCanvas();
             createParticles();
             animate();
+
+            // Info toggle functionality
+            const infoOverlay = document.getElementById('infoOverlay');
+            const infoToggleBtn = document.getElementById('infoToggleBtn');
+
+            infoToggleBtn.addEventListener('click', () => {
+                infoOverlay.classList.toggle('hidden');
+                infoToggleBtn.classList.toggle('show');
+            });
+
+            // Hide info overlay on page load, show toggle button
+            infoOverlay.classList.add('hidden');
+            infoToggleBtn.classList.add('show');
         </script>
     </body>
 </html>
