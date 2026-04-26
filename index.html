@@ -24,7 +24,8 @@
                 top: 0;
                 width: 100%;
                 z-index: 1000;
-                border-bottom: 15px solid rgb(0, 60, 120);
+                border-bottom: 8px solid rgb(0, 150, 255);
+                box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
             }
             .Selected{
                 background-color: rgb(40, 40, 60);
@@ -121,15 +122,20 @@
                 min-height: 100vh;
                 padding: 20px;
                 padding-top: 80px; /* To account for fixed nav */
-                border-top: 15px solid rgb(0, 60, 120);
-                border-bottom: 15px solid rgb(0, 60, 120);
+                border-top: 8px solid rgb(0, 150, 255);
+                border-bottom: 8px solid rgb(0, 150, 255);
                 border-radius: 50px;
                 margin: 20px 40px;
                 background-color: rgb(10, 10, 30);
+                box-shadow: 0 0 30px rgba(0, 150, 255, 0.3);
+            }
+            #home {
+                min-height: auto;
+                position: relative;
             }
             .Banner {
-                height: 600px;
-                background-image: url('Assets/Banner.jpg');
+                height: 65vh;
+                background-image: none;
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -137,7 +143,8 @@
                 align-items: center;
                 justify-content: center;
                 border-radius: 0 0 50px 50px;
-                border-bottom: 15px solid rgb(0, 60, 120);
+                border-bottom: 8px solid rgb(0, 150, 255);
+                box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
             }
             .banner-text {
                 font-size: 3em;
@@ -149,11 +156,12 @@
             }
             .footer {
                 background-color: rgb(10, 10, 30);
-                border-top: 15px solid rgb(0, 60, 120);
+                border-top: 8px solid rgb(0, 150, 255);
                 border-radius: 50px 50px 0 0;
                 margin: 20px 0 0;
                 padding: 30px 20px;
                 text-align: center;
+                box-shadow: 0 0 20px rgba(0, 150, 255, 0.3) inset;
             }
             .footer-content h3 {
                 margin-bottom: 20px;
@@ -714,6 +722,7 @@
             .capability-list {
                 list-style: none;
                 padding: 0;
+                color: rgb(0, 150, 255); 
             }
             .capability-list li {
                 color: rgb(200, 200, 230);
@@ -793,6 +802,7 @@
                     <li><a class="Selected" href="#home">Misconceptions</a></li>
                     <li><a href="#WebDev">AI Use Today</a></li>
                     <li><a href="#AI">AI & The Future</a></li>
+                    <li><a href="background.html">Background</a></li>
                 </ul>
                 <div class="language-selector">
                     <select id="languageSelector" onchange="changeLanguage(this.value)">
@@ -942,12 +952,7 @@
         <section id="AI" class="section-animate">
             <div class="thesis-box">
                 <h1>AI & The Future</h1>
-            </div>
-            
-            <!-- AI Advancement Timeline Chart -->
-            <div class="chart-container">
-                <h2>AI Capability Advancement Over Time [WIP]</h2>
-                <canvas id="aiAdvancementChart"></canvas>
+                <p><strong>Artificial intelligence has been debated riggorously. It's been a central part in many theorist's visions of the future. Weather it be <em>Terminator</em> or the more optomistic visions in <em>The Singularity is Near</em></strong></p>
             </div>
 
             <!-- Main point Cards (Reasoning) -->
@@ -967,6 +972,9 @@
                                 <p>The Technological Singularity is a subject of much debate and speculation. The most popular claim, supported by the two books <em>The Singularity Is Near</em> and <em>The Singularity Is Nearer</em>, places the singularity in 2045. just 19 years away.</p>
                             </div>
                             <li>What to watch For</li>
+                            <div class="solution-box">
+                                <p></p>
+                            </div>
                         </ul>
                     </div>
                     <div class="data-card card-present">
@@ -992,7 +1000,7 @@
 
             <!-- Tech Advancement Predictor Calculator -->
             <div class="calculator-container">
-                <h2>AI Advancement Predictor</h2>
+                <h2>AI Advancement Predictor [WIP]</h2>
                 <p>Explore what AI capabilities might look like in a specific year:</p>
                 <div class="calculator-input">
                     <label for="yearInput">Select Year:</label>
@@ -1101,11 +1109,12 @@
             observer.observe(section);
         });
 
-        // Particle system
+        // Enhanced Particle system with connections and pulsing effects
         const canvas = document.getElementById('particleCanvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
         let mouse = { x: 0, y: 0 };
+        let time = 0;
 
         function resizeCanvas() {
             canvas.width = window.innerWidth;
@@ -1114,69 +1123,149 @@
 
         function createParticles() {
             particles = [];
-            const particleCount = Math.floor(window.innerWidth / 50); // Responsive particle count
+            const particleCount = Math.floor(window.innerWidth / 40); // Slightly more particles for denser feel
 
             for (let i = 0; i < particleCount; i++) {
+                const hue = Math.random() * 60 + 200; // Blue to cyan range
                 particles.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
-                    vx: (Math.random() - 1),
-                    vy: (Math.random() - 1),
-                    size: Math.random() * 2.5 + 1.5,
-                    opacity: Math.random() * 0.5 + 0.2,
-                    color: `rgba(${Math.floor(Math.random() * 100 + 100)}, ${Math.floor(Math.random() * 100 + 100)}, 255, ${Math.random() * 0.3 + 0.2})`,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    baseSize: Math.random() * 2 + 1,
+                    size: 0,
+                    hue: hue,
+                    saturation: Math.random() * 30 + 70,
+                    lightness: Math.random() * 20 + 50,
+                    pulsePhase: Math.random() * Math.PI * 2,
+                    pulseSpeed: Math.random() * 0.02 + 0.01,
                     angle: Math.random() * Math.PI * 2,
-                    angleVelocity: (Math.random() - 0.5) * 0.05
+                    angleVelocity: (Math.random() - 0.5) * 0.03,
+                    connectionDistance: 120 + Math.random() * 40,
+                    directionChangeTimer: 0,
+                    directionChangeInterval: Math.random() * 200 + 100
                 });
             }
         }
 
         function updateParticles() {
-            particles.forEach(particle => {
-                // Brownian motion and natural movement with added randomness
-                particle.angle += particle.angleVelocity;
-                particle.vx += Math.cos(particle.angle) * 0.1 + (Math.random() - 0.5) * 0.05; // Added random component
-                particle.vy += Math.sin(particle.angle) * 0.1 + (Math.random() - 0.5) * 0.05;
+            particles.forEach((particle, index) => {
+                // Random direction change timer
+                particle.directionChangeTimer++;
+                if (particle.directionChangeTimer > particle.directionChangeInterval) {
+                    particle.angle = Math.random() * Math.PI * 2;
+                    particle.angleVelocity = (Math.random() - 0.5) * 0.05;
+                    particle.directionChangeTimer = 0;
+                    particle.directionChangeInterval = Math.random() * 200 + 100;
+                }
 
-                // Mouse interaction - repel particles
+                // Orbital motion with angle modulation
+                particle.angle += particle.angleVelocity;
+                particle.vx += Math.cos(particle.angle) * 0.08;
+                particle.vy += Math.sin(particle.angle) * 0.08;
+
+                // Subtle attraction to center (keeps particles from drifting off)
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+                const distToCenter = Math.sqrt(
+                    Math.pow(centerX - particle.x, 2) + 
+                    Math.pow(centerY - particle.y, 2)
+                );
+                
+                if (distToCenter > Math.min(canvas.width, canvas.height) * 0.6) {
+                    const angle = Math.atan2(centerY - particle.y, centerX - particle.x);
+                    particle.vx += Math.cos(angle) * 0.02;
+                    particle.vy += Math.sin(angle) * 0.02;
+                }
+
+                // Mouse interaction - repel particles with smoother falloff
                 const dx = mouse.x - particle.x;
                 const dy = mouse.y - particle.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
-                if (distance < 150) { // Increased range
-                    const force = (150 - distance) / 150; // Stronger force
-                    particle.vx -= (dx / distance) * force * 0.15; // Repel instead of attract, increased intensity
-                    particle.vy -= (dy / distance) * force * 0.15;
+                if (distance < 200) {
+                    const force = (200 - distance) / 200;
+                    particle.vx -= (dx / (distance + 1)) * force * 0.2;
+                    particle.vy -= (dy / (distance + 1)) * force * 0.2;
+                    
+                    // Brighten particles near cursor
+                    particle.lightness = Math.min(particle.lightness + force * 15, 80);
                 }
 
                 // Update position
                 particle.x += particle.vx;
                 particle.y += particle.vy;
 
-                // Reduced damping to prevent particles from getting stuck
-                particle.vx *= 0.98;
-                particle.vy *= 0.98;
+                // Damping
+                particle.vx *= 0.97;
+                particle.vy *= 0.97;
 
-                // Wrap around edges
-                if (particle.x < 0) particle.x = canvas.width;
-                if (particle.x > canvas.width) particle.x = 0;
-                if (particle.y < 0) particle.y = canvas.height;
-                if (particle.y > canvas.height) particle.y = 0;
+                // Wrap around edges with buffer
+                const buffer = 50;
+                if (particle.x < -buffer) particle.x = canvas.width + buffer;
+                if (particle.x > canvas.width + buffer) particle.x = -buffer;
+                if (particle.y < -buffer) particle.y = canvas.height + buffer;
+                if (particle.y > canvas.height + buffer) particle.y = -buffer;
+
+                // Update pulsing effect
+                particle.pulsePhase += particle.pulseSpeed;
+                const pulse = Math.sin(particle.pulsePhase) * 0.4 + 0.6;
+                particle.size = particle.baseSize * pulse;
             });
         }
 
-        function drawParticles() {
-            // Create trail effect by fading the canvas; use destination-out to ensure trails can fully disappear
-            ctx.save();
-            ctx.globalCompositeOperation = 'destination-out';
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.restore();
+        function drawConnections() {
+            // Draw lines between nearby particles for network effect
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
 
+                    const maxDist = (particles[i].connectionDistance + particles[j].connectionDistance) / 2;
+                    
+                    if (distance < maxDist) {
+                        const opacity = (1 - distance / maxDist) * 0.15;
+                        const avgHue = (particles[i].hue + particles[j].hue) / 2;
+                        const avgLightness = (particles[i].lightness + particles[j].lightness) / 2;
+                        
+                        ctx.strokeStyle = `hsla(${avgHue}, 70%, ${avgLightness}%, ${opacity})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function drawParticles() {
+            // Fade effect for trail
+            ctx.fillStyle = 'rgba(22, 18, 42, 0.02)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw connections first (behind particles)
+            drawConnections();
+
+            // Draw particles with glow effect
             particles.forEach(particle => {
+                // Outer glow
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.size * 1.5, 0, Math.PI * 2);
+                ctx.fillStyle = `hsla(${particle.hue}, ${particle.saturation}%, ${particle.lightness}%, ${(1 - particle.size / particle.baseSize) * 0.2})`;
+                ctx.fill();
+
+                // Main particle
                 ctx.beginPath();
                 ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-                ctx.fillStyle = particle.color;
+                ctx.fillStyle = `hsl(${particle.hue}, ${particle.saturation}%, ${particle.lightness}%)`;
+                ctx.fill();
+
+                // Inner highlight
+                ctx.beginPath();
+                ctx.arc(particle.x - particle.size * 0.3, particle.y - particle.size * 0.3, particle.size * 0.4, 0, Math.PI * 2);
+                ctx.fillStyle = `hsla(${particle.hue + 20}, 100%, 80%, 0.4)`;
                 ctx.fill();
             });
         }
@@ -1184,6 +1273,7 @@
         function animate() {
             updateParticles();
             drawParticles();
+            time++;
             requestAnimationFrame(animate);
         }
 

@@ -1,0 +1,416 @@
+<html>
+    <head>
+        <title>Credits</title>
+        <link rel="icon" type="image/png" href="Assets/Favicon.png">
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+            * {
+                padding: 0;
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                color: white;
+            }
+            body {
+                background-color: rgb(22, 18, 42);
+            }
+            .NavBar {
+                background-color: rgb(10, 10, 30);
+                padding: 5px;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+                border-bottom: 8px solid rgb(0, 150, 255);
+                box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
+            }
+            nav {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            nav ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: flex-start;
+            }
+            nav ul li {
+                margin-right: 20px;
+            }
+            nav ul li a {
+                color: white;
+                text-decoration: none;
+                padding: 10px;
+                display: block;
+                border-bottom: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-radius: 15px;
+                transition: all 0.3s ease;
+            }
+            nav ul li a:hover {
+                font-style: italic;
+            }
+            .nav-logo {
+                margin-right: 20px;
+                display: flex;
+                align-items: center;
+            }
+            .logo-image {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: white;
+                padding: 5px;
+                object-fit: contain;
+            }
+            .language-selector {
+                position: relative;
+            }
+            .language-selector select {
+                background-color: rgb(20, 20, 40);
+                color: white;
+                border: 3px solid rgb(0, 150, 255);
+                padding: 8px 12px;
+                border-radius: 8px;
+                font-size: 1em;
+                cursor: pointer;
+                background: rgb(0, 62, 107);
+            }
+            .language-selector select:hover {
+                background-color: rgba(0, 149, 255, 0.568);
+                box-shadow: 0 0 10px rgba(0, 150, 255, 0.3);
+            }
+            .credits-container {
+                min-height: 100vh;
+                padding: 120px 40px 40px;
+                max-width: 900px;
+                margin: 0 auto;
+            }
+            .credits-container h1 {
+                color: rgb(0, 150, 255);
+                font-size: 2.5em;
+                margin-bottom: 40px;
+                text-align: center;
+                text-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
+            }
+            .credit-section {
+                background: linear-gradient(135deg, rgba(0, 150, 255, 0.08), rgba(0, 200, 255, 0.03));
+                border: 3px solid rgb(0, 150, 255);
+                border-radius: 15px;
+                padding: 30px;
+                margin-bottom: 30px;
+                box-shadow: 0 0 30px rgba(0, 150, 255, 0.2);
+            }
+            .credit-section h2 {
+                color: rgb(0, 200, 255);
+                font-size: 1.8em;
+                margin-bottom: 15px;
+                text-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
+            }
+            .credit-section p {
+                color: rgb(200, 200, 230);
+                line-height: 1.8;
+                margin-bottom: 12px;
+                font-size: 1.05em;
+            }
+            .credit-link {
+                color: rgb(0, 200, 255);
+                text-decoration: none;
+                transition: all 0.3s ease;
+                font-weight: bold;
+            }
+            .credit-link:hover {
+                color: rgb(0, 150, 255);
+                text-shadow: 0 0 10px rgba(0, 150, 255, 0.6);
+            }
+            .footer {
+                background-color: rgb(10, 10, 30);
+                border-top: 8px solid rgb(0, 150, 255);
+                border-radius: 50px 50px 0 0;
+                margin: 40px 0 0;
+                padding: 30px 20px;
+                text-align: center;
+                box-shadow: 0 0 20px rgba(0, 150, 255, 0.3) inset;
+            }
+            .footer-content h3 {
+                margin-bottom: 20px;
+                color: rgb(0, 150, 255);
+                font-size: 1.5em;
+                text-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
+            }
+            .contact-info p {
+                margin: 10px 0;
+                font-size: 1.1em;
+                color: rgb(220, 220, 255);
+            }
+            .back-link {
+                display: inline-block;
+                margin-bottom: 30px;
+                padding: 12px 20px;
+                background: rgba(0, 150, 255, 0.1);
+                border: 2px solid rgb(0, 150, 255);
+                border-radius: 8px;
+                color: rgb(0, 150, 255);
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+            .back-link:hover {
+                background: rgb(0, 150, 255);
+                color: rgb(10, 10, 30);
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="particleCanvas" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+        <div class="NavBar">
+            <nav>
+                <div class="nav-logo">
+                    <img src="Assets/Favicon.png" alt="Logo" class="logo-image">
+                </div>
+                <ul>
+                    <li><a href="index.html">Misconceptions</a></li>
+                    <li><a href="index.html#WebDev">AI Use Today</a></li>
+                    <li><a href="index.html#AI">AI & The Future</a></li>
+                    <li><a href="background.html">Background</a></li>
+                </ul>
+                <div class="language-selector">
+                    <select id="languageSelector" onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">Dutch</option>
+                        <option value="ja">Japanese</option>
+                    </select>
+                </div>
+            </nav>
+        </div>
+
+        <div class="credits-container">
+            <a href="index.html" class="back-link">← Back to Main</a>
+            
+            <h1>Credits & Citations</h1>
+
+            <div class="credit-section">
+                <h2>The Singularity Is Near</h2>
+                <p><strong>Author:</strong> Ray Kurzweil</p>
+                <p><strong>Published:</strong> 2005</p>
+                <p>This groundbreaking work by Ray Kurzweil explores the concept of the technological singularity and presents detailed analyses of exponential technological growth. The theory and projections discussed on this website are significantly informed by Kurzweil's research and vision of the future.</p>
+                <p><strong>Why it matters:</strong> This book provides the theoretical foundation for understanding AI advancement trajectories and the convergence point where artificial intelligence surpasses human intelligence.</p>
+                <p><a href="https://www.kurzweilai.net/" class="credit-link" target="_blank">Learn more about Ray Kurzweil's work →</a></p>
+            </div>
+
+            <div class="credit-section">
+                <h2>GitHub</h2>
+                <p><strong>Platform:</strong> Version Control & Code Hosting</p>
+                <p>GitHub is the platform where this entire website project is hosted and version controlled. It enables collaborative development, code management, and deployment.</p>
+                <p><strong>Why it matters:</strong> GitHub's infrastructure allows for safe development, collaboration, and continuous integration of code changes. This website's repository is publicly available for reference and contribution.</p>
+                <p><a href="https://github.com/" class="credit-link" target="_blank">Visit GitHub →</a></p>
+                <p><strong>This Project:</strong> <a href="https://github.com/Prop3nguin/Prop3nguin.github.io" class="credit-link" target="_blank">Prop3nguin.github.io</a></p>
+            </div>
+
+            <div class="credit-section">
+                <h2>Visual Studio Code</h2>
+                <p><strong>Developer:</strong> Microsoft</p>
+                <p>VS Code is the primary development environment used to create and maintain this website. It provides powerful code editing, debugging, and integration capabilities.</p>
+                <p><strong>Why it matters:</strong> VS Code's extensive features, plugin ecosystem, and intuitive interface make it an essential tool for modern web development. Its AI-assisted capabilities (like GitHub Copilot) have also contributed to this project's development efficiency.</p>
+                <p><a href="https://code.visualstudio.com/" class="credit-link" target="_blank">Visit Visual Studio Code →</a></p>
+            </div>
+
+            <div class="credit-section">
+                <h2>Additional Technologies</h2>
+                <p>This website also uses:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>HTML5</strong> - Semantic markup and structure</li>
+                    <li><strong>CSS3</strong> - Styling, animations, and responsive design</li>
+                    <li><strong>JavaScript</strong> - Interactive features and particle animations</li>
+                    <li><strong>Canvas API</strong> - Real-time graphics for background animations</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <h3>By Spencer C. Haley</h3>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> Schaley@iastate.edu</p>
+                    <p><strong>Phone:</strong> (515) 400-7389</p>
+                </div>
+                <p style="margin-top: 20px; color: rgb(150, 150, 180);">&copy; 2026 Spencer Haley. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script>
+            // Particle system
+            const canvas = document.getElementById('particleCanvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            let mouse = { x: 0, y: 0 };
+            let time = 0;
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            function createParticles() {
+                particles = [];
+                const particleCount = Math.floor(window.innerWidth / 40);
+
+                for (let i = 0; i < particleCount; i++) {
+                    const hue = Math.random() * 60 + 200;
+                    particles.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        baseSize: Math.random() * 2 + 1,
+                        size: 0,
+                        hue: hue,
+                        saturation: Math.random() * 30 + 70,
+                        lightness: Math.random() * 20 + 50,
+                        pulsePhase: Math.random() * Math.PI * 2,
+                        pulseSpeed: Math.random() * 0.02 + 0.01,
+                        angle: Math.random() * Math.PI * 2,
+                        angleVelocity: (Math.random() - 0.5) * 0.03,
+                        connectionDistance: 120 + Math.random() * 40,
+                        directionChangeTimer: 0,
+                        directionChangeInterval: Math.random() * 200 + 100
+                    });
+                }
+            }
+
+            function updateParticles() {
+                particles.forEach((particle) => {
+                    particle.directionChangeTimer++;
+                    if (particle.directionChangeTimer > particle.directionChangeInterval) {
+                        particle.angle = Math.random() * Math.PI * 2;
+                        particle.angleVelocity = (Math.random() - 0.5) * 0.05;
+                        particle.directionChangeTimer = 0;
+                        particle.directionChangeInterval = Math.random() * 200 + 100;
+                    }
+
+                    particle.angle += particle.angleVelocity;
+                    particle.vx += Math.cos(particle.angle) * 0.08;
+                    particle.vy += Math.sin(particle.angle) * 0.08;
+
+                    const centerX = canvas.width / 2;
+                    const centerY = canvas.height / 2;
+                    const distToCenter = Math.sqrt(
+                        Math.pow(centerX - particle.x, 2) + 
+                        Math.pow(centerY - particle.y, 2)
+                    );
+                    
+                    if (distToCenter > Math.min(canvas.width, canvas.height) * 0.6) {
+                        const angle = Math.atan2(centerY - particle.y, centerX - particle.x);
+                        particle.vx += Math.cos(angle) * 0.02;
+                        particle.vy += Math.sin(angle) * 0.02;
+                    }
+
+                    const dx = mouse.x - particle.x;
+                    const dy = mouse.y - particle.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 200) {
+                        const force = (200 - distance) / 200;
+                        particle.vx -= (dx / (distance + 1)) * force * 0.2;
+                        particle.vy -= (dy / (distance + 1)) * force * 0.2;
+                        particle.lightness = Math.min(particle.lightness + force * 15, 80);
+                    }
+
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+
+                    particle.vx *= 0.97;
+                    particle.vy *= 0.97;
+
+                    const buffer = 50;
+                    if (particle.x < -buffer) particle.x = canvas.width + buffer;
+                    if (particle.x > canvas.width + buffer) particle.x = -buffer;
+                    if (particle.y < -buffer) particle.y = canvas.height + buffer;
+                    if (particle.y > canvas.height + buffer) particle.y = -buffer;
+
+                    particle.pulsePhase += particle.pulseSpeed;
+                    const pulse = Math.sin(particle.pulsePhase) * 0.4 + 0.6;
+                    particle.size = particle.baseSize * pulse;
+                });
+            }
+
+            function drawConnections() {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        const maxDist = (particles[i].connectionDistance + particles[j].connectionDistance) / 2;
+                        
+                        if (distance < maxDist) {
+                            const opacity = (1 - distance / maxDist) * 0.15;
+                            const avgHue = (particles[i].hue + particles[j].hue) / 2;
+                            const avgLightness = (particles[i].lightness + particles[j].lightness) / 2;
+                            
+                            ctx.strokeStyle = `hsla(${avgHue}, 70%, ${avgLightness}%, ${opacity})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            function drawParticles() {
+                ctx.fillStyle = 'rgba(22, 18, 42, 0.02)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                drawConnections();
+
+                particles.forEach(particle => {
+                    ctx.beginPath();
+                    ctx.arc(particle.x, particle.y, particle.size * 1.5, 0, Math.PI * 2);
+                    ctx.fillStyle = `hsla(${particle.hue}, ${particle.saturation}%, ${particle.lightness}%, ${(1 - particle.size / particle.baseSize) * 0.2})`;
+                    ctx.fill();
+
+                    ctx.beginPath();
+                    ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `hsl(${particle.hue}, ${particle.saturation}%, ${particle.lightness}%)`;
+                    ctx.fill();
+
+                    ctx.beginPath();
+                    ctx.arc(particle.x - particle.size * 0.3, particle.y - particle.size * 0.3, particle.size * 0.4, 0, Math.PI * 2);
+                    ctx.fillStyle = `hsla(${particle.hue + 20}, 100%, 80%, 0.4)`;
+                    ctx.fill();
+                });
+            }
+
+            function animate() {
+                updateParticles();
+                drawParticles();
+                time++;
+                requestAnimationFrame(animate);
+            }
+
+            window.addEventListener('resize', () => {
+                resizeCanvas();
+                createParticles();
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+
+            resizeCanvas();
+            createParticles();
+            animate();
+
+            function changeLanguage(language) {
+                console.log('Language changed to: ' + language);
+            }
+        </script>
+    </body>
+</html>
