@@ -789,10 +789,10 @@
                 <div class="language-selector">
                     <select id="languageSelector" onchange="changeLanguage(this.value)">
                         <option value="en">English</option>
-                        <option value="es">Spanish</option>
-                        <option value="fr">French</option>
-                        <option value="de">Dutch</option>
-                        <option value="ja">Japanese</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Nederlands</option>
+                        <option value="ja">日本語</option>
                     </select>
                 </div>
             </nav>
@@ -810,50 +810,50 @@
             
             <!-- Myth vs Reality Cards -->
             <div class="myth-reality-container">
-                <h2>Common Misconceptions About AI</h2>
+                <h2 data-i18n="mythsHeader">Common Misconceptions About AI</h2>
                 <div class="myth-cards">
                     <div class="myth-card">
                         <div class="myth-header">
-                            <span class="myth-label">❌ MYTH</span>
+                            <span class="myth-label" data-i18n="myth">❌ MYTH</span>
                         </div>
-                        <h3>AI Will Replace All Jobs</h3>
-                        <p class="myth-text">"AI will make humans obsolete in the workforce"</p>
+                        <h3 data-i18n="myth1Title">AI Will Replace All Jobs</h3>
+                        <p class="myth-text" data-i18n="myth1Myth">"AI will make humans obsolete in the workforce"</p>
                         <div class="reality-reveal">
-                            <span class="reveal-label">✓ REALITY</span>
-                            <p>AI creates new job categories while automating repetitive tasks. History shows technology shifts employment, Instead of eliminating it entirely.</p>
+                            <span class="reveal-label" data-i18n="reality">✓ REALITY</span>
+                            <p data-i18n="myth1Reality">AI creates new job categories while automating repetitive tasks. History shows technology shifts employment, instead of eliminating it entirely.</p>
                         </div>
                     </div>
                     <div class="myth-card">
                         <div class="myth-header">
-                            <span class="myth-label">❌ MYTH</span>
+                            <span class="myth-label" data-i18n="myth">❌ MYTH</span>
                         </div>
-                        <h3>AI Can Think Like Humans</h3>
-                        <p class="myth-text">"AI systems understand and reason just like people"</p>
+                        <h3 data-i18n="myth2Title">AI Can Think Like Humans</h3>
+                        <p class="myth-text" data-i18n="myth2Myth">"AI systems understand and reason just like people"</p>
                         <div class="reality-reveal">
-                            <span class="reveal-label">✓ REALITY</span>
-                            <p>An LLM recognizes patterns in data but lacks consciousness, emotions, and true understanding. It processes statistics, not meaning, and can't think unprompted.</p>
+                            <span class="reveal-label" data-i18n="reality">✓ REALITY</span>
+                            <p data-i18n="myth2Reality">An LLM recognizes patterns in data but lacks consciousness, emotions, and true understanding. It processes statistics, not meaning, and can't think unprompted.</p>
                         </div>
                     </div>
                     <div class="myth-card">
                         <div class="myth-header">
-                            <span class="myth-label">❌ MYTH</span>
+                            <span class="myth-label" data-i18n="myth">❌ MYTH</span>
                         </div>
-                        <h3>AI Is Inherently Evil</h3>
-                        <p class="myth-text">"AI will inevitably turn against humanity"</p>
+                        <h3 data-i18n="myth3Title">AI Is Inherently Evil</h3>
+                        <p class="myth-text" data-i18n="myth3Myth">"AI will inevitably turn against humanity"</p>
                         <div class="reality-reveal">
-                            <span class="reveal-label">✓ REALITY</span>
-                            <p>AI is a tool. Its impact depends entirely on how humans design, train, and deploy it. Values are programmed, not inherent.</p>
+                            <span class="reveal-label" data-i18n="reality">✓ REALITY</span>
+                            <p data-i18n="myth3Reality">AI is a tool. Its impact depends entirely on how humans design, train, and deploy it. Values are programmed, not inherent.</p>
                         </div>
                     </div>
                     <div class="myth-card">
                         <div class="myth-header">
-                            <span class="myth-label">❌ MYTH</span>
+                            <span class="myth-label" data-i18n="myth">❌ MYTH</span>
                         </div>
-                        <h3>Larger AI is Better</h3>
-                        <p class="myth-text">"More Data = Better AI"</p>
+                        <h3 data-i18n="myth4Title">Larger AI is Better</h3>
+                        <p class="myth-text" data-i18n="myth4Myth">"More Data = Better AI"</p>
                         <div class="reality-reveal">
-                            <span class="reveal-label">✓ REALITY</span>
-                            <p>While more data can make an AI behave more like a human, It doesn't make the AI more intelligent. The quality of data in the set is often more important.</p>
+                            <span class="reveal-label" data-i18n="reality">✓ REALITY</span>
+                            <p data-i18n="myth4Reality">While more data can make an AI behave more like a human, it doesn't make the AI more intelligent. The quality of data in the set is often more important.</p>
                         </div>
                     </div>
                 </div>
@@ -861,10 +861,10 @@
 
             <!-- AI Capabilities Display -->
             <div class="capabilities-display">
-                <h2>What AI Can & Cannot Do</h2>
+                <h2 data-i18n="canCannotHeader">What AI Can & Cannot Do</h2>
                 <div class="can-cannot-grid">
                     <div class="can-do">
-                        <h3>✓ AI CAN DO</h3>
+                        <h3 data-i18n="aiCanDo">✓ AI CAN DO</h3>
                         <ul class="capability-list">
                             <li><strong>Pattern Recognition:</strong> Identify trends in massive datasets</li>
                             <li><strong>Automation:</strong> Handle repetitive, well-defined tasks</li>
@@ -874,7 +874,7 @@
                         </ul>
                     </div>
                     <div class="cannot-do">
-                        <h3>✗ AI CANNOT DO</h3>
+                        <h3 data-i18n="aiCannotDo">✗ AI CANNOT DO</h3>
                         <ul class="capability-list">
                             <li><strong>True Understanding:</strong> Comprehend meaning, context, or intent</li>
                             <li><strong>Creativity:</strong> create an innovative solution to an unsolved problem</li>
@@ -889,7 +889,7 @@
         <section id="WebDev" class="section-animate">
             <div class="thesis-box">
                 <h2>AI Use Today</h2>
-                <p><strong>Currently, AI is being used to assist experts all over the world by doing things from mapping large protiens to advance the medical Field to helping joe smith program his own app.</strong></p>
+                <p><strong>Currently, AI is being used to assist experts all over the world by doing things from mapping large proteins to advance the medical field to helping joe smith program his own app.</strong></p>
             </div>
             <div class="timeline-container">
                 <h2>Project Journey: Obstacles → Solutions</h2>
@@ -901,8 +901,8 @@
                             <p class="obstacle-description">In the development of this website, JavaScript was used to add interactivity and dynamic behavior. without AI, The website wouldn't have been completed on-time</p>
                             <div class="solution-box">
                                 <h4>AI Solution Used:</h4>
-                                <p>I had complete creative control over the structure of the website and even very precise artistic feasability, however, the one part I couldn't touch with expertise was the JavaScript functionality.</p>
-                                <p class="outcome"><strong>Outcome:</strong> The website was completed on-time with the help of AI-assisted JavaScript development, albiet with some limitations.</p>
+                                <p>I had complete creative control over the structure of the website and even very precise artistic feasibility, however, the one part I couldn't touch with expertise was the JavaScript functionality.</p>
+                                <p class="outcome"><strong>Outcome:</strong> The website was completed on-time with the help of AI-assisted JavaScript development, albeit with some limitations.</p>
                             </div>
                         </div>
                     </div>
@@ -934,7 +934,7 @@
         <section id="AI" class="section-animate">
             <div class="thesis-box">
                 <h1>AI & The Future</h1>
-                <p><strong>Artificial intelligence has been debated riggorously. It's been a central part in many theorist's visions of the future. Weather it be <em>Terminator</em> or the more optomistic visions in <em>The Singularity is Near</em></strong></p>
+                <p><strong>Artificial intelligence has been debated rigorously. It's been a central part in many theorist's visions of the future. Weather it be<em>Terminator</em> or the more optimistic visions in <em>The Singularity is Near</em></strong></p>
             </div>
 
             <!-- Main point Cards (Reasoning) -->
@@ -947,7 +947,7 @@
                         <ul class="capabilities-list">
                             <li>Explanation</li>
                             <div class="solution-box">
-                                <p>The Singularity is a Hypothetical moment in the future where Technological advancement is completely uncontrolled by humankind. This leads to unpredictable innovations and potential risks.</p>
+                                <p>The Singularity is a hypothetical moment in the future where technological advancement is completely uncontrolled by humankind. This leads to unpredictable innovations and potential risks.</p>
                             </div>
                             <li>Time frame</li>
                             <div class="solution-box">
@@ -988,11 +988,11 @@
                         <ul class="capabilities-list">
                             <li>Explanation</li>
                             <div class="solution-box">
-                                <p>Transhumanism is an Ideology that argues for the integration of technology with the human body so much so that we "Evolve" beyond Human.</p>
+                                <p>Transhumanism is an Ideology that argues for the integration of technology with the human body so much so that we "Evolve" beyond the human condition.</p>
                             </div>
                             <li>Time frame</li>
                             <div class="solution-box">
-                                <p>Transhumanism is a concept that can only be fully realized post-singularity, most likely requiring advanced technology in feilds like Gene editing and robotic prosthetics.</p>
+                                <p>Transhumanism is a concept that can only be fully realized post-singularity, most likely requiring advanced technology in fields like gene editing and robotic prosthetics.</p>
                             </div>
                             <li>How does AI tie into it?</li>
                             <div class="solution-box">
@@ -1089,10 +1089,520 @@
         window.addEventListener('scroll', updateActiveLink);
         updateActiveLink(); // Call once on load
 
+        // Language translations - Complete page content
+        const translations = {
+            en: {
+                misconceptions: 'Misconceptions',
+                aiToday: 'AI Use Today',
+                aiFuture: 'AI & The Future',
+                background: 'Background',
+                bannerTitle: 'Understanding AI in 2026',
+                bannerDesc: 'Explore myths, capabilities, current applications, and the future of artificial intelligence',
+                mythsHeader: 'Common Misconceptions',
+                canCannotHeader: 'What AI Can & Cannot Do',
+                aiCanDo: '✓ AI CAN DO',
+                aiCannotDo: '✗ AI CANNOT DO',
+                patternRecog: 'Pattern Recognition',
+                patternRecogDesc: 'Identify trends in massive datasets',
+                automation: 'Automation',
+                automationDesc: 'Handle repetitive, well-defined tasks',
+                analysis: 'Analysis',
+                analysisDesc: 'Process information faster than humans',
+                prediction: 'Prediction',
+                predictionDesc: 'Make statistical forecasts based on historical data',
+                optimization: 'Optimization',
+                optimizationDesc: 'Find efficient solutions to complex problems',
+                trueUnderstand: 'True Understanding',
+                trueUnderstandDesc: 'Comprehend meaning, context, or intent',
+                creativity: 'Creativity',
+                creativityDesc: 'create an innovative solution to an unsolved problem',
+                consciousness: 'Consciousness',
+                consciousnessDesc: 'Feel, experience, or have subjective awareness',
+                commonSense: 'Common Sense',
+                commonSenseDesc: 'Apply real-world reasoning outside its training',
+                moralJudge: 'Moral Judgment',
+                moralJudgeDesc: 'Make ethical decisions independently',
+                aiTodayHeader: 'AI Use Today',
+                aiTodayDesc: 'Currently, AI is being used to assist experts all over the world by doing things from mapping large proteins to advance the medical field to helping joe smith program his own app.',
+                projectJourney: 'Project Journey: Obstacles → Solutions',
+                obstacle1: 'Obstacle 1: JavaScript',
+                obstacle1Desc: 'In the development of this website, JavaScript was used to add interactivity and dynamic behavior. without AI, The website wouldn\'t have been completed on-time',
+                aiSolutionUsed: 'AI Solution Used:',
+                obstacle1Solution: 'I had complete creative control over the structure of the website and even very precise artistic feasibility, however, the one part I couldn\'t touch with expertise was the JavaScript functionality.',
+                outcome: 'Outcome:',
+                obstacle1Outcome: 'The website was completed on-time with the help of AI-assisted JavaScript development, albeit with some limitations.',
+                obstacle2: 'Obstacle 2: Color & Contrast',
+                obstacle2Desc: 'I wanted to ensure the website had good color contrast for accessibility, but couldn\'t quickly determine the best color codes to use without looking them up separately.',
+                obstacle2Solution: 'I could trust the AI to generate color schemes that met accessibility requirements, while also maintaining a form of artistic control over where these color changes went.',
+                obstacle2Outcome: 'I was able to find a fitting color theme and integrate a glowing effect to make the site feel futuristic.',
+                obstacle3: 'Obstacle 3: Animated Elements',
+                obstacle3Desc: 'I wanted to add moving elements to the website to make it more engaging and I didn\'t know much about Javascript.',
+                obstacle3Solution: 'I could ask the AI agent to program a simple script to achieve my goals.',
+                obstacle3Outcome: 'I was able to add smooth animations to the website in several areas, like the animation of each section when it comes into view, or the moving dots in the background (which respond to the cursor\'s presence).',
+                aiFutureHeader: 'AI & The Future',
+                aiFutureDesc: 'Artificial intelligence has been debated rigorously. It\'s been a central part in many theorist\'s visions of the future. Weather it be Terminator or the more Optimistic visions in The Singularity is Near',
+                popularTheories: 'Popular Theories of the Future',
+                singularityTheory: 'Singularity Theory',
+                theoryLabel: '[Theory]',
+                explanation: 'Explanation',
+                singularityExplain: 'The Singularity is a Hypothetical moment in the future where Technological advancement is completely uncontrolled by humankind. This leads to unpredictable innovations and potential risks.',
+                timeframe: 'Time frame',
+                singularityTimeframe: 'The Technological Singularity is a subject of much debate and speculation. The most popular claim, supported by the two books The Singularity Is Near and The Singularity Is Nearer, places the singularity in 2045. just 19 years away.',
+                watchFor: 'What to watch For',
+                medicalBreak: 'AI breakthroughs in the medical field',
+                quantumComputing: 'Commercial use of Quantum Computing',
+                promptlessAI: 'Promptless AI & AI-Designed AI',
+                simulationTheory: 'Simulation Theory',
+                simulationExplain: 'The Theory suggests that it\'s possible to create a simulated reality that is completely indistinguishable from "real" reality.',
+                simulationTimeframe: 'Confermation or creation of a simulated reality will certainly be post-singularity',
+                simulationWhy: 'Why does Simulation Theory matter?',
+                simulationWhy2: 'It varies from person to person, but the implications of a "Simulated Reality" suggest several things :',
+                simulationPoint1: 'We may already be living in a simulation',
+                simulationPoint2: 'It may be possible to create a simulated reality in the future',
+                simulationPoint3: 'Our thoughts and experiences may be able to be manipulated by those in "higher" simulations',
+                transhumanism: 'Transhumanism',
+                ideologyLabel: '[Ideology]',
+                transhumanismExplain: 'Transhumanism is an Ideology that argues for the integration of technology with the human body so much so that we "Evolve" beyond the human condition.',
+                transhumanismTimeframe: 'Transhumanism is a concept that can only be fully realized post-singularity, most likely requiring advanced technology in feilds like Gene editing and robotic prosthetics.',
+                aiInTranshumanism: 'How does AI tie into it?',
+                aiTranshumanismDesc: 'AI plays a significant role in Transhumanism by providing the technological foundation for enhancing human capabilities. It enables the development of brain-computer interfaces, advanced prosthetics, and cognitive augmentation tools that align with Transhumanist goals.',
+                footerBy: 'By Spencer C. Haley',
+                footerEmail: 'Email:',
+                footerPhone: 'Phone:',
+                footerCopyright: '© 2026 Spencer Haley. All rights reserved.',
+                myth: '❌ MYTH',
+                reality: '✓ REALITY',
+                myth1Title: 'AI Will Replace All Jobs',
+                myth1Myth: '"AI will make humans obsolete in the workforce"',
+                myth1Reality: 'AI creates new job categories while automating repetitive tasks. History shows technology shifts employment, instead of eliminating it entirely.',
+                myth2Title: 'AI Can Think Like Humans',
+                myth2Myth: '"AI systems understand and reason just like people"',
+                myth2Reality: 'An LLM recognizes patterns in data but lacks consciousness, emotions, and true understanding. It processes statistics, not meaning, and can\'t think unprompted.',
+                myth3Title: 'AI Is Inherently Evil',
+                myth3Myth: '"AI will inevitably turn against humanity"',
+                myth3Reality: 'AI is a tool. Its impact depends entirely on how humans design, train, and deploy it. Values are programmed, not inherent.',
+                myth4Title: 'Larger AI is Better',
+                myth4Myth: '"More Data = Better AI"',
+                myth4Reality: 'While more data can make an AI behave more like a human, it doesn\'t make the AI more intelligent. The quality of data in the set is often more important.'
+            },
+            es: {
+                misconceptions: 'Conceptos Erróneos',
+                aiToday: 'Uso de IA Hoy',
+                aiFuture: 'IA y El Futuro',
+                background: 'Fondo',
+                bannerTitle: 'Comprendiendo la IA en 2026',
+                bannerDesc: 'Explora mitos, capacidades, aplicaciones actuales y el futuro de la inteligencia artificial',
+                mythsHeader: 'Conceptos Erróneos Comunes',
+                canCannotHeader: 'Lo que la IA Puede y No Puede Hacer',
+                aiCanDo: '✓ LA IA PUEDE HACER',
+                aiCannotDo: '✗ LA IA NO PUEDE HACER',
+                patternRecog: 'Reconocimiento de Patrones',
+                patternRecogDesc: 'Identificar tendencias en conjuntos de datos masivos',
+                automation: 'Automatización',
+                automationDesc: 'Manejar tareas repetitivas bien definidas',
+                analysis: 'Análisis',
+                analysisDesc: 'Procesar información más rápido que los humanos',
+                prediction: 'Predicción',
+                predictionDesc: 'Hacer pronósticos estadísticos basados en datos históricos',
+                optimization: 'Optimización',
+                optimizationDesc: 'Encontrar soluciones eficientes para problemas complejos',
+                trueUnderstand: 'Verdadera Comprensión',
+                trueUnderstandDesc: 'Comprender significado, contexto o intención',
+                creativity: 'Creatividad',
+                creativityDesc: 'Crear una solución innovadora a un problema sin resolver',
+                consciousness: 'Conciencia',
+                consciousnessDesc: 'Sentir, experimentar o tener conciencia subjetiva',
+                commonSense: 'Sentido Común',
+                commonSenseDesc: 'Aplicar razonamiento del mundo real fuera de su entrenamiento',
+                moralJudge: 'Juicio Moral',
+                moralJudgeDesc: 'Tomar decisiones éticas de forma independiente',
+                aiTodayHeader: 'Uso de IA Hoy',
+                aiTodayDesc: 'Actualmente, la IA se utiliza para asistir a expertos en todo el mundo, desde mapear proteínas grandes para avanzar en el campo médico hasta ayudar a joe smith a programar su propia aplicación.',
+                projectJourney: 'Viaje del Proyecto: Obstáculos → Soluciones',
+                obstacle1: 'Obstáculo 1: JavaScript',
+                obstacle1Desc: 'En el desarrollo de este sitio web, se utilizó JavaScript para agregar interactividad y comportamiento dinámico. Sin IA, el sitio web no se habría completado a tiempo',
+                aiSolutionUsed: 'Solución de IA Utilizada:',
+                obstacle1Solution: 'Tenía control creativo completo sobre la estructura del sitio web e incluso una viabilidad artística muy precisa, sin embargo, la única parte en la que no podía tener experiencia era la funcionalidad de JavaScript.',
+                outcome: 'Resultado:',
+                obstacle1Outcome: 'El sitio web se completó a tiempo con la ayuda del desarrollo de JavaScript asistido por IA, aunque con algunas limitaciones.',
+                obstacle2: 'Obstáculo 2: Color y Contraste',
+                obstacle2Desc: 'Quería asegurarme de que el sitio web tuviera un buen contraste de color para la accesibilidad, pero no podía determinar rápidamente los mejores códigos de color a usar sin buscarlos por separado.',
+                obstacle2Solution: 'Podía confiar en que la IA generara esquemas de color que cumplieran con los requisitos de accesibilidad, mientras mantenía una forma de control artístico sobre dónde iban estos cambios de color.',
+                obstacle2Outcome: 'Pude encontrar un tema de color adecuado e integrar un efecto de brillo para que el sitio se vea futurista.',
+                obstacle3: 'Obstáculo 3: Elementos Animados',
+                obstacle3Desc: 'Quería agregar elementos en movimiento al sitio web para hacerlo más atractivo y no sabía mucho sobre Javascript.',
+                obstacle3Solution: 'Podía pedirle al agente de IA que programara un script simple para lograr mis objetivos.',
+                obstacle3Outcome: 'Pude agregar animaciones suave al sitio web en varias áreas, como la animación de cada sección cuando entra en vista, o los puntos móviles en el fondo (que responden a la presencia del cursor).',
+                aiFutureHeader: 'IA y El Futuro',
+                aiFutureDesc: 'La inteligencia artificial ha sido debatida rigurosamente. Ha sido una parte central en las visiones del futuro de muchos teóricos. Ya sea Terminator o las visiones más optimistas en The Singularity is Near',
+                popularTheories: 'Teorías Populares del Futuro',
+                singularityTheory: 'Teoría de la Singularidad',
+                theoryLabel: '[Teoría]',
+                explanation: 'Explicación',
+                singularityExplain: 'La Singularidad es un momento hipotético en el futuro donde el avance tecnológico está completamente fuera del control de la humanidad. Esto lleva a innovaciones impredecibles y riesgos potenciales.',
+                timeframe: 'Marco de Tiempo',
+                singularityTimeframe: 'La Singularidad Tecnológica es un tema de mucho debate y especulación. La afirmación más popular, respaldada por los dos libros The Singularity Is Near y The Singularity Is Nearer, coloca la singularidad en 2045. solo 19 años.',
+                watchFor: 'Qué Observar',
+                medicalBreak: 'Avances de IA en el campo médico',
+                quantumComputing: 'Uso comercial de la Computación Cuántica',
+                promptlessAI: 'IA sin indicaciones e IA diseñada por IA',
+                simulationTheory: 'Teoría de la Simulación',
+                simulationExplain: 'La teoría sugiere que es posible crear una realidad simulada que sea completamente indistinguible de la realidad "real".',
+                simulationTimeframe: 'La confirmación o creación de una realidad simulada ciertamente será post-singularidad',
+                simulationWhy: '¿Por qué importa la Teoría de la Simulación?',
+                simulationWhy2: 'Varía de persona a persona, pero las implicaciones de una "Realidad Simulada" sugieren varias cosas:',
+                simulationPoint1: 'Podríamos ya estar viviendo en una simulación',
+                simulationPoint2: 'Podría ser posible crear una realidad simulada en el futuro',
+                simulationPoint3: 'Nuestros pensamientos y experiencias podrían ser manipulados por los de simulaciones "superiores"',
+                transhumanism: 'Transhumanismo',
+                ideologyLabel: '[Ideología]',
+                transhumanismExplain: 'El transhumanismo es una ideología que aboga por la integración de la tecnología con el cuerpo humano de tal manera que "evolucionemos" más allá de lo humano.',
+                transhumanismTimeframe: 'El transhumanismo es un concepto que solo puede realizarse plenamente después de la singularidad, probablemente requiriendo tecnología avanzada en campos como la edición genética y las prótesis robóticas.',
+                aiInTranshumanism: '¿Cómo se relaciona la IA con esto?',
+                aiTranshumanismDesc: 'La IA juega un papel importante en el transhumanismo al proporcionar la base tecnológica para mejorar las capacidades humanas. Permite el desarrollo de interfaces cerebro-computadora, prótesis avanzadas y herramientas de aumento cognitivo que se alinean con los objetivos transhumanistas.',
+                footerBy: 'Por Spencer C. Haley',
+                footerEmail: 'Correo Electrónico:',
+                footerPhone: 'Teléfono:',
+                footerCopyright: '© 2026 Spencer Haley. Todos los derechos reservados.',
+                myth: '❌ MITO',
+                reality: '✓ REALIDAD',
+                myth1Title: 'La IA Reemplazará Todos los Empleos',
+                myth1Myth: '"La IA hará que los humanos sean obsoletos en la fuerza laboral"',
+                myth1Reality: 'La IA crea nuevas categorías de empleos mientras automatiza tareas repetitivas. La historia muestra que la tecnología cambia el empleo, en lugar de eliminarlo por completo.',
+                myth2Title: 'La IA Puede Pensar Como Humanos',
+                myth2Myth: '"Los sistemas de IA entienden y razonan como las personas"',
+                myth2Reality: 'Un LLM reconoce patrones en datos pero carece de conciencia, emociones y verdadera comprensión. Procesa estadísticas, no significado, y no puede pensar sin ser indicado.',
+                myth3Title: 'La IA Es Inherentemente Malvada',
+                myth3Myth: '"La IA inevitablemente se volverá contra la humanidad"',
+                myth3Reality: 'La IA es una herramienta. Su impacto depende enteramente de cómo los humanos la diseñen, entrenen e implementen. Los valores se programan, no son inherentes.',
+                myth4Title: 'La IA Más Grande es Mejor',
+                myth4Myth: '"Más Datos = Mejor IA"',
+                myth4Reality: 'Aunque más datos pueden hacer que una IA se comporte más como un humano, no hace que la IA sea más inteligente. La calidad de los datos del conjunto suele ser más importante.'
+            },
+            fr: {
+                misconceptions: 'Idées Fausses',
+                aiToday: 'Utilisation de l\'IA Aujourd\'hui',
+                aiFuture: 'IA et L\'Avenir',
+                background: 'Arrière-plan',
+                bannerTitle: 'Comprendre l\'IA en 2026',
+                bannerDesc: 'Explorez les mythes, les capacités, les applications actuelles et l\'avenir de l\'intelligence artificielle',
+                mythsHeader: 'Idées Fausses Communes',
+                canCannotHeader: 'Ce que l\'IA Peut et Ne Peut Pas Faire',
+                aiCanDo: '✓ L\'IA PEUT FAIRE',
+                aiCannotDo: '✗ L\'IA NE PEUT PAS FAIRE',
+                patternRecog: 'Reconnaissance de Motifs',
+                patternRecogDesc: 'Identifier les tendances dans les ensembles de données massifs',
+                automation: 'Automatisation',
+                automationDesc: 'Gérer les tâches répétitives bien définies',
+                analysis: 'Analyse',
+                analysisDesc: 'Traiter les informations plus rapidement que les humains',
+                prediction: 'Prédiction',
+                predictionDesc: 'Faire des prévisions statistiques basées sur des données historiques',
+                optimization: 'Optimisation',
+                optimizationDesc: 'Trouver des solutions efficaces à des problèmes complexes',
+                trueUnderstand: 'Véritable Compréhension',
+                trueUnderstandDesc: 'Comprendre le sens, le contexte ou l\'intention',
+                creativity: 'Créativité',
+                creativityDesc: 'Créer une solution innovante à un problème non résolu',
+                consciousness: 'Conscience',
+                consciousnessDesc: 'Ressentir, vivre ou avoir une conscience subjective',
+                commonSense: 'Bon Sens',
+                commonSenseDesc: 'Appliquer le raisonnement du monde réel en dehors de son entraînement',
+                moralJudge: 'Jugement Moral',
+                moralJudgeDesc: 'Prendre des décisions éthiques de manière indépendante',
+                aiTodayHeader: 'Utilisation de l\'IA Aujourd\'hui',
+                aiTodayDesc: 'Actuellement, l\'IA est utilisée pour aider les experts du monde entier en faisant des choses comme cartographier de grandes protéines pour faire progresser le domaine médical à aider joe smith à programmer sa propre application.',
+                projectJourney: 'Parcours du Projet: Obstacles → Solutions',
+                obstacle1: 'Obstacle 1: JavaScript',
+                obstacle1Desc: 'Lors du développement de ce site Web, JavaScript a été utilisé pour ajouter de l\'interactivité et un comportement dynamique. sans IA, le site Web n\'aurait pas été complété à temps',
+                aiSolutionUsed: 'Solution IA Utilisée:',
+                obstacle1Solution: 'J\'avais un contrôle créatif complet sur la structure du site Web et même une faisabilité artistique très précise, cependant, la seule partie sur laquelle je ne pouvais pas avoir d\'expertise était la fonctionnalité JavaScript.',
+                outcome: 'Résultat:',
+                obstacle1Outcome: 'Le site Web a été complété à temps grâce à l\'aide du développement JavaScript assisté par l\'IA, bien qu\'avec certaines limitations.',
+                obstacle2: 'Obstacle 2: Couleur et Contraste',
+                obstacle2Desc: 'Je voulais m\'assurer que le site Web avait un bon contraste de couleur pour l\'accessibilité, mais je ne pouvais pas déterminer rapidement les meilleurs codes de couleur à utiliser sans les rechercher séparément.',
+                obstacle2Solution: 'Je pouvais faire confiance à l\'IA pour générer des schémas de couleurs qui répondaient aux exigences d\'accessibilité, tout en maintenant une forme de contrôle artistique sur l\'endroit où ces changements de couleur ont eu lieu.',
+                obstacle2Outcome: 'J\'ai pu trouver un thème de couleur approprié et intégrer un effet de lueur pour que le site se sente futuriste.',
+                obstacle3: 'Obstacle 3: Éléments Animés',
+                obstacle3Desc: 'Je voulais ajouter des éléments en mouvement au site Web pour le rendre plus attrayant et je ne savais pas grand-chose sur Javascript.',
+                obstacle3Solution: 'Je pouvais demander à l\'agent IA de programmer un script simple pour atteindre mes objectifs.',
+                obstacle3Outcome: 'J\'ai pu ajouter des animations fluides au site Web dans plusieurs zones, comme l\'animation de chaque section lorsqu\'elle entre dans la vue, ou les points mobiles en arrière-plan (qui réagissent à la présence du curseur).',
+                aiFutureHeader: 'IA et L\'Avenir',
+                aiFutureDesc: 'L\'intelligence artificielle a été débattue rigoureusement. Elle a été une partie centrale dans les visions du futur de nombreux théoriciens. Qu\'il s\'agisse de Terminator ou des visions plus optimistes dans The Singularity is Near',
+                popularTheories: 'Théories Populaires de l\'Avenir',
+                singularityTheory: 'Théorie de la Singularité',
+                theoryLabel: '[Théorie]',
+                explanation: 'Explication',
+                singularityExplain: 'La Singularité est un moment hypothétique dans le futur où l\'avancement technologique est complètement incontrôlable par l\'humanité. Cela conduit à des innovations imprévisibles et à des risques potentiels.',
+                timeframe: 'Délai',
+                singularityTimeframe: 'La Singularité Technologique est un sujet de beaucoup de débat et de spéculation. La réclamation la plus populaire, soutenue par les deux livres The Singularity Is Near et The Singularity Is Nearer, place la singularité en 2045. juste 19 ans.',
+                watchFor: 'Ce qu\'il Faut Observer',
+                medicalBreak: 'Percées de l\'IA dans le domaine médical',
+                quantumComputing: 'Utilisation commerciale de l\'Informatique Quantique',
+                promptlessAI: 'IA Sans Invite et IA Conçue par IA',
+                simulationTheory: 'Théorie de la Simulation',
+                simulationExplain: 'La théorie suggère qu\'il est possible de créer une réalité simulée qui est complètement indistinguible de la réalité "réelle".',
+                simulationTimeframe: 'La confirmation ou la création d\'une réalité simulée sera certainement post-singularité',
+                simulationWhy: 'Pourquoi la Théorie de la Simulation est-elle importante?',
+                simulationWhy2: 'Cela varie d\'une personne à l\'autre, mais les implications d\'une "Réalité Simulée" suggèrent plusieurs choses:',
+                simulationPoint1: 'Nous vivons peut-être déjà dans une simulation',
+                simulationPoint2: 'Il peut être possible de créer une réalité simulée à l\'avenir',
+                simulationPoint3: 'Nos pensées et nos expériences pourraient être manipulées par ceux des simulations "supérieures"',
+                transhumanism: 'Transhumanisme',
+                ideologyLabel: '[Idéologie]',
+                transhumanismExplain: 'Le transhumanisme est une idéologie qui plaide pour l\'intégration de la technologie au corps humain de manière à ce que nous "évoluions" au-delà de l\'humain.',
+                transhumanismTimeframe: 'Le transhumanisme est un concept qui ne peut être pleinement réalisé qu\'après la singularité, nécessitant probablement une technologie avancée dans des domaines comme l\'édition génique et les prothèses robotiques.',
+                aiInTranshumanism: 'Comment l\'IA s\'intègre-t-elle?',
+                aiTranshumanismDesc: 'L\'IA joue un rôle important dans le transhumanisme en fournissant la base technologique pour améliorer les capacités humaines. Il permet le développement d\'interfaces cerveau-ordinateur, de prothèses avancées et d\'outils d\'augmentation cognitive qui s\'alignent sur les objectifs transhumanistes.',
+                footerBy: 'Par Spencer C. Haley',
+                footerEmail: 'E-mail:',
+                footerPhone: 'Téléphone:',
+                footerCopyright: '© 2026 Spencer Haley. Tous droits réservés.',
+                myth: '❌ MYTHE',
+                reality: '✓ RÉALITÉ',
+                myth1Title: 'L\'IA Remplacera Tous les Emplois',
+                myth1Myth: '"L\'IA rendra les humains obsolètes dans la main-d\'œuvre"',
+                myth1Reality: 'L\'IA crée de nouvelles catégories d\'emplois tout en automatisant les tâches répétitives. L\'histoire montre que la technologie change l\'emploi, au lieu de l\'éliminer complètement.',
+                myth2Title: 'L\'IA Peut Penser Comme les Humains',
+                myth2Myth: '"Les systèmes IA comprennent et raisonnent comme les gens"',
+                myth2Reality: 'Un LLM reconnaît les motifs dans les données mais manque de conscience, d\'émotions et de véritable compréhension. Il traite les statistiques, pas le sens, et ne peut pas penser sans invite.',
+                myth3Title: 'L\'IA Est Intrinsèquement Malveillante',
+                myth3Myth: '"L\'IA se retournera inévitablement contre l\'humanité"',
+                myth3Reality: 'L\'IA est un outil. Son impact dépend entièrement de la façon dont les humains la conçoivent, l\'entraînent et la déploient. Les valeurs sont programmées, pas intrinsèques.',
+                myth4Title: 'Plus Grand IA est Mieux',
+                myth4Myth: '"Plus de Données = Meilleure IA"',
+                myth4Reality: 'Bien que plus de données puissent faire qu\'une IA se comporte plus comme un humain, cela ne rend pas l\'IA plus intelligente. La qualité des données de l\'ensemble est souvent plus importante.'
+            },
+            de: {
+                misconceptions: 'Missverständnisse',
+                aiToday: 'KI-Nutzung Heute',
+                aiFuture: 'KI und Die Zukunft',
+                background: 'Hintergrund',
+                bannerTitle: 'KI im Jahr 2026 verstehen',
+                bannerDesc: 'Erkunden Sie Mythen, Fähigkeiten, aktuelle Anwendungen und die Zukunft der künstlichen Intelligenz',
+                mythsHeader: 'Häufige Missverständnisse',
+                canCannotHeader: 'Was KI Kann und Nicht Kann',
+                aiCanDo: '✓ KI KANN',
+                aiCannotDo: '✗ KI KANN NICHT',
+                patternRecog: 'Mustererkennung',
+                patternRecogDesc: 'Trends in massiven Datensätzen erkennen',
+                automation: 'Automatisierung',
+                automationDesc: 'Wiederholte, gut definierte Aufgaben bewältigen',
+                analysis: 'Analyse',
+                analysisDesc: 'Informationen schneller verarbeiten als Menschen',
+                prediction: 'Vorhersage',
+                predictionDesc: 'Statistische Prognosen basierend auf historischen Daten erstellen',
+                optimization: 'Optimierung',
+                optimizationDesc: 'Effiziente Lösungen für komplexe Probleme finden',
+                trueUnderstand: 'Echtes Verständnis',
+                trueUnderstandDesc: 'Bedeutung, Kontext oder Absicht verstehen',
+                creativity: 'Kreativität',
+                creativityDesc: 'Eine innovative Lösung für ein ungelöstes Problem schaffen',
+                consciousness: 'Bewusstsein',
+                consciousnessDesc: 'Fühlen, erfahren oder subjektives Bewusstsein haben',
+                commonSense: 'Gesunder Menschenverstand',
+                commonSenseDesc: 'Reales Denken außerhalb des Trainings anwenden',
+                moralJudge: 'Moralisches Urteil',
+                moralJudgeDesc: 'Ethische Entscheidungen unabhängig treffen',
+                aiTodayHeader: 'KI-Nutzung Heute',
+                aiTodayDesc: 'Derzeit wird KI verwendet, um Experten auf der ganzen Welt zu unterstützen, indem sie von der Kartographie großer Proteine zur Förderung des medizinischen Bereichs bis zur Unterstützung von joe smith bei der Programmierung seiner eigenen App reicht.',
+                projectJourney: 'Projektreise: Hindernisse → Lösungen',
+                obstacle1: 'Hindernis 1: JavaScript',
+                obstacle1Desc: 'Bei der Entwicklung dieser Website wurde JavaScript verwendet, um Interaktivität und dynamisches Verhalten hinzuzufügen. Ohne KI wäre die Website nicht rechtzeitig fertiggestellt worden',
+                aiSolutionUsed: 'Verwendete KI-Lösung:',
+                obstacle1Solution: 'Ich hatte vollständige kreative Kontrolle über die Struktur der Website und sogar sehr präzise künstlerische Machbarkeit, aber der einzige Teil, in dem ich keine Expertise hatte, war die JavaScript-Funktionalität.',
+                outcome: 'Ergebnis:',
+                obstacle1Outcome: 'Die Website wurde mit Hilfe der KI-gestützten JavaScript-Entwicklung rechtzeitig fertiggestellt, wenn auch mit einigen Einschränkungen.',
+                obstacle2: 'Hindernis 2: Farbe und Kontrast',
+                obstacle2Desc: 'Ich wollte sicherstellen, dass die Website einen guten Farbkontrast für die Barrierefreiheit hat, konnte aber nicht schnell bestimmen, welche Farbcodes ohne separate Recherche am besten zu verwenden sind.',
+                obstacle2Solution: 'Ich konnte der KI vertrauen, um Farbschemata zu generieren, die die Anforderungen der Barrierefreiheit erfüllen, während ich gleichzeitig eine Form der künstlerischen Kontrolle darüber behielt, wo diese Farbänderungen vorgenommen wurden.',
+                obstacle2Outcome: 'Ich konnte ein passendes Farbthema finden und einen Glüheffekt integrieren, um die Website futuristisch wirken zu lassen.',
+                obstacle3: 'Hindernis 3: Animierte Elemente',
+                obstacle3Desc: 'Ich wollte animierte Elemente zur Website hinzufügen, um sie ansprechender zu gestalten, und wusste nicht viel über Javascript.',
+                obstacle3Solution: 'Ich konnte den KI-Agent bitten, ein einfaches Skript zu programmieren, um meine Ziele zu erreichen.',
+                obstacle3Outcome: 'Ich konnte sanfte Animationen auf der Website in mehreren Bereichen hinzufügen, wie die Animation jedes Abschnitts, wenn er in den Blick kommt, oder die beweglichen Punkte im Hintergrund (die auf die Anwesenheit des Cursors reagieren).',
+                aiFutureHeader: 'KI und Die Zukunft',
+                aiFutureDesc: 'Künstliche Intelligenz wurde intensiv diskutiert. Es war ein zentraler Bestandteil in vielen Visionen von Theoretikern über die Zukunft. Ob Terminator oder die optimistischeren Visionen in The Singularity is Near',
+                popularTheories: 'Beliebte Theorien der Zukunft',
+                singularityTheory: 'Singularitätstheorie',
+                theoryLabel: '[Theorie]',
+                explanation: 'Erklärung',
+                singularityExplain: 'Die Singularität ist ein hypothetischer Moment in der Zukunft, in dem der technologische Fortschritt vollständig außerhalb der Kontrolle der Menschheit liegt. Dies führt zu unvorhersehbaren Innovationen und potenziellen Risiken.',
+                timeframe: 'Zeitrahmen',
+                singularityTimeframe: 'Die technologische Singularität ist Gegenstand vieler Diskussionen und Spekulationen. Die populärste These, unterstützt durch die beiden Bücher The Singularity Is Near und The Singularity Is Nearer, setzt die Singularität auf 2045. gerade noch 19 Jahre.',
+                watchFor: 'Worauf Sie Achten Sollten',
+                medicalBreak: 'KI-Durchbrüche im medizinischen Bereich',
+                quantumComputing: 'Kommerzielle Nutzung von Quantum Computing',
+                promptlessAI: 'Aufforderungslose KI und KI-designed KI',
+                simulationTheory: 'Simulationstheorie',
+                simulationExplain: 'Die Theorie besagt, dass es möglich ist, eine simulierte Realität zu schaffen, die vollständig von der "echten" Realität zu unterscheiden ist.',
+                simulationTimeframe: 'Bestätigung oder Erstellung einer simulierten Realität wird sicherlich post-Singularität sein',
+                simulationWhy: 'Warum ist die Simulationstheorie wichtig?',
+                simulationWhy2: 'Dies variiert von Person zu Person, aber die Implikationen einer "simulierten Realität" deuten auf mehrere Dinge hin:',
+                simulationPoint1: 'Wir könnten bereits in einer Simulation leben',
+                simulationPoint2: 'Es könnte möglich sein, eine simulierte Realität in der Zukunft zu schaffen',
+                simulationPoint3: 'Unsere Gedanken und Erfahrungen könnten von denen in "höheren" Simulationen manipuliert werden',
+                transhumanism: 'Transhumanismus',
+                ideologyLabel: '[Ideologie]',
+                transhumanismExplain: 'Transhumanismus ist eine Ideologie, die sich für die Integration von Technologie mit dem menschlichen Körper einsetzt, bis wir über das Menschliche hinaus "evolvieren".',
+                transhumanismTimeframe: 'Transhumanismus ist ein Konzept, das nur nach der Singularität vollständig realisiert werden kann und wahrscheinlich fortgeschrittene Technologie in Bereichen wie Gentechnik und Roboterprothesen erfordert.',
+                aiInTranshumanism: 'Wie ist KI damit verbunden?',
+                aiTranshumanismDesc: 'KI spielt eine bedeutende Rolle im Transhumanismus, indem sie die technologische Grundlage für die Verbesserung menschlicher Fähigkeiten bietet. Es ermöglicht die Entwicklung von Gehirn-Computer-Schnittstellen, fortgeschrittenen Prothesen und kognitiven Augmentationswerkzeugen, die sich an transhumanistische Ziele anpassen.',
+                footerBy: 'Von Spencer C. Haley',
+                footerEmail: 'E-Mail:',
+                footerPhone: 'Telefon:',
+                footerCopyright: '© 2026 Spencer Haley. Alle Rechte vorbehalten.',
+                myth: '❌ MYTHOS',
+                reality: '✓ REALITÄT',
+                myth1Title: 'KI wird alle Arbeitsplätze ersetzen',
+                myth1Myth: '"KI wird Menschen im Beruf überflüssig machen"',
+                myth1Reality: 'KI schafft neue Jobkategorien, während wiederholte Aufgaben automatisiert werden. Die Geschichte zeigt, dass Technologie Beschäftigung verlagert, statt sie vollständig zu beseitigen.',
+                myth2Title: 'KI kann wie Menschen denken',
+                myth2Myth: '"KI-Systeme verstehen und denken wie Menschen"',
+                myth2Reality: 'Ein LLM erkennt Muster in Daten, dem aber Bewusstsein, Emotionen und echtes Verständnis fehlen. Es verarbeitet Statistiken, nicht Bedeutung, und kann nicht unpromptiert denken.',
+                myth3Title: 'KI ist von Natur aus böse',
+                myth3Myth: '"KI wird sich unweigerlich gegen die Menschheit wenden"',
+                myth3Reality: 'KI ist ein Werkzeug. Seine Auswirkungen hängen vollständig davon ab, wie Menschen es entwerfen, trainieren und einsetzen. Werte sind programmiert, nicht angeboren.',
+                myth4Title: 'Größere KI ist besser',
+                myth4Myth: '"Mehr Daten = Bessere KI"',
+                myth4Reality: 'Während mehr Daten eine KI menschlicher wirken lassen können, macht das die KI nicht intelligenter. Die Qualität der Daten im Datensatz ist oft wichtiger.'
+            },
+            ja: {
+                misconceptions: '誤解',
+                aiToday: '今日のAI利用',
+                aiFuture: 'AIと将来',
+                background: '背景',
+                bannerTitle: '2026年のAIを理解する',
+                bannerDesc: '神話、能力、現在の応用、人工知能の将来を探索します',
+                mythsHeader: '一般的な誤解',
+                canCannotHeader: 'AIが可能でできないこと',
+                aiCanDo: '✓ AIはできる',
+                aiCannotDo: '✗ AIはできない',
+                patternRecog: 'パターン認識',
+                patternRecogDesc: '大規模なデータセット内のトレンドを特定',
+                automation: '自動化',
+                automationDesc: '反復的でよく定義されたタスクを処理',
+                analysis: '分析',
+                analysisDesc: '人間より速く情報を処理',
+                prediction: '予測',
+                predictionDesc: '過去のデータに基づいた統計的予測を作成',
+                optimization: '最適化',
+                optimizationDesc: '複雑な問題に対する効率的なソリューションを見つける',
+                trueUnderstand: '真の理解',
+                trueUnderstandDesc: '意味、文脈、または意図を理解',
+                creativity: '創造性',
+                creativityDesc: '未解決の問題への革新的な解決策を作成',
+                consciousness: '意識',
+                consciousnessDesc: '感じたり、経験したり、主観的な認識を持ったりする',
+                commonSense: '常識',
+                commonSenseDesc: 'トレーニング外の実世界の推論を適用',
+                moralJudge: '道徳的判断',
+                moralJudgeDesc: '独立して倫理的な決定を下す',
+                aiTodayHeader: '今日のAI利用',
+                aiTodayDesc: '現在、AIは世界中の専門家を支援するために使用されており、大規模なタンパク質のマッピングから医学分野の進歩、joe smithが独自のアプリをプログラムするのを支援するまで、様々なことに利用されています。',
+                projectJourney: 'プロジェクトのジャーニー: 障害物 → ソリューション',
+                obstacle1: '障害物1: JavaScript',
+                obstacle1Desc: 'このウェブサイトの開発では、JavaScriptを使用してインタラクティビティと動的な動作を追加しました。AIがなければ、ウェブサイトは時間通りに完成しなかったでしょう',
+                aiSolutionUsed: '使用されたAIソリューション:',
+                obstacle1Solution: 'ウェブサイトの構造と非常に正確な芸術的実現可能性に対して完全な創造的管理を持っていますが、専門知識を持つことができなかった唯一の部分はJavaScriptの機能です。',
+                outcome: '結果:',
+                obstacle1Outcome: 'AIが支援するJavaScript開発の助けにより、ウェブサイトは時間通りに完成しましたが、いくつかの制限があります。',
+                obstacle2: '障害物2: 色とコントラスト',
+                obstacle2Desc: 'ウェブサイトがアクセシビリティのために優れた色のコントラストを持つことを確認したかったのですが、別々に検索することなく、最適な色コードをすばやく判断できませんでした。',
+                obstacle2Solution: 'AIがアクセシビリティ要件を満たしている色スキームを生成することを信頼でき、これらの色変更がどこに行くかについて芸術的な制御の形式を維持していました。',
+                obstacle2Outcome: '適切なカラーテーマを見つけることができ、サイトを未来的に見えるようにグロー効果を統合することができました。',
+                obstacle3: '障害物3: アニメーション化された要素',
+                obstacle3Desc: 'ウェブサイトにアニメーション要素を追加してより魅力的にしたかったのですが、JavaScriptについてはあまり知りませんでした。',
+                obstacle3Solution: 'AIエージェントに目標を達成するためのシンプルなスクリプトをプログラムするよう依頼することができました。',
+                obstacle3Outcome: '複数の領域でウェブサイトにスムーズなアニメーションを追加することができました。セクションがビューに入ったときのアニメーション、または背景の動くドット（カーソルの存在に反応する）などです。',
+                aiFutureHeader: 'AIと将来',
+                aiFutureDesc: '人工知能は厳密に議論されてきました。多くの理論家の将来のビジョンの中心的な部分でした。ターミネーターであろうと、The Singularity is Nearのより楽観的なビジョンであろうと',
+                popularTheories: '将来の人気のある理論',
+                singularityTheory: '特異点理論',
+                theoryLabel: '[理論]',
+                explanation: '説明',
+                singularityExplain: 'シンギュラリティは、技術的進歩が完全に人類の支配外にある将来の仮想的な瞬間です。これは予測不可能な革新と潜在的なリスクにつながります。',
+                timeframe: 'タイムフレーム',
+                singularityTimeframe: '技術的シンギュラリティは多くの議論と推測の対象です。最も人気のある主張は、2冊の本「The Singularity Is Near」と「The Singularity Is Nearer」によって支持されており、シンギュラリティを2045年に配置しています。あと19年です。',
+                watchFor: '注視すべきこと',
+                medicalBreak: '医療分野でのAIの革新',
+                quantumComputing: '量子コンピューティングの商用利用',
+                promptlessAI: 'プロンプトレスAIとAIデザインAI',
+                simulationTheory: 'シミュレーション理論',
+                simulationExplain: 'この理論は、「実」の現実と完全に区別できないシミュレートされた現実を作成することが可能であることを示唆しています。',
+                simulationTimeframe: 'シミュレートされた現実の確認または作成は確実にシンギュラリティ後になります',
+                simulationWhy: 'シミュレーション理論はなぜ重要ですか?',
+                simulationWhy2: 'これは人から人によって異なりますが、「シミュレートされた現実」の含意は複数のことを示唆しています:',
+                simulationPoint1: '私たちは既にシミュレーションの中に住んでいるかもしれません',
+                simulationPoint2: '将来、シミュレートされた現実を作成することが可能かもしれません',
+                simulationPoint3: '私たちの思考と経験は「高い」シミュレーションの人々によって操作されるかもしれません',
+                transhumanism: 'トランスヒューマニズム',
+                ideologyLabel: '[イデオロギー]',
+                transhumanismExplain: 'トランスヒューマニズムは、人間を「進化させる」ために、技術を人間の体と統合することを主張するイデオロギーです。',
+                transhumanismTimeframe: 'トランスヒューマニズムはシンギュラリティ後にのみ完全に実現できるコンセプトであり、遺伝子編集やロボット義肢などの分野での高度な技術が必要です。',
+                aiInTranshumanism: 'AIはどのように関係していますか?',
+                aiTranshumanismDesc: 'AIは、人間の能力を強化するための技術的基盤を提供することにより、トランスヒューマニズムで重要な役割を果たします。脳コンピュータインターフェース、高度な義肢、およびトランスヒューマニストの目標に沿った認知増強ツールの開発が可能になります。',
+                footerBy: 'Spencer C. Haley著',
+                footerEmail: 'メール:',
+                footerPhone: '電話:',
+                footerCopyright: '© 2026 Spencer Haley。著作権所有。',
+                myth: '❌ 神話',
+                reality: '✓ 現実',
+                myth1Title: 'AIがすべての仕事を置き換える',
+                myth1Myth: '"AIは労働力の中で人間を時代遅れにします"',
+                myth1Reality: 'AIは繰り返しのタスクを自動化しながら新しい仕事のカテゴリを作成します。歴史は技術が雇用をシフトし、それを完全に排除するのではなく。',
+                myth2Title: 'AIは人間のように考えることができます',
+                myth2Myth: '"AIシステムは人々のように理解し、推論します"',
+                myth2Reality: 'LLMはデータのパターンを認識しますが、意識、感情、真の理解がありません。それは意味ではなく統計を処理し、プロンプトなしで考えることはできません。',
+                myth3Title: 'AIは本質的に悪です',
+                myth3Myth: '"AIは必然的に人類に対して向きます"',
+                myth3Reality: 'AIはツールです。その影響は、人間がそれを設計、訓練、展開する方法に完全に依存します。値はプログラムされていません。',
+                myth4Title: 'より大きなAIが良い',
+                myth4Myth: '"より多くのデータ = より良いAI"',
+                myth4Reality: 'より多くのデータはAIをより人間らしく行動させることができますが、AIをより知的にすることはできません。セット内のデータの品質はしばしばより重要です。'
+            }
+        };
+
         function changeLanguage(language) {
-            console.log('Language changed to: ' + language);
-            // Add language switching logic here
+            // Store selected language in localStorage
+            localStorage.setItem('selectedLanguage', language);
+            
+            // Helper function to translate element text content and attributes
+            function translateElement(selector, textKey) {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(element => {
+                    if (translations[language][textKey]) {
+                        element.textContent = translations[language][textKey];
+                    }
+                });
+            }
+            
+            // Translate navigation links
+            const navLinks = document.querySelectorAll('nav ul li a');
+            if (navLinks[0]) navLinks[0].textContent = translations[language].misconceptions;
+            if (navLinks[1]) navLinks[1].textContent = translations[language].aiToday;
+            if (navLinks[2]) navLinks[2].textContent = translations[language].aiFuture;
+            if (navLinks[3]) navLinks[3].textContent = translations[language].background;
+            
+            // Update page title and descriptions using data attributes
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[language][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[language][key];
+                    } else {
+                        element.textContent = translations[language][key];
+                    }
+                }
+            });
         }
+
+        // Load saved language on page load
+        window.addEventListener('load', () => {
+            const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+            document.getElementById('languageSelector').value = savedLanguage;
+            changeLanguage(savedLanguage);
+        });
 
         // Animations removed
 
