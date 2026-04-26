@@ -1,1 +1,1368 @@
-# Prop3nguin.github.io
+<html>
+    <head>
+        <title>The AI Discussion</title>
+        <link rel="icon" type="image/png" href="Assets/Favicon.png">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            html {
+                scroll-behavior: smooth;
+                scroll-padding-top: 90px; /* Account for fixed navbar height */
+            }
+            *{
+                padding: 0%;
+                margin: 0%;
+                font-family: Arial, Helvetica, sans-serif;
+                color: white;
+            }
+            body{
+                background-color: rgb(22, 18, 42);
+            }
+            .NavBar{
+                background-color: rgb(10, 10, 30);
+                padding: 5px;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+                border-bottom: 15px solid rgb(0, 60, 120);
+            }
+            .Selected{
+                background-color: rgb(40, 40, 60);
+                border-bottom: 5px solid rgb(10, 10, 30);
+                border-right: 5px solid rgb(10, 10, 30);
+            }
+            nav {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            nav ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: flex-start;
+            }
+            nav ul li {
+                margin-right: 20px;
+            }
+            nav ul li a {
+                color: white;
+                text-decoration: none;
+                padding: 10px;
+                display: block;
+                border-bottom: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-radius: 15px;
+                transition: all 0.3s ease;
+            }
+            nav ul li a:hover {
+                font-style: italic;
+            }
+            .nav-logo {
+                margin-right: 20px;
+                display: flex;
+                align-items: center;
+            }
+            .logo-image {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: white;
+                padding: 5px;
+                object-fit: contain;
+            }
+            /* Scroll animations */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(50px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .section-animate {
+                opacity: 0;
+                transform: translateY(50px);
+                transition: opacity 0.8s ease, transform 0.8s ease;
+            }
+            .section-animate.animate {
+                animation: fadeInUp 0.8s ease forwards;
+            }
+            section h1 {
+                color: rgb(0, 150, 255);
+                text-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
+                margin-bottom: 20px;
+            }
+            section p {
+                color: rgb(220, 220, 255);
+                line-height: 1.6;
+            }
+            .language-selector {
+                position: relative;
+            }
+            .language-selector select {
+                background-color: rgb(20, 20, 40);
+                color: white;
+                border: 3px solid rgb(0, 150, 255);
+                padding: 8px 12px;
+                border-radius: 8px;
+                font-size: 1em;
+                cursor: pointer;
+                background: rgb(0, 62, 107);
+            }
+            .language-selector select:hover {
+                background-color: rgba(0, 149, 255, 0.568);
+                box-shadow: 0 0 10px rgba(0, 150, 255, 0.3);
+            }
+            section {
+                min-height: 100vh;
+                padding: 20px;
+                padding-top: 80px; /* To account for fixed nav */
+                border-top: 15px solid rgb(0, 60, 120);
+                border-bottom: 15px solid rgb(0, 60, 120);
+                border-radius: 50px;
+                margin: 20px 40px;
+                background-color: rgb(10, 10, 30);
+            }
+            .Banner {
+                height: 600px;
+                background-image: url('Assets/Banner.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 0 0 50px 50px;
+                border-bottom: 15px solid rgb(0, 60, 120);
+            }
+            .banner-text {
+                font-size: 3em;
+                font-weight: bold;
+                color: rgb(220, 220, 255);
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 150, 255, 0.5);
+                text-align: center;
+                background: transparent;
+            }
+            .footer {
+                background-color: rgb(10, 10, 30);
+                border-top: 15px solid rgb(0, 60, 120);
+                border-radius: 50px 50px 0 0;
+                margin: 20px 0 0;
+                padding: 30px 20px;
+                text-align: center;
+            }
+            .footer-content h3 {
+                margin-bottom: 20px;
+                color: rgb(0, 150, 255);
+                font-size: 1.5em;
+                text-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
+            }
+            .contact-info p {
+                margin: 10px 0;
+                font-size: 1.1em;
+                color: rgb(220, 220, 255);
+            }
+            .social-links {
+                margin: 20px 0;
+            }
+            .social-link {
+                display: inline-block;
+                margin: 0 15px;
+                color: rgb(0, 150, 255);
+                text-decoration: none;
+                padding: 10px 20px;
+                border: 3px solid rgb(0, 150, 255);
+                border-radius: 25px;
+                transition: all 0.3s;
+                background: rgba(0, 150, 255, 0.1);
+            }
+            .social-link:hover {
+                background-color: rgb(0, 150, 255);
+                color: rgb(10, 10, 30);
+                box-shadow: 0 0 15px rgba(0, 150, 255, 0.6);
+                transform: translateY(-2px);
+            }
+            .copyright {
+                margin-top: 20px;
+                font-size: 0.9em;
+                color: rgb(150, 150, 180);
+            }
+            #particleCanvas {
+                pointer-events: none;
+            }
+            /* Timeline Styles */
+            .timeline-container {
+                margin-top: 40px;
+                padding: 30px 0;
+                overflow: hidden;
+            }
+            .timeline-container h2 {
+                color: rgb(0, 150, 255);
+                text-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
+                margin-bottom: 30px;
+                text-align: center;
+                font-size: 1.8em;
+            }
+            .timeline {
+                position: relative;
+                padding: 20px;
+                display: flex;
+                gap: 25px;
+                overflow-x: auto;
+                overflow-y: hidden;
+                scroll-behavior: smooth;
+                align-items: stretch;
+                scroll-snap-type: x mandatory;
+            }
+            .timeline::-webkit-scrollbar {
+                height: 12px;
+            }
+            .timeline::-webkit-scrollbar-track {
+                background: rgba(0, 150, 255, 0.1);
+                border-radius: 10px;
+            }
+            .timeline::-webkit-scrollbar-thumb {
+                background: rgb(0, 150, 255);
+                border-radius: 10px;
+                transition: all 0.3s ease;
+            }
+            .timeline::-webkit-scrollbar-thumb:hover {
+                background: rgb(0, 200, 255);
+                box-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
+            }
+            .timeline::before {
+                display: none;
+            }
+            .timeline-item {
+                margin-bottom: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                flex: 0 0 auto;
+                min-width: 20%;
+                min-height: 400px;
+                z-index: 2;
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+            }
+            .timeline-marker {
+                position: relative;
+                left: 0;
+                transform: none;
+                width: 20px;
+                height: 20px;
+                background: rgb(0, 150, 255);
+                border: 3px solid rgb(10, 10, 30);
+                border-radius: 50%;
+                box-shadow: 0 0 15px rgba(0, 150, 255, 0.7), inset 0 0 10px rgba(0, 150, 255, 0.3);
+                z-index: 3;
+                flex-shrink: 0;
+                margin-bottom: 20px;
+                animation: pulse 2s ease-in-out infinite;
+            }
+            @keyframes pulse {
+                0%, 100% {
+                    box-shadow: 0 0 15px rgba(0, 150, 255, 0.7), inset 0 0 10px rgba(0, 150, 255, 0.3);
+                    transform: scale(1);
+                }
+                50% {
+                    box-shadow: 0 0 25px rgba(0, 150, 255, 1), inset 0 0 15px rgba(0, 150, 255, 0.5);
+                    transform: scale(1.1);
+                }
+            }
+            .timeline-content {
+                background: rgba(0, 150, 255, 0.05);
+                padding: 30px;
+                border-radius: 15px;
+                border-left: 3px solid rgb(0, 150, 255);
+                transition: all 0.3s ease;
+                width: 100%;
+                flex: 1;
+                min-height: 250px;
+                max-width: 675px;
+                display: flex;
+                flex-direction: column;
+            }
+            .timeline-content:hover {
+                background: rgba(0, 150, 255, 0.12);
+                box-shadow: 0 0 30px rgba(0, 150, 255, 0.6);
+                transform: translateY(-10px);
+                border-left: 3px solid rgb(0, 200, 255);
+            }
+            .obstacle-title {
+                color: rgb(0, 150, 255);
+                margin-bottom: 10px;
+                font-size: 1.2em;
+            }
+            .obstacle-description {
+                color: rgb(220, 220, 255);
+                margin-bottom: 15px;
+                line-height: 1.5;
+            }
+            .solution-box {
+                background: rgba(0, 150, 255, 0.08);
+                padding: 15px;
+                border-radius: 10px;
+                margin-top: 10px;
+                border: 1px solid rgba(0, 150, 255, 0.3);
+            }
+            .solution-box h4 {
+                color: rgb(100, 200, 255);
+                margin-bottom: 8px;
+                font-size: 0.95em;
+            }
+            .solution-box p {
+                color: rgb(200, 200, 230);
+                margin: 5px 0;
+                font-size: 0.95em;
+            }
+            .outcome {
+                color: rgb(100, 200, 255) !important;
+                margin-top: 10px;
+                font-style: italic;
+            }
+            
+            /* Chart Container Styles */
+            .chart-container {
+                margin: 50px 0;
+                padding: 30px;
+                background: rgba(0, 150, 255, 0.05);
+                border-radius: 20px;
+                border: 2px solid rgba(0, 150, 255, 0.3);
+                box-shadow: 0 0 20px rgba(0, 150, 255, 0.2);
+            }
+            .chart-container h2 {
+                color: rgb(0, 150, 255);
+                text-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
+                margin-bottom: 30px;
+                text-align: center;
+                font-size: 1.8em;
+            }
+            .chart-container canvas {
+                max-height: 400px;
+            }
+
+            /* Data Cards Styles */
+            .data-cards-container {
+                margin: 50px 0;
+            }
+            .data-cards-container h2 {
+                color: rgb(0, 150, 255);
+                text-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
+                margin-bottom: 30px;
+                text-align: center;
+                font-size: 1.8em;
+            }
+            .data-cards {
+                display: flex;
+                justify-content: space-around;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .data-card {
+                flex: 1;
+                min-width: 250px;
+                padding: 25px;
+                border-radius: 15px;
+                border: 2px solid;
+                background: rgba(0, 150, 255, 0.05);
+                transition: all 0.3s ease;
+            }
+            .data-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 10px 30px rgba(0, 150, 255, 0.3);
+            }
+            .card-past {
+                border-color: rgba(150, 100, 255, 0.6);
+            }
+            .card-present {
+                border-color: rgb(0, 150, 255);
+                box-shadow: 0 0 20px rgba(0, 150, 255, 0.4);
+            }
+            .card-future {
+                border-color: rgba(0, 200, 255, 0.6);
+            }
+            .data-card h3 {
+                color: rgb(0, 150, 255);
+                font-size: 1.8em;
+                margin-bottom: 5px;
+            }
+            .data-card .card-label {
+                color: rgb(150, 150, 180);
+                font-size: 0.9em;
+                margin-bottom: 20px;
+            }
+            .capabilities-list {
+                list-style: none;
+                padding: 0;
+            }
+            .capabilities-list li {
+                color: rgb(220, 220, 255);
+                padding: 8px 0;
+                border-bottom: 1px solid rgba(0, 150, 255, 0.2);
+                padding-left: 15px;
+                position: relative;
+            }
+            .capabilities-list li:last-child {
+                border-bottom: none;
+            }
+            .capabilities-list li::before {
+                content: '▸';
+                position: absolute;
+                left: -5px;
+                color: rgb(0, 150, 255);
+            }
+
+            /* Calculator Styles */
+            .calculator-container {
+                margin: 50px 0;
+                padding: 30px;
+                background: rgba(0, 150, 255, 0.05);
+                border-radius: 20px;
+                border: 2px solid rgba(0, 150, 255, 0.3);
+            }
+            .calculator-container h2 {
+                color: rgb(0, 150, 255);
+                text-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
+                margin-bottom: 15px;
+                text-align: center;
+                font-size: 1.8em;
+            }
+            .calculator-container > p {
+                text-align: center;
+                color: rgb(200, 200, 230);
+                margin-bottom: 30px;
+            }
+            .calculator-input {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                margin-bottom: 40px;
+                flex-wrap: wrap;
+            }
+            .calculator-input label {
+                color: rgb(0, 150, 255);
+                font-weight: bold;
+                font-size: 1.1em;
+            }
+            .year-slider {
+                width: 300px;
+                height: 8px;
+                border-radius: 5px;
+                background: linear-gradient(to right, rgba(0, 150, 255, 0.2), rgba(0, 150, 255, 0.5));
+                outline: none;
+                -webkit-appearance: none;
+            }
+            .year-slider::-webkit-slider-thumb {
+                appearance: none;
+                -webkit-appearance: none;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: rgb(0, 150, 255);
+                cursor: pointer;
+                box-shadow: 0 0 15px rgba(0, 150, 255, 0.7);
+                border: 2px solid rgb(10, 10, 30);
+            }
+            .year-slider::-moz-range-thumb {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: rgb(0, 150, 255);
+                cursor: pointer;
+                box-shadow: 0 0 15px rgba(0, 150, 255, 0.7);
+                border: 2px solid rgb(10, 10, 30);
+            }
+            #yearDisplay {
+                color: rgb(0, 150, 255);
+                font-weight: bold;
+                font-size: 1.3em;
+                min-width: 60px;
+                text-align: center;
+            }
+            .calculator-output {
+                background: rgba(0, 100, 200, 0.1);
+                padding: 30px;
+                border-radius: 15px;
+                border: 2px solid rgba(0, 150, 255, 0.4);
+            }
+            .calculator-output h3 {
+                color: rgb(0, 150, 255);
+                text-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
+                margin-bottom: 30px;
+                text-align: center;
+                font-size: 1.4em;
+            }
+            .capability-boxes {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 25px;
+            }
+            .capability-box {
+                background: rgba(0, 150, 255, 0.08);
+                padding: 20px;
+                border-radius: 12px;
+                border-left: 4px solid rgb(0, 150, 255);
+                transition: all 0.3s ease;
+            }
+            .capability-box:hover {
+                background: rgba(0, 150, 255, 0.12);
+                box-shadow: 0 0 15px rgba(0, 150, 255, 0.3);
+            }
+            .capability-box h4 {
+                color: rgb(0, 150, 255);
+                margin-bottom: 10px;
+                font-size: 1.1em;
+            }
+            .capability-box p {
+                color: rgb(200, 200, 230);
+                font-size: 0.95em;
+                line-height: 1.5;
+                margin-bottom: 15px;
+            }
+            .progress-bar {
+                width: 100%;
+                height: 10px;
+                background: rgba(0, 150, 255, 0.2);
+                border-radius: 5px;
+                overflow: hidden;
+                margin-bottom: 8px;
+            }
+            .progress-fill {
+                height: 100%;
+                background: linear-gradient(90deg, rgb(0, 150, 255), rgb(0, 200, 255));
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 150, 255, 0.6);
+                transition: width 0.5s ease;
+            }
+            .progress-label {
+                color: rgb(0, 150, 255);
+                font-size: 0.85em;
+                font-weight: bold;
+            }
+
+            /* Hook Section Styling */
+            .myth-reality-container {
+                margin: 50px 0;
+            }
+            .myth-reality-container h2 {
+                color: rgb(0, 150, 255);
+                text-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
+                margin-bottom: 40px;
+                text-align: center;
+                font-size: 1.8em;
+            }
+            .myth-cards {
+                display: flex;
+                gap: 25px;
+                overflow-x: auto;
+                overflow-y: hidden;
+                scroll-behavior: smooth;
+                padding: 20px;
+                scroll-snap-type: x mandatory;
+            }
+            .myth-cards::-webkit-scrollbar {
+                height: 12px;
+            }
+            .myth-cards::-webkit-scrollbar-track {
+                background: rgba(0, 150, 255, 0.1);
+                border-radius: 10px;
+            }
+            .myth-cards::-webkit-scrollbar-thumb {
+                background: rgb(0, 150, 255);
+                border-radius: 10px;
+                transition: all 0.3s ease;
+            }
+            .myth-cards::-webkit-scrollbar-thumb:hover {
+                background: rgb(0, 200, 255);
+                box-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
+            }
+            .myth-card {
+                background: linear-gradient(135deg, rgba(0, 150, 255, 0.08), rgba(0, 150, 255, 0.03));
+                border: 2px solid rgba(0, 150, 255, 0.3);
+                border-radius: 15px;
+                padding: 25px;
+                transition: all 0.4s ease;
+                position: relative;
+                overflow: hidden;
+                flex: 0 0 auto;
+                min-width: 300px;
+                max-width: 600px;
+                min-height: 450px;
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+                display: flex;
+                flex-direction: column;
+            }
+            .myth-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(0, 150, 255, 0.1), transparent);
+                transition: left 0.6s ease;
+            }
+            .myth-card:hover {
+                background: linear-gradient(135deg, rgba(0, 150, 255, 0.15), rgba(0, 150, 255, 0.08));
+                border-color: rgb(0, 150, 255);
+                box-shadow: 0 0 30px rgba(0, 150, 255, 0.4);
+                transform: translateY(-8px);
+            }
+            .myth-card:hover::before {
+                left: 100%;
+            }
+            .myth-header {
+                margin-bottom: 15px;
+            }
+            .myth-label {
+                display: inline-block;
+                background: rgba(255, 100, 100, 0.2);
+                color: rgb(255, 150, 150);
+                padding: 5px 12px;
+                border-radius: 20px;
+                font-size: 0.85em;
+                font-weight: bold;
+                border: 1px solid rgba(255, 100, 100, 0.5);
+            }
+            .myth-card h3 {
+                color: rgb(220, 100, 100);
+                margin: 15px 0 10px;
+                font-size: 1.3em;
+            }
+            .myth-text {
+                color: rgb(200, 150, 150);
+                font-style: italic;
+                margin-bottom: 15px;
+                padding: 10px;
+                background: rgba(255, 100, 100, 0.05);
+                border-left: 3px solid rgb(255, 100, 100);
+                border-radius: 5px;
+            }
+            .reality-reveal {
+                margin-top: 15px;
+                padding-top: 15px;
+                border-top: 1px solid rgba(0, 150, 255, 0.3);
+            }
+            .reveal-label {
+                display: inline-block;
+                background: rgba(100, 255, 100, 0.2);
+                color: rgb(150, 255, 150);
+                padding: 5px 12px;
+                border-radius: 20px;
+                font-size: 0.85em;
+                font-weight: bold;
+                border: 1px solid rgba(100, 255, 100, 0.5);
+                margin-bottom: 10px;
+            }
+            .reality-reveal p {
+                color: rgb(200, 220, 200);
+                line-height: 1.6;
+            }
+
+            /* Capabilities Display */
+            .capabilities-display {
+                margin: 50px 0;
+                padding: 30px;
+                background: rgba(0, 150, 255, 0.05);
+                border-radius: 15px;
+                border: 2px solid rgba(0, 150, 255, 0.2);
+            }
+            .capabilities-display h2 {
+                color: rgb(0, 150, 255);
+                text-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
+                margin-bottom: 30px;
+                text-align: center;
+                font-size: 1.8em;
+            }
+            .can-cannot-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+            .can-do, .cannot-do {
+                padding: 25px;
+                border-radius: 12px;
+                background: rgba(0, 150, 255, 0.03);
+                border: 2px solid rgba(0, 150, 255, 0.2);
+            }
+            .can-do {
+                border-color: rgba(100, 200, 100, 0.4);
+                background: rgba(100, 200, 100, 0.03);
+            }
+            .can-do h3 {
+                color: rgb(150, 255, 100);
+                margin-bottom: 20px;
+                font-size: 1.3em;
+            }
+            .cannot-do {
+                border-color: rgba(255, 100, 100, 0.4);
+                background: rgba(255, 100, 100, 0.03);
+            }
+            .cannot-do h3 {
+                color: rgb(255, 150, 100);
+                margin-bottom: 20px;
+                font-size: 1.3em;
+            }
+            .capability-list {
+                list-style: none;
+                padding: 0;
+            }
+            .capability-list li {
+                color: rgb(200, 200, 230);
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(0, 150, 255, 0.1);
+                line-height: 1.6;
+            }
+            .capability-list li:last-child {
+                border-bottom: none;
+            }
+            .capability-list strong {
+                color: rgb(0, 150, 255);
+            }
+
+            /* Thesis Box */
+            .thesis-box {
+                margin-top: 50px;
+                padding: 40px;
+                background: linear-gradient(135deg, rgba(0, 150, 255, 0.1), rgba(0, 200, 255, 0.05));
+                border: 3px solid rgb(0, 150, 255);
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0 0 40px rgba(0, 150, 255, 0.3);
+            }
+            .thesis-box h2 {
+                color: rgb(0, 200, 255);
+                text-shadow: 0 0 20px rgba(0, 150, 255, 0.6);
+                margin-bottom: 20px;
+                font-size: 1.8em;
+            }
+            .thesis-box p {
+                color: rgb(220, 220, 255);
+                font-size: 1.1em;
+                line-height: 1.8;
+                margin: 15px 0;
+            }
+            .thesis-box p:first-of-type {
+                font-weight: bold;
+                color: rgb(0, 200, 255);
+                font-size: 1.2em;
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+                .can-cannot-grid {
+                    grid-template-columns: 1fr;
+                }
+                .myth-card {
+                    min-width: 320px;
+                }
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .timeline {
+                    flex-direction: row;
+                    padding: 20px;
+                    gap: 20px;
+                }
+                .timeline-item {
+                    min-width: 400px;
+                }
+                .year-slider {
+                    width: 200px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="particleCanvas" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+        <div class="NavBar">
+            <nav>
+                <div class="nav-logo">
+                    <img src="Assets/Favicon.png" alt="Logo" class="logo-image">
+                </div>
+                <ul>
+                    <li><a class="Selected" href="#home">Misconceptions</a></li>
+                    <li><a href="#WebDev">AI Use Today</a></li>
+                    <li><a href="#AI">AI & The Future</a></li>
+                </ul>
+                <div class="language-selector">
+                    <select id="languageSelector" onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">Dutch</option>
+                        <option value="ja">Japanese</option>
+                    </select>
+                </div>
+            </nav>
+        </div>
+        <div class="Banner">
+            <h1 class="banner-text">The AI Discussion</h1>
+        </div>
+        <section id="home" class="section-animate">
+            <!-- Thesis Box at Top -->
+            <div class="thesis-box">
+                <h2>Artificial Intelligence, Herald of Doom, or Peace?</h2>
+                <p><strong>AI as we know it isn't either one. It's currently a prediction tool using the largest library of information available; The Internet.</strong></p>
+                <p>Understanding what AI truly is, - an LLM or Large Language Model, - is essential to harnessing its benefits while mitigating risks through responsible use.</p>
+            </div>
+            
+            <!-- Myth vs Reality Cards -->
+            <div class="myth-reality-container">
+                <h2>Common Misconceptions About AI</h2>
+                <div class="myth-cards">
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="myth-label">❌ MYTH</span>
+                        </div>
+                        <h3>AI Will Replace All Jobs</h3>
+                        <p class="myth-text">"AI will make humans obsolete in the workforce"</p>
+                        <div class="reality-reveal">
+                            <span class="reveal-label">✓ REALITY</span>
+                            <p>AI creates new job categories while automating repetitive tasks. History shows technology shifts employment, Instead of eliminating it entirely.</p>
+                        </div>
+                    </div>
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="myth-label">❌ MYTH</span>
+                        </div>
+                        <h3>AI Can Think Like Humans</h3>
+                        <p class="myth-text">"AI systems understand and reason just like people"</p>
+                        <div class="reality-reveal">
+                            <span class="reveal-label">✓ REALITY</span>
+                            <p>An LLM recognizes patterns in data but lacks consciousness, emotions, and true understanding. It processes statistics, not meaning, and can't think unprompted.</p>
+                        </div>
+                    </div>
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="myth-label">❌ MYTH</span>
+                        </div>
+                        <h3>AI Is Inherently Evil</h3>
+                        <p class="myth-text">"AI will inevitably turn against humanity"</p>
+                        <div class="reality-reveal">
+                            <span class="reveal-label">✓ REALITY</span>
+                            <p>AI is a tool. Its impact depends entirely on how humans design, train, and deploy it. Values are programmed, not inherent.</p>
+                        </div>
+                    </div>
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="myth-label">❌ MYTH</span>
+                        </div>
+                        <h3>Larger AI is Better</h3>
+                        <p class="myth-text">"More Data = Better AI"</p>
+                        <div class="reality-reveal">
+                            <span class="reveal-label">✓ REALITY</span>
+                            <p>While more data can make an AI behave more like a human, It doesn't make the AI more intelligent. The quality of data in the set is often more important.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Capabilities Display -->
+            <div class="capabilities-display">
+                <h2>What AI Can & Cannot Do</h2>
+                <div class="can-cannot-grid">
+                    <div class="can-do">
+                        <h3>✓ AI CAN DO</h3>
+                        <ul class="capability-list">
+                            <li><strong>Pattern Recognition:</strong> Identify trends in massive datasets</li>
+                            <li><strong>Automation:</strong> Handle repetitive, well-defined tasks</li>
+                            <li><strong>Analysis:</strong> Process information faster than humans</li>
+                            <li><strong>Prediction:</strong> Make statistical forecasts based on historical data</li>
+                            <li><strong>Optimization:</strong> Find efficient solutions to complex problems</li>
+                        </ul>
+                    </div>
+                    <div class="cannot-do">
+                        <h3>✗ AI CANNOT DO</h3>
+                        <ul class="capability-list">
+                            <li><strong>True Understanding:</strong> Comprehend meaning, context, or intent</li>
+                            <li><strong>Creativity (True):</strong> Generate truly novel ideas, only remix existing data</li>
+                            <li><strong>Consciousness:</strong> Feel, experience, or have subjective awareness</li>
+                            <li><strong>Common Sense:</strong> Apply real-world reasoning outside its training</li>
+                            <li><strong>Moral Judgment:</strong> Make ethical decisions independently</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="WebDev" class="section-animate">
+            <div class="thesis-box">
+                <h2>AI Use Today</h2>
+                <p><strong>Currently, AI is being used to assist experts all over the world by doing things from mapping large protiens to advance the medical Field to helping joe smith program his own app.</strong></p>
+            </div>
+            <div class="timeline-container">
+                <h2>Project Journey: Obstacles → Solutions</h2>
+                <div class="timeline">
+                    <!-- Timeline item template - replace with actual data -->
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="obstacle-title">Obstacle 1: JavaScript</h3>
+                            <p class="obstacle-description">In the development of this website, JavaScript was used to add interactivity and dynamic behavior. without AI, The website wouldn't have been completed on-time</p>
+                            <div class="solution-box">
+                                <h4>AI Solution Used:</h4>
+                                <p>I had complete creative control over the structure of the website and even very precise artistic feasability, however, the one part I couldn't touch with expertise was the JavaScript functionality.</p>
+                                <p class="outcome"><strong>Outcome:</strong> The website was completed on-time with the help of AI-assisted JavaScript development, albiet with some limitations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="obstacle-title">Obstacle 2: Color & Contrast</h3>
+                            <p class="obstacle-description">I wanted to ensure the website had good color contrast for accessibility, but couldn't quickly determine the best color codes to use without looking them up separately.</p>
+                            <div class="solution-box">
+                                <h4>AI Solution Used:</h4>
+                                <p>I could trust the AI to generate color schemes that met accessibility requirements, while also maintaining a form of artistic control over where these color changes went.</p>
+                                <p class="outcome"><strong>Outcome:</strong> I was able to find a fitting color theme and integrate a glowing effect to make the site feel futuristic.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="obstacle-title">Obstacle 3: Animated Elements</h3>
+                            <p class="obstacle-description">I wanted to add moving elements to the website to make it more engaging and I didn't know much about Javascript.</p>
+                            <div class="solution-box">
+                                <h4>AI Solution Used:</h4>
+                                <p>I could ask the AI agent to program a simple script to achieve my goals.</p>
+                                <p class="outcome"><strong>Outcome:</strong> I was able to add smooth animations to the website in several areas, like the animation of each section when it comes into view, or the moving dots in the background (which respond to the cursor's presence).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="AI" class="section-animate">
+            <div class="thesis-box">
+                <h1>AI & The Future</h1>
+            </div>
+            
+            <!-- AI Advancement Timeline Chart -->
+            <div class="chart-container">
+                <h2>AI Capability Advancement Over Time [WIP]</h2>
+                <canvas id="aiAdvancementChart"></canvas>
+            </div>
+
+            <!-- Main point Cards (Reasoning) -->
+            <div class="data-cards-container">
+                <h2>Popular Theories and Reasonings</h2>
+                <div class="data-cards">
+                    <div class="data-card card-past">
+                        <h3>Technological Singularity</h3>
+                        <p class="card-label">[Theory]</p>
+                        <ul class="capabilities-list">
+                            <li>Explanation</li>
+                            <div class="solution-box">
+                                <p>The Singularity is a Hypothetical moment in the future where Technological advancement is completely uncontrolled by humankind. This leads to unpredictable innovations and potential risks.</p>
+                            </div>
+                            <li>Time frame</li>
+                            <div class="solution-box">
+                                <p>The Technological Singularity is a subject of much debate and speculation. The most popular claim, supported by the two books <em>The Singularity Is Near</em> and <em>The Singularity Is Nearer</em>, places the singularity in 2045. just 19 years away.</p>
+                            </div>
+                            <li>What to watch For</li>
+                        </ul>
+                    </div>
+                    <div class="data-card card-present">
+                        <h3>"True" AI</h3>
+                        <p class="card-label">[Evolution of LLMs]</p>
+                        <ul class="capabilities-list">
+                            <li>Explanation</li>
+                            <li>Time frame</li>
+                            <li>Impact on Daily Life</li>
+                        </ul>
+                    </div>
+                    <div class="data-card card-future">
+                        <h3>2035</h3>
+                        <p class="card-label">Projected Capabilities</p>
+                        <ul class="capabilities-list">
+                            <li>Explanation</li>
+                            <li>Time frame</li>
+                            <li>What to watch For</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Advancement Predictor Calculator -->
+            <div class="calculator-container">
+                <h2>AI Advancement Predictor</h2>
+                <p>Explore what AI capabilities might look like in a specific year:</p>
+                <div class="calculator-input">
+                    <label for="yearInput">Select Year:</label>
+                    <input type="range" id="yearInput" min="2026" max="2050" value="2026" class="year-slider">
+                    <span id="yearDisplay">2026</span>
+                </div>
+                <div class="calculator-output">
+                    <h3>Technology Capabilities for <span id="outputYear">2026</span></h3>
+                    <div class="capability-boxes">
+                        <!-- These will be populated based on year selection -->
+                        <div class="capability-box">
+                            <h4></h4>
+                            <p id="cap1-text"></p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="cap1-progress" style="width: 60%;"></div>
+                            </div>
+                            <span class="progress-label" id="cap1-label"></span>
+                        </div>
+                        <div class="capability-box">
+                            <h4></h4>
+                            <p id="cap2-text"></p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="cap2-progress" style="width: 55%;"></div>
+                            </div>
+                            <span class="progress-label" id="cap2-label"></span>
+                        </div>
+                        <div class="capability-box">
+                            <h4></h4>
+                            <p id="cap3-text"></p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="cap3-progress" style="width: 70%;"></div>
+                            </div>
+                            <span class="progress-label" id="cap3-label"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <h3>By Spencer C. Haley</h3>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> Schaley@iastate.edu</p>
+                    <p><strong>Phone:</strong> (515) 400-7389</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/spencer-haley-ab509a402/?skipRedirect=true" class="social-link">LinkedIn</a>
+                        <a href="https://github.com/Prop3nguin" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">Citations</a>
+                    </div>
+                </div>
+                <p class="copyright">&copy; 2026 Spencer Haley. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </body>
+    <script>
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        function updateActiveLink() {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('Selected');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('Selected');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveLink);
+        updateActiveLink(); // Call once on load
+
+        function changeLanguage(language) {
+            console.log('Language changed to: ' + language);
+            // Add language switching logic here
+        }
+
+        // Scroll animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                } else {
+                    entry.target.classList.remove('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections with animation class
+        document.querySelectorAll('.section-animate').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Particle system
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: 0, y: 0 };
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        function createParticles() {
+            particles = [];
+            const particleCount = Math.floor(window.innerWidth / 50); // Responsive particle count
+
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 1),
+                    vy: (Math.random() - 1),
+                    size: Math.random() * 2.5 + 1.5,
+                    opacity: Math.random() * 0.5 + 0.2,
+                    color: `rgba(${Math.floor(Math.random() * 100 + 100)}, ${Math.floor(Math.random() * 100 + 100)}, 255, ${Math.random() * 0.3 + 0.2})`,
+                    angle: Math.random() * Math.PI * 2,
+                    angleVelocity: (Math.random() - 0.5) * 0.05
+                });
+            }
+        }
+
+        function updateParticles() {
+            particles.forEach(particle => {
+                // Brownian motion and natural movement with added randomness
+                particle.angle += particle.angleVelocity;
+                particle.vx += Math.cos(particle.angle) * 0.1 + (Math.random() - 0.5) * 0.05; // Added random component
+                particle.vy += Math.sin(particle.angle) * 0.1 + (Math.random() - 0.5) * 0.05;
+
+                // Mouse interaction - repel particles
+                const dx = mouse.x - particle.x;
+                const dy = mouse.y - particle.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 150) { // Increased range
+                    const force = (150 - distance) / 150; // Stronger force
+                    particle.vx -= (dx / distance) * force * 0.15; // Repel instead of attract, increased intensity
+                    particle.vy -= (dy / distance) * force * 0.15;
+                }
+
+                // Update position
+                particle.x += particle.vx;
+                particle.y += particle.vy;
+
+                // Reduced damping to prevent particles from getting stuck
+                particle.vx *= 0.98;
+                particle.vy *= 0.98;
+
+                // Wrap around edges
+                if (particle.x < 0) particle.x = canvas.width;
+                if (particle.x > canvas.width) particle.x = 0;
+                if (particle.y < 0) particle.y = canvas.height;
+                if (particle.y > canvas.height) particle.y = 0;
+            });
+        }
+
+        function drawParticles() {
+            // Create trail effect by fading the canvas; use destination-out to ensure trails can fully disappear
+            ctx.save();
+            ctx.globalCompositeOperation = 'destination-out';
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.restore();
+
+            particles.forEach(particle => {
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                ctx.fillStyle = particle.color;
+                ctx.fill();
+            });
+        }
+
+        function animate() {
+            updateParticles();
+            drawParticles();
+            requestAnimationFrame(animate);
+        }
+
+        // Event listeners
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            createParticles();
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        // Initialize
+        resizeCanvas();
+        createParticles();
+        animate();
+
+        // ==================== DATA VISUALIZATION SETUP ====================
+        
+        // Tech Advancement Calculator Data Structure
+        // FILL IN THIS DATA WITH ACTUAL VALUES
+        const capabilityData = {
+            2026: {
+                "Medical Field": { level: 9, description: "[FILL IN 2026 NLP]" },
+                "Exploration Field": { level: 1, description: "[FILL IN 2026 CV]" },
+                "Misc. Field": { level: 6, description: "[FILL IN 2026 Robotics]" }
+            },
+            2035: {
+                "Medical Field": { level: 33, description: "[FILL IN 2035 NLP]" },
+                "Exploration Field": { level: 21, description: "[FILL IN 2035 CV]" },
+                "Misc. Field": { level: 38, description: "[FILL IN 2035 Robotics]" }
+            },
+            2045: {
+                "Medical Field": { level: 98, description: "[FILL IN 2045 NLP]" },
+                "Exploration Field": { level: 90, description: "[FILL IN 2045 CV]" },
+                "Misc. Field": { level: 95, description: "[FILL IN 2045 Robotics]" }
+            },
+            2050: {
+                "Medical Field": { level: 100, description: "[FILL IN 2050 NLP]" },
+                "Exploration Field": { level: 100, description: "[FILL IN 2050 CV]" },
+                "Misc. Field": { level: 100, description: "[FILL IN 2050 Robotics]" }
+            }
+        };
+
+        // Year slider functionality
+        const yearInput = document.getElementById('yearInput');
+        const yearDisplay = document.getElementById('yearDisplay');
+        const outputYear = document.getElementById('outputYear');
+
+        if (yearInput) {
+            yearInput.addEventListener('input', (e) => {
+                const year = e.target.value;
+                yearDisplay.textContent = year;
+                outputYear.textContent = year;
+                updateCapabilities(year);
+            });
+
+            // Initialize with default year
+            updateCapabilities(2026);
+        }
+
+        function updateCapabilities(year) {
+            // Find the closest year in data or interpolate
+            const years = Object.keys(capabilityData).map(Number).sort((a, b) => a - b);
+            let data;
+
+            if (capabilityData[year]) {
+                data = capabilityData[year];
+            } else {
+                // Linear interpolation between closest years
+                const lowerYear = years.filter(y => y <= year).pop() || years[0];
+                const upperYear = years.find(y => y > year) || years[years.length - 1];
+                const ratio = (year - lowerYear) / (upperYear - lowerYear);
+                data = interpolateData(capabilityData[lowerYear], capabilityData[upperYear], ratio);
+            }
+
+            // Update capability boxes
+            const capabilities = Object.keys(data);
+            const boxes = document.querySelectorAll('.capability-box');
+            
+            boxes.forEach((box, index) => {
+                if (index < capabilities.length) {
+                    const capName = capabilities[index];
+                    const capData = data[capName];
+                    
+                    const h4 = box.querySelector('h4');
+                    const p = box.querySelector('p');
+                    const progressFill = box.querySelector('.progress-fill');
+                    const progressLabel = box.querySelector('.progress-label');
+                    
+                    if (h4) h4.textContent = capName;
+                    if (p) p.textContent = capData.description;
+                    if (progressFill) progressFill.style.width = capData.level + '%';
+                    if (progressLabel) progressLabel.textContent = capData.level + '%';
+                }
+            });
+        }
+
+        function interpolateData(lowerData, upperData, ratio) {
+            const result = {};
+            const keys = Object.keys(lowerData);
+            
+            keys.forEach(key => {
+                result[key] = {
+                    level: Math.round(lowerData[key].level + (upperData[key].level - lowerData[key].level) * ratio),
+                    description: lowerData[key].description
+                };
+            });
+            
+            return result;
+        }
+
+        // Chart.js initialization (requires Chart.js library)
+        // FILL IN THIS DATA LATER with actual advancement milestones
+        if (typeof Chart !== 'undefined' && document.getElementById('aiAdvancementChart')) {
+            const aiChartCanvas = document.getElementById('aiAdvancementChart');
+            new Chart(aiChartCanvas, {
+                type: 'line',
+                data: {
+                    labels: ['2015', '2018', '2021', '2024', '2026', '2030', '2035', '2040', '2050'],
+                    datasets: [{
+                        label: 'Overall AI Capability Index',
+                        data: [1 , 1, 4, 6, 9, 20, 33, 66, 100],
+                        borderColor: 'rgb(0, 150, 255)',
+                        backgroundColor: 'rgba(0, 150, 255, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: 'rgb(0, 150, 255)',
+                        pointBorderColor: 'rgb(0, 150, 255)',
+                        pointRadius: 6,
+                        pointHoverRadius: 8,
+                        pointBorderWidth: 2,
+                        pointHoverBorderWidth: 3,
+                        shadowColor: 'rgba(0, 150, 255, 0.5)',
+                        shadowBlur: 15
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'rgb(220, 220, 255)',
+                                font: { size: 14, weight: 'bold' },
+                                padding: 20
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                color: 'rgb(150, 150, 180)',
+                                font: { size: 12 }
+                            },
+                            grid: {
+                                color: 'rgba(0, 150, 255, 0.1)'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: 'rgb(150, 150, 180)',
+                                font: { size: 12 }
+                            },
+                            grid: {
+                                color: 'rgba(0, 150, 255, 0.1)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+
+</html>
