@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Credits</title>
+        <title>Credits & Citations</title>
         <link rel="icon" type="image/png" href="Assets/Favicon.png">
         <style>
             html {
@@ -66,28 +66,11 @@
                 padding: 5px;
                 object-fit: contain;
             }
-            .language-selector {
-                position: relative;
-            }
-            .language-selector select {
-                background-color: rgb(20, 20, 40);
-                color: white;
-                border: 3px solid rgb(0, 150, 255);
-                padding: 8px 12px;
-                border-radius: 8px;
-                font-size: 1em;
-                cursor: pointer;
-                background: rgb(0, 62, 107);
-            }
-            .language-selector select:hover {
-                background-color: rgba(0, 149, 255, 0.568);
-                box-shadow: 0 0 10px rgba(0, 150, 255, 0.3);
-            }
             .credits-container {
                 min-height: 100vh;
                 padding: 120px 40px 40px;
-                max-width: 900px;
-                margin: 0 auto;
+                min-width: 70%;
+                margin: 0 10%;
             }
             .credits-container h1 {
                 color: rgb(0, 150, 255);
@@ -97,9 +80,10 @@
                 text-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
             }
             .credit-section {
-                background: linear-gradient(135deg, rgba(0, 150, 255, 0.08), rgba(0, 200, 255, 0.03));
-                border: 3px solid rgb(0, 150, 255);
-                border-radius: 15px;
+                background: rgb(10, 10, 30);
+                border-top: 8px solid rgb(0, 150, 255);
+                border-bottom: 8px solid rgb(0, 150, 255);
+                border-radius: 50px;
                 padding: 30px;
                 margin-bottom: 30px;
                 box-shadow: 0 0 30px rgba(0, 150, 255, 0.2);
@@ -161,6 +145,60 @@
                 background: rgb(0, 150, 255);
                 color: rgb(10, 10, 30);
             }
+            .social-links {
+                margin: 20px 0;
+            }
+            .social-link {
+                display: inline-block;
+                margin: 0 15px;
+                color: rgb(0, 150, 255);
+                text-decoration: none;
+                padding: 10px 20px;
+                border: 3px solid rgb(0, 150, 255);
+                border-radius: 25px;
+                transition: all 0.3s;
+                background: rgba(0, 150, 255, 0.1);
+            }
+            .social-link:hover {
+                background-color: rgb(0, 150, 255);
+                color: rgb(10, 10, 30);
+                box-shadow: 0 0 15px rgba(0, 150, 255, 0.6);
+                transform: translateY(-2px);
+            }
+            .description-box {
+                background-image: linear-gradient(135deg, rgba(0, 149, 255, 0.2), rgba(36, 0, 77, 0.3));
+                border-left: 5px solid rgb(0, 150, 255);
+                border-right: 5px solid rgb(0, 150, 255);
+                padding: 15px 20px;
+                margin: 15px 0;
+                border-radius: 15px;
+                transition: all 0.3s;
+            }
+            .description-box:hover {
+                transition: all 0.3s ease;
+                box-shadow: 0 0 5px rgba(0, 149, 255, 0.45);
+                transform: translateY(-2px);
+            }
+            .capabilities-list {
+                list-style: none;
+                padding: 0;
+            }
+            .capabilities-list li {
+                color: rgb(220, 220, 255);
+                padding: 8px 0;
+                border-bottom: 1px solid rgba(0, 150, 255, 0.2);
+                padding-left: 15px;
+                position: relative;
+            }
+            .capabilities-list li:last-child {
+                border-bottom: none;
+            }
+            .capabilities-list li::before {
+                content: '▸';
+                position: absolute;
+                left: -5px;
+                color: rgb(0, 150, 255);
+            }
         </style>
     </head>
     <body>
@@ -176,37 +214,33 @@
                     <li><a href="index.html#AI">AI & The Future</a></li>
                     <li><a href="background.html">Background</a></li>
                 </ul>
-                <div class="language-selector">
-                    <select id="languageSelector" onchange="changeLanguage(this.value)">
-                        <option value="en">English</option>
-                        <option value="es">Spanish</option>
-                        <option value="fr">French</option>
-                        <option value="de">Dutch</option>
-                        <option value="ja">Japanese</option>
-                    </select>
+                <div>
+                    <!-- A Placeholder to fill the Language Selector space -->
                 </div>
             </nav>
         </div>
 
         <div class="credits-container">
-            <a href="index.html" class="back-link">← Back to Main</a>
-            
             <h1>Credits & Citations</h1>
 
             <div class="credit-section">
-                <h2>The Singularity Is Near</h2>
-                <p><strong>Author:</strong> Ray Kurzweil</p>
-                <p><strong>Published:</strong> 2005</p>
-                <p>This groundbreaking work by Ray Kurzweil explores the concept of the technological singularity and presents detailed analyses of exponential technological growth. The theory and projections discussed on this website are significantly informed by Kurzweil's research and vision of the future.</p>
-                <p><strong>Why it matters:</strong> This book provides the theoretical foundation for understanding AI advancement trajectories and the convergence point where artificial intelligence surpasses human intelligence.</p>
+                <h2>The Singularity Is Nearer</h2>
+                <p><strong>Author:</strong> <a href="https://en.wikipedia.org/wiki/Ray_Kurzweil" class="credit-link" target="_blank">Ray Kurzweil</a></p>
+                <p><strong>Published:</strong> 2024</p>
+                <div class="description-box">
+                    <p>This groundbreaking work by Ray Kurzweil explores the concept of the technological singularity and presents detailed analyses of exponential technological growth. The theory and projections discussed on this website are significantly informed by Kurzweil's research and vision of the future.</p>
+                    <p><strong>Why it matters:</strong> This book provides the theoretical foundation for understanding AI advancement trajectories and the convergence point where artificial intelligence surpasses human intelligence.</p>
+                </div>
                 <p><a href="https://www.kurzweilai.net/" class="credit-link" target="_blank">Learn more about Ray Kurzweil's work →</a></p>
             </div>
 
             <div class="credit-section">
                 <h2>GitHub</h2>
                 <p><strong>Platform:</strong> Version Control & Code Hosting</p>
-                <p>GitHub is the platform where this entire website project is hosted and version controlled. It enables collaborative development, code management, and deployment.</p>
-                <p><strong>Why it matters:</strong> GitHub's infrastructure allows for safe development, collaboration, and continuous integration of code changes. This website's repository is publicly available for reference and contribution.</p>
+                <div class="description-box">
+                    <p>GitHub is the platform where this entire website project is hosted and version controlled. It enables collaborative development, code management, and deployment.</p>
+                    <p><strong>Why it matters:</strong> GitHub's infrastructure allows for safe development, collaboration, and continuous integration of code changes. This website's repository is publicly available for reference and contribution.</p>
+                </div>
                 <p><a href="https://github.com/" class="credit-link" target="_blank">Visit GitHub →</a></p>
                 <p><strong>This Project:</strong> <a href="https://github.com/Prop3nguin/Prop3nguin.github.io" class="credit-link" target="_blank">Prop3nguin.github.io</a></p>
             </div>
@@ -214,20 +248,24 @@
             <div class="credit-section">
                 <h2>Visual Studio Code</h2>
                 <p><strong>Developer:</strong> Microsoft</p>
-                <p>VS Code is the primary development environment used to create and maintain this website. It provides powerful code editing, debugging, and integration capabilities.</p>
-                <p><strong>Why it matters:</strong> VS Code's extensive features, plugin ecosystem, and intuitive interface make it an essential tool for modern web development. Its AI-assisted capabilities (like GitHub Copilot) have also contributed to this project's development efficiency.</p>
+                <div class="description-box">
+                    <p>VS Code is the primary development environment used to create and maintain this website. It provides powerful code editing, debugging, and integration capabilities.</p>
+                    <p><strong>Why it matters:</strong> VS Code's extensive features, plugin ecosystem, and intuitive interface make it an essential tool for modern web development. Its AI-assisted capabilities (like GitHub Copilot) have also contributed to this project's development efficiency.</p>
+                </div>
                 <p><a href="https://code.visualstudio.com/" class="credit-link" target="_blank">Visit Visual Studio Code →</a></p>
             </div>
 
             <div class="credit-section">
                 <h2>Additional Technologies</h2>
                 <p>This website also uses:</p>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li><strong>HTML5</strong> - Semantic markup and structure</li>
-                    <li><strong>CSS3</strong> - Styling, animations, and responsive design</li>
-                    <li><strong>JavaScript</strong> - Interactive features and particle animations</li>
-                    <li><strong>Canvas API</strong> - Real-time graphics for background animations</li>
-                </ul>
+                <div class="description-box">
+                    <ul class="capabilities-list">
+                        <li><strong>HTML5</strong> - Semantic markup and structure</li>
+                        <li><strong>CSS3</strong> - Styling, animations, and responsive design</li>
+                        <li><strong>JavaScript</strong> - Interactive features and particle animations</li>
+                        <li><strong>Canvas API</strong> - Real-time graphics for background animations</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -237,12 +275,18 @@
                 <div class="contact-info">
                     <p><strong>Email:</strong> Schaley@iastate.edu</p>
                     <p><strong>Phone:</strong> (515) 400-7389</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/spencer-haley-ab509a402/?skipRedirect=true" class="social-link">LinkedIn</a>
+                        <a href="https://github.com/Prop3nguin" class="social-link">GitHub</a>
+                        <!-- <a href="credits.html" class="social-link">Citations</a> -->
+                    </div>
                 </div>
                 <p style="margin-top: 20px; color: rgb(150, 150, 180);">&copy; 2026 Spencer Haley. All rights reserved.</p>
             </div>
         </footer>
 
         <script>
+
             // Particle system
             const canvas = document.getElementById('particleCanvas');
             const ctx = canvas.getContext('2d');
