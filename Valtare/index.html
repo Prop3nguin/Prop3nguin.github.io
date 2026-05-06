@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Conlang Translator</title>
+    </head>
+    <body>
+
+        <h1>Translator</h1>
+
+        <input id="input" placeholder="Enter English text">
+        <button onclick="translate()">Translate</button>
+
+        <p id="output"></p>
+
+        <h2>Lexicon</h2>
+        <button onclick="loadLexicon()">Load Lexicon</button>
+        <ul id="lexicon"></ul>
+
+        <script>
+const API_URL = "https://flaskbackend-omjs.onrender.com";
+
+async function translate() {
+  const text = document.getElementById("input").value;
+
+  try {
+    const res = await fetch(API_URL + "/translate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ text })
+    });
+
+    const data = await res.json();
+    document.getElementById("output").innerText = data.result;
+
+  } catch (err) {
+    document.getElementById("output").innerText = "Error connecting to API";
+  }
+}
+        </script>
+    </body>
+</html>
