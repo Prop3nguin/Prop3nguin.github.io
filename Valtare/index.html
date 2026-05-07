@@ -19,6 +19,7 @@
         <script>
 const API_URL = "https://flaskbackend-omjs.onrender.com";
 
+// Translate text
 async function translate() {
   const text = document.getElementById("input").value;
 
@@ -28,16 +29,39 @@ async function translate() {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ text })
+      body: JSON.stringify({ text: text })
     });
 
     const data = await res.json();
+
     document.getElementById("output").innerText = data.result;
 
   } catch (err) {
-    document.getElementById("output").innerText = "Error connecting to API";
+    console.error(err);
+    document.getElementById("output").innerText =
+      "Error connecting to API";
   }
 }
-        </script>
+
+// Load lexicon
+async function loadLexicon() {
+  try {
+    const res = await fetch(API_URL + "/lexicon");
+    const data = await res.json();
+
+    const list = document.getElementById("lexicon");
+    list.innerHTML = "";
+
+    for (const word in data) {
+      const li = document.createElement("li");
+      li.innerText = word + " → " + data[word];
+      list.appendChild(li);
+    }
+
+  } catch (err) {
+    console.error(err);
+  }
+}
+      </script>
     </body>
 </html>
