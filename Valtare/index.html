@@ -2,34 +2,32 @@
 <html>
 <body>
 
-<button id="btn">Test Backend</button>
+<button id="btn">Test</button>
 
 <pre id="output"></pre>
 
 <script>
-document.getElementById("btn").addEventListener("click", async () => {
-
-    const output = document.getElementById("output");
+document.getElementById("btn").onclick = async () => {
 
     try {
 
-        const response = await fetch(
+        const res = await fetch(
             "https://flaskbackend-omjs.onrender.com/"
         );
 
-        const text = await response.text();
+        const text = await res.text();
 
-        output.textContent = text;
+        document.getElementById("output").textContent =
+            text;
 
     } catch (err) {
 
-        output.textContent =
-            "ERROR:\n\n" + err;
-
         console.error(err);
-    }
 
-});
+        document.getElementById("output").textContent =
+            err;
+    }
+};
 </script>
 
 </body>
