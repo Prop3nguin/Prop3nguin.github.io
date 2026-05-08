@@ -14,9 +14,9 @@ nav a img{
     width: 70px;
     height: 70px;
     padding: 10px;
-    align-self: left;
 }
 nav ul {
+    position: relative;
     align-self: center;
     align-items: center;
 }
