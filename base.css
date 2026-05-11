@@ -56,8 +56,8 @@ nav ul li a {
     padding: 5px;
     object-fit: contain;
 }
-h1 {
-    color: rgb(85, 0, 0);
+.Heading {
+    color: rgb(168, 168, 168);
     font-style: italic;
-    text-shadow: 3px rgb(187, 0, 187);
+    text-shadow: 2px, 2px, black, 3px
 }
