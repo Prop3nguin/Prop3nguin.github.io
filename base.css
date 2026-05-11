@@ -10,7 +10,6 @@ html {
 body {
     background-color: hsl(356, 100%, 6%);
 }
-
 .NavigationBar {
     background-color: rgb(10, 10, 30);
     padding: 5px;
@@ -56,4 +55,9 @@ nav ul li a {
     background-color: white;
     padding: 5px;
     object-fit: contain;
+}
+h1 {
+    color: rgb(85, 0, 0);
+    font-style: italic;
+    text-shadow: 3px rgb(187, 0, 187);
 }
