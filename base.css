@@ -1,15 +1,18 @@
+/* Defualt CSS settings */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px; /* Account for fixed navbar height */
+    padding-top: 90px; /* Account for fixed navbar height */
 }
 * {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding: 0;
     margin: 0;
+    color: white;
 }
 body {
-    background-color: hsl(356, 100%, 6%);
+    background-color: hsl(0, 0%, 0%);
 }
+/* Navigation CSS */
 .NavigationBar {
     background-color: rgb(10, 10, 30);
     padding: 5px;
@@ -56,8 +59,46 @@ nav ul li a {
     padding: 5px;
     object-fit: contain;
 }
-.Heading {
-    color: rgb(168, 168, 168);
-    font-style: italic;
-    text-shadow: 2px, 2px, black, 3px
+/* Section CSS */
+section {
+    min-height: 500px;
+    border-radius: 15px;
+    border: 3px solid rgb(0, 150, 255);
+    box-shadow: 0px 0px 10px rgb(0, 150, 255);
 }
+section div p {
+    padding: 5px 0;
+    border-radius: 5px;
+    background-image: linear-gradient( 135deg, rgb(0, 0, 0), rgb(39, 0, 0))
+}
+/* Text Types CSS */
+/* -> 1. Large Text */
+/* -> 2. Medium Text */
+.Section-Title {
+    text-align: center;
+    padding: 20px 0;
+    border: 3px solid rgb(0, 150, 255);
+    border-radius: 10px;
+}
+.Heading {
+    padding: 10px 0;
+    color: rgb(255, 255, 255);
+    font-style: Bold;
+    text-shadow: 
+        4px 4px 5px rgb(134, 134, 134);
+}
+.Heading-Blue {
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    text-shadow: 
+        4px 4px black,
+        4px 4px 20px rgb(0, 150, 255);
+}
+.Heading-Red {
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    text-shadow: 
+        4px 4px black,
+        4px 4px 20px rgb(255, 0, 0);
+}
+/* -> 3. Paragraph Text */
