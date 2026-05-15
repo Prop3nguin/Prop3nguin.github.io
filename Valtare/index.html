@@ -7,25 +7,16 @@
 <pre id="output"></pre>
 
 <script>
+const API = "https://flaskbackend-production-fdd8.up.railway.app";
+
 document.getElementById("btn").onclick = async () => {
-
     try {
-
-        const res = await fetch(
-            "https://flaskbackend-omjs.onrender.com/"
-        );
-
+        const res = await fetch(`${API}/`);
         const text = await res.text();
-
-        document.getElementById("output").textContent =
-            text;
-
+        document.getElementById("output").textContent = text;
     } catch (err) {
-
         console.error(err);
-
-        document.getElementById("output").textContent =
-            err;
+        document.getElementById("output").textContent = "Error: " + err.message;
     }
 };
 </script>
