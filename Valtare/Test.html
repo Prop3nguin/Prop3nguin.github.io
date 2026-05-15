@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--Working Backend Connection code-->
+<html>
+    <body>
+
+        <button id="btn">Test</button>
+
+        <pre id="output"></pre>
+
+        <script>
+const API = "https://flaskbackend-production-5330.up.railway.app";
+
+document.getElementById("btn").onclick = async () => {
+    try {
+        const res = await fetch(`${API}/`);
+        const text = await res.text();
+        document.getElementById("output").textContent = text;
+    } catch (err) {
+        console.error(err);
+        document.getElementById("output").textContent = "Error: " + err.message;
+    }
+};
+        </script>
+
+    </body>
+</html>

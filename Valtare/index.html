@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 <html>
-<body>
+    <head>
+        <title>Valtare</title>
+        <link rel="icon" type="image/png" href="Assets/Favicon.png">
+        <link rel="stylesheet" href="Valtare.css">
+    </head>
+    <body>
+        
+        <script>
 
-<button id="btn">Test</button>
-
-<pre id="output"></pre>
-
-<script>
-const API = "https://flaskbackend-production-5330.up.railway.app";
-
-document.getElementById("btn").onclick = async () => {
-    try {
-        const res = await fetch(`${API}/`);
-        const text = await res.text();
-        document.getElementById("output").textContent = text;
-    } catch (err) {
-        console.error(err);
-        document.getElementById("output").textContent = "Error: " + err.message;
-    }
-};
-</script>
-
-</body>
+        </script>
+    </body>
 </html>
