@@ -1,7 +1,6 @@
 /* Defualt CSS settings */
 html {
     scroll-behavior: smooth;
-    padding-top: 90px; /* Account for fixed navbar height */
 }
 * {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -16,12 +15,11 @@ body {
 .NavigationBar {
     background-color: rgb(10, 10, 30);
     padding: 5px;
-    position: fixed;
-    top: 0;
-    width: 100%;
+    margin: 20px;
+    border-radius: 15px;
+    position: sticky;   
     z-index: 1000;
-    border-bottom: 8px solid rgb(0, 150, 255);
-    box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
+    box-shadow: 0 0 30px rgb(0, 150, 255);
 }
 nav {
     display: flex;
@@ -42,17 +40,14 @@ nav ul li a {
     text-decoration: none;
     padding: 10px;
     display: block;
-    border-bottom: 5px solid transparent;
-    border-right: 5px solid transparent;
     border-radius: 15px;
-    transition: all 0.3s ease;
 }
 nav ul li a:hover {
-    transition: all 0.3s ease;
-    -ms-transform-origin-y: 3px;
+    text-decoration: underline;
+    font-style: italic;
+    text-shadow: 2px 2px 5px red, 2px 2px 0 black;
 }
 .NavSelected {
-    border-radius: 5px;
     border-bottom: 2px solid red;
     border-top: 2px solid red;
     background-color: rgba(55, 0, 0, 0.5);
@@ -73,46 +68,77 @@ nav ul li a:hover {
 /* Section CSS */
 section {
     min-height: 500px;
+    margin: 50px;
     border-radius: 15px;
-    border: 3px solid rgb(0, 150, 255);
-    box-shadow: 0px 0px 10px rgb(0, 150, 255);
+    box-shadow: 0px 0px 30px rgb(0, 150, 255);
+    background-image: linear-gradient( 90deg, rgb(15, 0, 40), rgb(0, 30, 40));
 }
 Section div {
-    background-image: linear-gradient( 135deg, rgb(0, 0, 0), rgb(39, 0, 0));
-    border:1px solid rgb(0, 150, 255);
-    box-shadow: 0px 0px 10px rgb(0, 150, 255);
+    background-color: black;
+    box-shadow: 0px 0px 30px rgb(0, 150, 255);
     border-radius: 5px;
     padding: 10px;
-    margin: 10px;
+    margin: 0 50px;
 }
 section div p {
     font-size: 20px;
 }
 /* Text Types CSS */
 /* -> 1. Large Text */
+.PageTitle {
+    padding: 200px 0;
+    text-align: center;
+    text-shadow: 
+        5px 5px 0 black,
+        5px 5px 15px red    
+    ;
+    border-radius: 20px;
+    margin: 50px;
+    box-shadow: 0 0 30px rgb(0, 150, 255);
+    background-image: linear-gradient(rgb(15, 0, 40), rgb(0, 30, 40));
+}
+.PageTitle::after {
+    content: "◆";
+    position: relative;
+    right: -30px;
+}
+.PageTitle::before {
+    content: "◆";
+    position: relative;
+    right: 30px;
+}
 /* -> 2. Medium Text */
 .Section-Title {
     text-align: center;
     padding: 20px 0;
-    border: 3px solid rgb(0, 150, 255);
     border-radius: 10px;
+    margin: 50px;
+    text-shadow: 
+        5px 5px 0 black,
+        5px 5px 15px red    
+    ;
+}
+.Section-Title::after {
+    content: "◆";
+    position: relative;
+    right: -30px;
+}
+.Section-Title::before {
+    content: "◆";
+    position: relative;
+    right: 30px;
 }
 .Heading {
-    margin-left: 20px;
+    text-align: center;
     padding: 10px;
     color: rgb(255, 255, 255);
     font-style: Bold;
     text-shadow: 
-        4px 4px 5px rgb(134, 134, 134);
-}
-.Heading::before {
-    content: ">";
-    position: relative;
-    left: -10px;
-    color: rgb(0, 150, 255);
+        2px 2px 0 black,
+        2px 2px 5px rgb(255, 255, 255);
 }
 .Heading-Blue {
-    margin-left: 20px;
+    text-align: center;
     padding: 10px;
     color: rgb(255, 255, 255);
     font-style: italic;
@@ -120,14 +146,8 @@ section div p {
         4px 4px black,
         4px 4px 20px rgb(0, 150, 255);
 }
-.Heading-Blue::before {
-    content: ">";
-    position: relative;
-    left: -10px;
-    color: rgb(0, 150, 255);
-}
 .Heading-Red {
-    margin-left: 20px;
+    text-align: center;
     padding: 10px;
     color: rgb(255, 255, 255);
     font-style: italic;
@@ -135,10 +155,9 @@ section div p {
         4px 4px black,
         4px 4px 20px rgb(255, 0, 0);
 }
-.Heading-Red::before {
-    content: ">";
-    position: relative;
-    left: -10px;
-    color: rgb(0, 150, 255);
+.Diamond {
+    text-align: center;
+    padding: 10px;
+    margin: 0 10px;
 }
 /* -> 3. Paragraph Text */
