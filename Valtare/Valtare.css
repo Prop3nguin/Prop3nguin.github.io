@@ -11,6 +11,7 @@ html {
 body {
     background-color: hsl(0, 0%, 0%);
 }
+/* Navigation CSS */
 .NavigationLogo {
     margin-right: 20px;
     display: flex;
@@ -57,10 +58,8 @@ nav ul li a {
     color: white;
     font-size: medium;
     text-decoration: none;
-    transition: all 0.3s ease;
 }
 .NavSelected {
-    border-radius: 5px;
     border-bottom: 2px solid Gold;
     border-top: 2px solid Gold;
     background-color: rgba(55, 0, 0, 0.5);
@@ -140,5 +139,4 @@ a:hover {
     text-decoration: underline;
     font-style: italic;
     text-shadow: 2px 2px 5px rgb(55, 0, 0);
-    transition: all 0.3s ease;
 }
