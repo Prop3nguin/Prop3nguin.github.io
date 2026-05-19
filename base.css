@@ -209,3 +209,26 @@ p::before {
 .AdvancedSearch {
     display: none;
 }
+.DirectoryTable {
+    background-color: rgb(10, 10, 30);
+    box-shadow: 0 0 10px black;
+    border-radius: 15px;
+    border-right: 5px solid rgb(50, 0, 130);
+    border-left: 5px solid rgb(50, 0, 130);
+    padding: 10px;
+    margin: 0 50px;
+    min-width: 800px;
+    min-height: 200px;
+    justify-self: center;
+    transition: all 0.3s ease;
+}
+.DirectoryTable:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        5px 5px 15px black;
+}
+thead {
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-style: italic;
+}
