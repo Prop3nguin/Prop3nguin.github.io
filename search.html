@@ -4,11 +4,14 @@
         <title>Prop3nguin's Page</title>
         <link rel="icon" type="image/png" href="Assets/Favicon.png">
         <link rel="stylesheet" href="base.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Amita:wght@400;700&family=Comfortaa:wght@300..700&family=Libertinus+Mono&family=Mea+Culpa&family=Uncial+Antiqua&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="NavigationBar">
+        <div>
             <nav>
-                <div class="NavigationLogo">
+                <div>
                     <a href="./index.html">
                         <img src="Assets/Favicon.png" alt="Logo" class="LogoImage">
                     </a>
@@ -16,47 +19,59 @@
                 <ul>
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./projects.html">Projects</a></li>
-                    <li class="NavSelected"><a href="./search.html">Search</a></li>
+                    <li><a href="./search.html">Search</a></li>
                 </ul>
-                <div class="Diamond">◆</div>
+                <div class="diamond">◈</div>
             </nav>
         </div>
+        <div class="BackgroundText">Prop3nguin</div>
+        <div class="divider">✦ ───────── ◈ ───────── ✦</div>
         <h1 class="PageTitle">Site-Wide Search</h1>
-        <section class="BasicSearch">
-            <h2 class="SectionTitle">Basic Searchbar</h2>
-        </section>
-        <section class="AdvancedSearch">
-            <h2 class="SectionTitle">Advanced Searchbar</h2>
-        </section>
+        <div class="divider">✦ ───────── ◈ ───────── ✦</div>
         <section>
-            <h2 class="SectionTitle">Results</h2>
-            <table class="DirectoryTable">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Parent</th>
-                        <th>URL</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>Prop3nguin's Place</th>
-                        <th>Root</th>
-                        <th><a href="Prop3nguin.github.io/index.html">Prop3nguin.github.io/index.html</a></th>
-                    </tr>
-                    <tr>
-                        <th>Prop3nguin's Projects</th>
-                        <th>Root</th>
-                        <th><a href="Prop3nguin.github.io/projects.html">Prop3nguin.github.io/projects.html</a></th>
-                    </tr>
-                    <tr>
-                        <th>Search Prop3nguin's Place</th>
-                        <th>Root</th>
-                        <th><a href="Prop3nguin.github.io/search.html">Prop3nguin.github.io/search.html</a></th>
-                    </tr>
-                </tbody>
-            </table>
+            <ul class="Columns">
+                <li>
+                    <h3 class="InstanceTitle">Search</h3>
+                    <div class="divider">✦ ───────── ◈ ───────── ✦</div>
+                    <input type="search" name="name" placeholder="Name">
+                    <input type="search" name="url" placeholder="URL">
+                    <input type="search" name="parent" placeholder="Parent">
+                    <div class="divider">✦ ───────── ◈ ───────── ✦</div>
+                </li>
+                <li>
+                    <h3 class="InstanceTitle">Results</h3>
+                    <div class="divider">✦ ───────── ◈ ───────── ✦</div>
+                    <table class="DirectoryTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Parent</th>
+                                <th>URL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Prop3nguin's Place</th>
+                                <th>Root</th>
+                                <th><a href="Prop3nguin.github.io/index.html">r/index</a></th>
+                            </tr>
+                            <tr>
+                                <th>Prop3nguin's Projects</th>
+                                <th>Root</th>
+                                <th><a href="Prop3nguin.github.io/projects.html">r/projects</a></th>
+                            </tr>
+                            <tr>
+                                <th>Search Prop3nguin's Place</th>
+                                <th>Root</th>
+                                <th><a href="Prop3nguin.github.io/search.html">r/search</a></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="divider">✦ ───────── ◈ ───────── ✦</div>
+                </li>
+            </ul>
         </section>
+        <div class="divider">✦ ───────── ◈ ───────── ✦</div>
         <script src="base.json"></script>
     </body>
 </html>

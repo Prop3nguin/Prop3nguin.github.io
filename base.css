@@ -1,234 +1,459 @@
-/* Defualt CSS settings */
-html {
-    scroll-behavior: smooth;
+/*
+
+primary Background : rgb(18, 24, 38)
+
+gold accent : rgb(201, 167, 92) 
+
+    Reds ;
+Burgandy : rgb(68, 22, 35)
+
+Dark crimson : rgb(92, 24, 34)
+
+Oxblood : rgb(58, 16, 24)
+
+*/
+
+:root {
+    --PrimaryBackgroundColor: rgb(18, 24, 38);
+    --GoldAccentColor: rgb(201, 167, 92);
+    --Burgandy: rgb(68, 22, 35);
+    --DarkCrimson: rgb(92, 24, 34); 
+    --Oxblood: rgb(58, 16, 24);
+    --LightTextColor: rgb(240, 236, 224);
+    --DarkTextColor: rgb(45, 37, 26);
+    --FaintTextColor: rgba(240, 236, 224, 0.3);
 }
+
 * {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding: 0;
     margin: 0;
-    color: white;
+    color: var(--LightTextColor);
 }
 body {
-    background-color: hsl(0, 0%, 0%);
+    padding-top: 5rem; /* for Navbar */
+    font-family: 'uncial antiqua';
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--PrimaryBackgroundColor);
+    background-image:
+        radial-gradient(
+            rgba(68, 37, 139, 0.3) 1px,
+            transparent 1px
+        );
+    background-size: 12px 12px;
 }
-/* Navigation CSS */
-.NavigationBar {
-    background-color: rgb(10, 10, 30);
-    padding: 5px;
-    margin: 0 20px 20px 20px ;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    box-shadow: 0 0 30px rgb(0, 150, 255);
+p {
+    font-family: 'Almendra';
+    font-weight: 400;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.6);
+}
+.BackgroundText {
+    font-family: 'Mea Culpa', 'Cursive';
+    font-weight: 400;
+    position: fixed;
+    justify-self: center;
+    z-index: -1;
+    font-size: 18rem;
+    opacity: .15;
+    color: black;
+    line-break: none;
+    pointer-events: none;
+    border-radius: 44%;
+    padding: 50px;
+    border: 10px solid black;
 }
 nav {
+    top: 0;
+    align-self: top;
+    z-index: 3;
+    position: fixed;
+    position: top;
+    width: 100%;
+    font-family: 'Amita';
+    background-color: var(--DarkCrimson);
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
+    max-height: 5rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+}
+nav img {
+    max-width: 2rem;
+    max-height: 2rem;
+    padding: 10px;
 }
 nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: flex-start;
-}
-nav ul li {
-    padding: 10px;
-    margin: 0 10px;
-    border-radius: 15px;
-    display: block;
-}
-nav ul li a {
-    color: white;
-    font-size: medium;
-    text-decoration: none;
-}
-a {
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-    text-shadow: 2px 2px 5px rgb(50, 0, 130), 2px 2px 0 black;
-}
-.NavSelected {
-    border-bottom: 2px solid rgb(50, 0, 130);
-    border-top: 2px solid rgb(50, 0, 130);
-    background-color: rgb(15, 0, 40);
-}
-.NavigationLogo {
-    margin-right: 20px;
-    display: flex;
-    align-items: center;
-}
-.LogoImage {
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    object-fit: contain;
-}
-/* Section CSS */
-section {
-    padding-bottom: 80px;
-    margin: 50px;
-    border-radius: 15px;
-    box-shadow: 0 0 30px rgb(30, 0, 75);
-    background-image: linear-gradient( 90deg, rgb(15, 0, 40), rgb(0, 30, 40));
-}
-section p a {
-    color: rgb(132, 206, 255);
-    text-shadow: 0 0 3px rgb(0, 150, 255);
-}
-Section div {
-    background-color: rgb(10, 10, 30);
-    box-shadow: 0 0 10px black;
-    border-radius: 15px;
-    border-right: 5px solid rgb(50, 0, 130);
-    border-left: 5px solid rgb(50, 0, 130);
-    padding: 10px;
-    margin: 0 50px;
-}
-section div p {
-    font-size: 20px;
-}
-section ul {
     display: flex;
     justify-content: center;
 }
-section ul li {
-    max-width: 800px;
-    list-style-type: none;
-    background-color: rgb(10, 10, 30);
-    box-shadow: 0 0 10px black;
-    border-radius: 15px;
-    border-right: 5px solid rgb(50, 0, 130);
-    border-left: 5px solid rgb(50, 0, 130);
+nav ul li {
+    padding: 14px 20px;
+}
+.diamond {
+    text-align: center;
+    color: var(--GoldAccentColor);
+    width: 2rem;
+    height: 100%;
     padding: 10px;
-    margin: 0 50px;
-    min-width: 400px;
-    min-height: 200px;
+}
+a {
+    text-decoration: none;
+    color: var(--GoldAccentColor);
+    text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
     transition: all 0.3s ease;
 }
-section ul li:hover {
+.InstanceTitle a {
+    text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
+    box-shadow: none;
+}
+nav ul a {
+    display: inline-block;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: var(--Oxblood);
+    border-radius: 15px;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
+}
+nav ul a:hover {
+    transform: translateY( -5px );
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.6);
+}
+textarea {
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Amita';
+    background-color: var(--PrimaryBackgroundColor);
+}
+button {
+    font-family: 'Amita';
+    border-radius: 5px;
+    background-color: var(--PrimaryBackgroundColor);
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    margin: 40px;
+    transition: 0.3s ease all;
+    min-width: 200px;
+}
+button:hover {
+    font-family: 'Amita';
+    background-color: var(--PrimaryBackgroundColor);
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.6);
+    margin: 40px;
     transform: translateY(-5px);
-    box-shadow: 
-        5px 5px 15px black;
 }
-section ul li h2 {
+.navSymbol {
+    margin-left: 15%;
+    margin-right: 15%;
+    color: var(--GoldAccentColor);
+    opacity: 0.6;
+}
+.divider{
+    color: var(--GoldAccentColor);
+    opacity: 0.6;
     text-align: center;
+    margin: 3rem;
+    text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
 }
-/* Text Types CSS */
-/* -> 1. Large Text */
+
+/* 
+other classes for basic themes and positioning website-wide
+
+ - PageTitle
+ - SoftTitle
+ - InstanceTitle
+ - Section
+ - Card
+ - Section Card
+ - Disclaimer
+
+*/
+
 .PageTitle {
-    padding: 200px 0;
+    color: var(--GoldAccentColor);
+    font-family: 'Mea Culpa';
+    font-weight: 400;
     text-align: center;
-    text-shadow: 
-        5px 5px 0 black,
-        5px 5px 15px rgb(50, 0, 130)    
-    ;
-    border-radius: 20px;
+    font-size: 8rem;
     margin: 50px;
-    box-shadow: 0 0 30px rgb(30, 0, 75);
-    background-image: linear-gradient(rgb(15, 0, 40), rgb(0, 30, 40));
+    padding: 50px;
+    text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
 }
-.PageTitle::after {
-    content: "◆";
-    position: relative;
-    right: -30px;
-}
-.PageTitle::before {
-    content: "◆";
-    position: relative;
-    right: 30px;
-}
-/* -> 2. Medium Text */
-.SectionTitle {
-    text-align: center;
-    padding-top: 40px;
-    border-radius: 10px;
-    margin: 50px;
-    text-shadow: 
-        5px 5px 0 black,
-        5px 5px 15px rgb(0, 150, 255);
-}
-.SectionTitle::after {
-    content: "◆";
-    position: relative;
-    right: -30px;
-}
-.SectionTitle::before {
-    content: "◆";
-    position: relative;
-    right: 30px;
-}
-.Heading {
-    text-align: center;
-    padding: 10px;
-    color: rgb(255, 255, 255);
-    font-style: Bold;
-    text-shadow: 
-        2px 2px 0 black,
-        2px 2px 5px rgb(255, 255, 255);
-}
-.Heading-Blue {
-    text-align: center;
-    padding: 10px;
-    color: rgb(255, 255, 255);
-    font-style: italic;
-    text-shadow: 
-        4px 4px black,
-        4px 4px 20px rgb(0, 150, 255);
-}
-.Heading-Red {
-    text-align: center;
-    padding: 10px;
-    color: rgb(255, 255, 255);
-    font-style: italic;
-    text-shadow: 
-        4px 4px black,
-        4px 4px 20px rgb(255, 0, 0);
-}
-.Diamond {
-    text-align: center;
-    padding: 10px;
-    margin: 0 10px;
-}
-/* -> 3. Paragraph Text */
-p {
-    margin: 20px;
+.disclaimer {
+    color: var(--FaintTextColor);
+    margin-top: 20px;
     text-indent: 20px;
 }
-p::before {
-    color: rgb(0, 150, 255);
-    content: "⬨";
-    position: relative;
-    left: -10px;
-    font-style: normal;
-}
-.AdvancedSearch {
-    display: none;
-}
-.DirectoryTable {
-    background-color: rgb(10, 10, 30);
-    box-shadow: 0 0 10px black;
-    border-radius: 15px;
-    border-right: 5px solid rgb(50, 0, 130);
-    border-left: 5px solid rgb(50, 0, 130);
-    padding: 10px;
-    margin: 0 50px;
-    min-width: 800px;
-    min-height: 200px;
+section {
     justify-self: center;
-    transition: all 0.3s ease;
+    z-index: 1;
+
+    height: fit-content;
+    width: fit-content;
+
+    min-height: 100px;
+    min-width: 20%;
+
+    max-width: 95%;
+
+    padding: 10px;
+    margin: 50px;
+    margin-top: 0;
+
+    border-radius: 10px;
+
+    background-image: linear-gradient( 180deg, var(--DarkCrimson), var(--Oxblood));
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
 }
-.DirectoryTable:hover {
-    transform: translateY(-5px);
-    box-shadow: 
-        5px 5px 15px black;
-}
-thead {
-    text-transform: uppercase;
-    text-decoration: underline;
+.TabTitle {
+    font-family: 'Almendra', 'serif';
+    font-weight: 400;
     font-style: italic;
+    justify-self: center;
+    z-index: 0;
+    padding: 40px;
+    background-color: var(--DarkCrimson);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
+}
+.TabTitle::before {
+    content: '◈';
+    font-style: normal;
+    position: relative;
+    right: 20px;
+    color: var(--GoldAccentColor);
+}
+.TabTitle::after {
+    content: '◈';
+    font-style: normal;
+    position: relative;
+    left: 20px;
+    color: var(--GoldAccentColor);
+}
+.Columns {
+    min-width: 50vw;
+    width: 100%;
+    display: inline-flex;
+    list-style: none;
+}
+.Columns p {
+    line-height: 1.5rem;
+    font-family: 'Almendra';
+    font-weight: 400;
+    text-align: left;
+    background-color: var(--Oxblood);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
+    text-indent: 2rem;
+}
+.Columns li {
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    min-width: 25vw;
+    min-height: 200px;  
+    border-radius: 10px;
+}
+.link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--Oxblood);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+.link:hover{
+    transform: translateY( -5px );
+    text-shadow: none;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+    box-shadow: none;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
+}
+.Columns p a {
+    border-radius: 10px;
+    padding: 5px;
+    display: inline-flexbox;
+}
+.Columns p a:hover {
+    background-color: var(--DarkCrimson);
+}
+.Columns h3 a {
+    border-radius: 10px;
+    padding: 5px;
+    display: inline-flexbox;
+}
+.Columns h3 a:hover {
+    background-color: var(--DarkCrimson);
+}
+.Structure {
+    background-color: var(--Oxblood);
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.Structure ul {
+    list-style: none;
+    padding-left: 20px;
+}
+.Structure li {
+    list-style: none;
+    margin: 5px 0;
+    position: relative;
+}
+.Structure li::before {
+    content: '└ ';
+}
+.card {
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--DarkCrimson);
+    justify-self: center;
+    width: 16.5%;
+}
+.MapNDisc {
+    justify-content: center;
+    list-style-type: none;
+    display: flex;
+}
+.Description {
+    background-color: var(--DarkCrimson);
+    min-width: 20vw;
+    max-width: 80%;
+    height: fit-content;
+    border-radius: 10px;
+    justify-self: center;
+    padding: 5px;
+    margin-top: 10px;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
+}
+.Description p {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    text-indent: 2rem;
+    background-color: var(--Oxblood);
+    border-radius: 10px;
+    min-height: 45%;
+    margin-top: 10px;
+    padding: 30px;
+}
+.AddDelete {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+.AddDelete li {
+    background-color: var(--Oxblood);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: none;
+}
+.InstanceTitle {
+    font-family: 'Uncial Antiqua';
+    font-weight: 200;
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: var(--Oxblood);
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
+}
+.Entry {
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: var(--Oxblood);
+    padding: 30px;
+}
+.Edit {
+    max-width: 50vw;
+    padding: 0;
+    list-style-type: none;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+.Edit li {
+    border-radius: 10px;
+    background-color: var(--Oxblood);
+    padding: 20px;
+    margin: 10px;
+}
+form {
+    height: fit-content;
+    width: fit-content;
+    justify-self: center;
+    padding: 10px;
+    min-height: 100px;
+    min-width: 20%;
+    margin: 50px;
+    margin-top: 0;
+    border-radius: 10px;
+    background-image: linear-gradient( 180deg, var(--DarkCrimson), var(--Oxblood));
+}
+form ul {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+form ul li {
+    background-color: var(--Oxblood);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+label {
+    font-family: 'Uncial Antiqua';
+    display: inline-block;
+    white-space: nowrap;
+    
+    
+}
+input, select, option {
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Amita';
+    margin-bottom: 10px;
+    background-color: var(--PrimaryBackgroundColor);
+}
+textarea {
+    background-color: var(--PrimaryBackgroundColor);
+    z-index: -2;
+}
+.submit {
+    width: 90%;
+}
+.button {
+    margin: 0;
+    padding: 0;
+}
+footer {
+    background-color: var(--Oxblood);
+}
+footer .InstanceTitle {
+    background-color: var(--DarkCrimson);
+}
+footer ul {
+    padding: 10px;
+    list-style: none;
+    justify-content: space-evenly;
+    display: flex;
+}
+footer ul li {
+    background-color: var(--DarkCrimson);
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    display: inline-block;
+}
+footer h4 {
+    font-family: 'Amita';
 }
