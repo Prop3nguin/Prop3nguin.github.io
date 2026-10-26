@@ -5,48 +5,97 @@
     --Title-Color: #fff;
     --Light-Paragraph: #cccccc;
     --Dark-Paragraph: #999999;
+    --border: #500000;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Lora", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color:var(--Light-Paragraph);
+}
+html{
+  margin: 0;
 }
 body{
-  background-color: var(--Background-Color);
+  background-color: var(--Deep-Color);
+  margin: 0;
+  min-height: 100vh;
+}
+hr{
+  margin: 1rem;
+}
+.title{
+  color:var(--Title-Color);
+  text-align: center;
+  line-height: 2rem;
+  padding: 10px;
+}
+.heading-text{
+  color: var(--Title-Color);
+  text-align: center;
+}
+.trifold-layout-center p{
+  text-indent: 2rem;
+  padding: 1rem; 
+}
+.web-title{
+  font-weight: 600;
+  font-style: italic;
 }
 
 /* Page Layout */
 
 .site-layout{
-  border: 2px solid white;
+  min-height: 100vh;
+  display:flex;
+  flex-direction: column;
 }
 
 .navbar {
-  border: 2px solid white;
+  border-bottom: 2px solid var(--border);
+  background-color: var(--Background-Color);
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .footer{
-  border: 2px solid white;
+  background-color: var(--Background-Color);
+  border-top: 2px solid var(--border);
+  border-radius: 10px;
+  margin-top: auto;
+  padding: 10px;
 }
 
-.trifold-layout{
-  border: 2px solid white;
+.page-body{
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr) 12rem;
+  flex-grow: 1;
 }
 
 .trifold-layout-left{
-  border: 2px solid white;
+  background-color: var(--Foreground-color);
+  margin-top: 3rem;
+  padding: 1rem;
+  border-top: 2px solid var(--border);
+  border-radius: 10px;
 }
 
 .trifold-layout-center{
-  border: 2px solid white;
+  padding-top: 1rem;
+  background-color: var(--Deep-Color);
 }
 
 .trifold-layout-right{
-  border: 2px solid white;
+  background-color: var(--Foreground-color);
+  padding: 1rem;
+  margin-top: 3rem;
+  border-top: 2px solid var(--border);
+  border-radius: 10px;
 }
 
 
