@@ -84,18 +84,27 @@ p{
 }
 .navbar {
   display: grid;
-  grid-template-columns: 33% 1fr 25%;
+  grid-template-columns: 1fr 1fr 1fr;
   border-bottom: 2px solid var(--border);
   background-color: var(--Foreground-color);
   border-radius: 10px;
   padding: 1rem;
+  align-content: center;
 }
 .navbar div, .navbar ul {
   display: flex;
   list-style: none;
+  align-self: center;
+}
+.nav-pages {
+  border-right: 1px solid var(--border);
+}
+.nav-links {
+  border-left: 1px solid var(--border);
 }
 .navbar ul li {
-  padding-right: 2rem;
+  width: 33%;
+  text-align: center;
 }
 
 .footer{
