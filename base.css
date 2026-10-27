@@ -77,7 +77,9 @@ p{
   display:flex;
   flex-direction: column;
 }
-
+.rights-reserved {
+  padding-top: 1rem;
+}
 .nav-icon {
   width: 2rem;
   margin-right: 2rem;
@@ -137,7 +139,10 @@ p{
   padding: 1rem;
   margin-top: 3rem;
 }
-
+.page-topic-indented {
+  text-indent: 1rem;
+  border-left: 2px solid var(--Foreground-color);
+}
 
 /* Smaller Alignments */
 
