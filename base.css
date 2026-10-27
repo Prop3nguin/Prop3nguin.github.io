@@ -1,33 +1,52 @@
 :root {
-    --Foreground-color: #222222;
-    --Background-Color: #1b1b1b;
-    --Deep-Color: #111;
+    --Foreground-color: #151210;
+    --Background-Color: #0c0a09;
     --Title-Color: #fff;
-    --Light-Paragraph: #cccccc;
-    --Dark-Paragraph: #999999;
-    --border: #500000;
+    --Light-Paragraph: #ccc;
+    --Dark-Paragraph: #999;
+    --Vibrant-Link: rgb(255, 112, 112);
+    --Dull-Link: rgb(112, 40, 40);
+    --border: #500;
 }
 
 * {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0px;
   padding: 0;
   font-family: "Lora", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   color:var(--Light-Paragraph);
+  /* To show the structure of the site.
+  margin: 5px;
+  border: 1px solid white; 
+  */
 }
 html{
   margin: 0;
 }
 body{
-  background-color: var(--Deep-Color);
+  background-color: var(--Background-Color);
   margin: 0;
   min-height: 100vh;
 }
+a{
+  text-decoration: none;
+  color: var(--Vibrant-Link);
+}
+a:hover {
+  transition: 0.3s;
+  color: var(--Dull-Link);
+}
 hr{
   margin: 1rem;
+}
+i {
+  font-style: italic;
+}
+h5 {
+  line-height: 2rem;
 }
 .title{
   color:var(--Title-Color);
@@ -38,6 +57,9 @@ hr{
 .heading-text{
   color: var(--Title-Color);
   text-align: center;
+}
+p{
+  color:var(--Dark-Paragraph);
 }
 .trifold-layout-center p{
   text-indent: 2rem;
@@ -56,19 +78,32 @@ hr{
   flex-direction: column;
 }
 
+.nav-icon {
+  width: 2rem;
+  margin-right: 2rem;
+}
 .navbar {
+  display: grid;
+  grid-template-columns: 33% 1fr 25%;
   border-bottom: 2px solid var(--border);
-  background-color: var(--Background-Color);
+  background-color: var(--Foreground-color);
   border-radius: 10px;
-  padding: 10px;
+  padding: 1rem;
+}
+.navbar div, .navbar ul {
+  display: flex;
+  list-style: none;
+}
+.navbar ul li {
+  padding-right: 2rem;
 }
 
 .footer{
-  background-color: var(--Background-Color);
+  background-color: var(--Foreground-color);
   border-top: 2px solid var(--border);
   border-radius: 10px;
   margin-top: auto;
-  padding: 10px;
+  padding: 2rem;
 }
 
 .page-body{
@@ -78,25 +113,82 @@ hr{
 }
 
 .trifold-layout-left{
-  background-color: var(--Foreground-color);
+  background-color: var(--Background-Color);
   margin-top: 3rem;
   padding: 1rem;
-  border-top: 2px solid var(--border);
-  border-radius: 10px;
 }
 
 .trifold-layout-center{
   padding-top: 1rem;
-  background-color: var(--Deep-Color);
+  background-color: var(--Background-Color);
 }
 
 .trifold-layout-right{
-  background-color: var(--Foreground-color);
+  background-color: var(--Background-Color);
   padding: 1rem;
   margin-top: 3rem;
-  border-top: 2px solid var(--border);
-  border-radius: 10px;
 }
+
+
+/* Smaller Alignments */
+
+.descreet-collection-left {
+  display: grid;
+  grid-template-columns: 70% 1fr;
+  padding: 1rem;
+}
+.descreet-collection-right {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  padding: 1rem;
+}
+.collection-paragraph {
+  line-height: 2rem;
+}
+.collection-image {
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px var(--Foreground-color);
+  align-self: center;
+  width: 100%;
+}
+.divider {
+  margin: 2rem; 
+  margin-left: 10%;
+  width: 80%;
+  border-bottom: 2px solid var(--border);
+}
+.decorative-title-line {
+  margin-left:37.5%;
+  width: 25%;
+  border-bottom: 2px solid var(--border);
+}
+
+
+
+
+
+/* Footer Styling */
+.footer i {
+  border-bottom: 2px solid var(--border);
+  padding: 0.25rem;
+}
+
+
+/* Footer Structuring */
+.footer {
+  display: grid;
+  grid-template-columns: 60% 1fr;
+}
+.footer-creator-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.footer ul {
+  list-style: none;
+
+}
+
+
 
 
 
@@ -138,3 +230,4 @@ hr{
   font-weight: 700;
   font-style: italic;
 }
+
