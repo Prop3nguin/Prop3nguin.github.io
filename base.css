@@ -18,13 +18,14 @@
   font-weight: 400;
   font-style: normal;
   color:var(--Light-Paragraph);
-  /* To show the structure of the site.
+  /* To show the structure of the site.  
   margin: 5px;
   border: 1px solid white; 
   */
 }
 html{
   margin: 0;
+  scroll-behavior: smooth;
 }
 body{
   background-color: var(--Background-Color);
@@ -53,6 +54,16 @@ h5 {
   text-align: center;
   line-height: 2rem;
   padding: 10px;
+}
+h1.title {
+  line-height: 4rem;
+  margin-bottom:1rem;
+}
+h2.title {
+  line-height: 2rem;
+}
+.footer h3 {
+  line-height: 3rem;
 }
 .heading-text{
   color: var(--Title-Color);
@@ -86,7 +97,7 @@ p{
 }
 .navbar {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   border-bottom: 2px solid var(--border);
   background-color: var(--Foreground-color);
   border-radius: 10px;
@@ -94,15 +105,19 @@ p{
   align-content: center;
 }
 .navbar div, .navbar ul {
-  display: flex;
   list-style: none;
   align-self: center;
 }
+.navbar div {
+  display: flex;
+}
 .nav-pages {
+  display: none;
   border-right: 1px solid var(--border);
 }
 .nav-links {
-  border-left: 1px solid var(--border);
+  display: none;
+  border-left: 2px solid var(--border);
 }
 .navbar ul li {
   width: 33%;
@@ -114,28 +129,27 @@ p{
   border-top: 2px solid var(--border);
   border-radius: 10px;
   margin-top: auto;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .page-body{
-  display: grid;
+  display: block;
   grid-template-columns: 12rem minmax(0, 1fr) 12rem;
   flex-grow: 1;
 }
 
 .trifold-layout-left{
-  background-color: var(--Background-Color);
+  display: none;
   margin-top: 3rem;
   padding: 1rem;
 }
 
 .trifold-layout-center{
   padding-top: 1rem;
-  background-color: var(--Background-Color);
 }
 
 .trifold-layout-right{
-  background-color: var(--Background-Color);
+  display: none;
   padding: 1rem;
   margin-top: 3rem;
 }
@@ -145,26 +159,35 @@ p{
 }
 
 /* Smaller Alignments */
+.descreet-collection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem;
+}
 
-.descreet-collection-left {
-  display: grid;
-  grid-template-columns: 70% 1fr;
-  padding: 1rem;
-}
+.descreet-collection-left,
 .descreet-collection-right {
-  display: grid;
-  grid-template-columns: 30% 1fr;
+  display: block;
+  flex-direction: row;
   padding: 1rem;
 }
+
 .collection-paragraph {
   line-height: 2rem;
 }
+
 .collection-image {
   border-radius: 10px;
+  border: 2px solid var(--Dark-Paragraph);
   box-shadow: 0px 0px 20px var(--Foreground-color);
   align-self: center;
+  display: block;
+  min-width: 10rem;
   width: 100%;
+  height: auto;
+  object-fit: cover;
 }
+
 .divider {
   margin: 2rem; 
   margin-left: 10%;
@@ -245,3 +268,78 @@ p{
   font-style: italic;
 }
 
+
+
+
+
+@media (min-width: 888px) {
+
+  .navbar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav-links {
+    display: flex;
+    border-left: 2px solid var(--border);
+  }
+
+  .page-body {
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 1fr);
+  }
+
+  .trifold-layout-left {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .page-body {
+    grid-template-columns: 12rem minmax(0, 1fr) 12rem;
+  }
+
+  .trifold-layout-right {
+    display: block;
+  }
+
+}
+
+@media (min-width: 1300px) {
+
+  .navbar {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .nav-pages {
+    display: flex;
+    border-right: 1px solid var(--border);
+  }
+
+  .nav-links {
+    border-left: 1px solid var(--border);
+  }
+
+}
+
+@media (min-width: 1400px) {
+
+  .descreet-collection-left {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding: 1rem;
+  }
+
+  .descreet-collection-right {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 1rem;
+  }
+
+  .collection-image {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+
+}
