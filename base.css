@@ -56,8 +56,12 @@ h5 {
   padding: 10px;
 }
 h1.title {
-  line-height: 4rem;
-  margin-bottom:1rem;
+  padding: 2rem 0;
+  width:80%;
+  margin: 0 10%;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--border);
+  min-width: fit-content;
 }
 h2.title {
   line-height: 2rem;
@@ -88,6 +92,7 @@ p{
   min-height: 100vh;
   display:flex;
   flex-direction: column;
+  max-width: 5000px;
 }
 .rights-reserved {
   padding-top: 1rem;
@@ -104,6 +109,8 @@ p{
   border-radius: 10px;
   padding: 1rem;
   align-content: center;
+  position: sticky;
+  top: 0;
 }
 .navbar div, .navbar ul {
   list-style: none;
@@ -143,6 +150,7 @@ p{
   display: none;
   margin-top: 3rem;
   padding: 1rem;
+  height: fit-content;
 }
 
 .trifold-layout-center{
@@ -153,6 +161,7 @@ p{
   display: none;
   padding: 1rem;
   margin-top: 3rem;
+  height: fit-content;
 }
 .page-topic-indented {
   text-indent: 1rem;
@@ -161,15 +170,13 @@ p{
 
 /* Smaller Alignments */
 .descreet-collection {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: block;
   padding: 1rem;
 }
 
 .descreet-collection-left,
 .descreet-collection-right {
   display: block;
-  flex-direction: row;
   padding: 1rem;
 }
 
@@ -291,6 +298,8 @@ p{
 
   .trifold-layout-right {
     display: block;
+    position: sticky;
+    top: 4rem; 
   }
 
   .footer h3 {
@@ -314,6 +323,8 @@ p{
 
   .trifold-layout-left {
     display: block;
+    position: sticky;
+    top: 4rem; 
   }
 
 }
@@ -336,6 +347,11 @@ p{
 }
 
 @media (min-width: 1400px) {
+
+  .descreet-collection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 
   .descreet-collection-left {
     display: grid;
