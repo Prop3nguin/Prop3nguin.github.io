@@ -173,6 +173,9 @@ p{
   height: fit-content;
   margin-left: 1rem;
 }
+.feature-loss-disclaimer {
+  display: none;
+}
 .trifold-layout-left a h5 {
   text-indent: 1rem;
 }
@@ -283,6 +286,10 @@ p{
   .page-body {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 13rem;
+  }
+
+  .feature-loss-disclaimer {
+    display: block;
   }
 
   .trifold-layout-right {
