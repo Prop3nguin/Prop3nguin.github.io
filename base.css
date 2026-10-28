@@ -63,7 +63,7 @@ h2.title {
   line-height: 2rem;
 }
 .footer h3 {
-  line-height: 3rem;
+  line-height: 1rem;
 }
 .heading-text{
   color: var(--Title-Color);
@@ -215,6 +215,8 @@ p{
 .footer {
   display: grid;
   grid-template-columns: 60% 1fr;
+  font-size: 0.6rem;
+  line-height: 1rem;
 }
 .footer-creator-links {
   display: grid;
@@ -222,7 +224,6 @@ p{
 }
 .footer ul {
   list-style: none;
-
 }
 
 
@@ -290,6 +291,18 @@ p{
 
   .trifold-layout-right {
     display: block;
+  }
+
+  .footer h3 {
+    line-height: 3rem;
+  }
+  
+  .footer {
+    font-size: 1rem;
+  }
+  
+  .footer ul a {
+    line-height: 1.6rem;
   }
 }
 
