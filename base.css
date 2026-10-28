@@ -5,7 +5,7 @@
     --Light-Paragraph: #ccc;
     --Dark-Paragraph: #999;
     --Vibrant-Link: rgb(255, 112, 112);
-    --Dull-Link: rgb(112, 40, 40);
+    --Dull-Link: rgb(161, 58, 58);
     --border: #500;
 }
 
@@ -133,7 +133,7 @@ p{
 }
 .nav-links {
   display: none;
-  border-left: 2px solid var(--border);
+  border-left: 2px solid var(--Dark-Paragraph);
 }
 .navbar ul li {
   width: 33%;
@@ -178,7 +178,7 @@ p{
 }
 .page-topic-indented {
   text-indent: 1rem;
-  border-left: 2px solid var(--Foreground-color);
+  border-left: 2px solid var(--Dark-Paragraph);
 }
 
 /* Smaller Alignments */
@@ -314,12 +314,12 @@ p{
   }
 
   .nav-pages {
-    border-right: 1px solid var(--border);
+    border-right: 1px solid var(--Dark-Paragraph);
   }
 
   .nav-links {
     display: flex;
-    border-left: 1px solid var(--border);
+    border-left: 1px solid var(--Dark-Paragraph);
   }
 
 }
