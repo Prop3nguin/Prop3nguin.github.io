@@ -108,6 +108,17 @@ p{
   width: 2rem;
   margin-right: 2rem;
 }
+.profile-icon-image {
+  border-radius: 50%;
+  border: 2px solid var(--Dark-Paragraph);
+  box-shadow: 0px 0px 20px var(--Foreground-color);
+  align-self: center;
+  display: block;
+  min-width: 10rem;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 .navbar {
   display: grid;
   grid-template-columns: 1fr;
