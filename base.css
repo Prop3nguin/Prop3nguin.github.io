@@ -161,6 +161,9 @@ p{
   margin-top: 1rem;
   height: fit-content;
 }
+.trifold-layout-left a h5 {
+  text-indent: 1rem;
+}
 
 .trifold-layout-center{
   padding-top: 1rem;
