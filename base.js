@@ -1,3 +1,6 @@
+
+
+// Create The Page Topics List
 // 1. Target your containers
 const mainBody = document.querySelector('#MainBody');
 const topicsContainer = document.querySelector('#PageTopics'); // Change this selector to match your HTML sidebar container
@@ -37,4 +40,7 @@ if (mainBody && topicsContainer) {
         // 7. Append the structured link into your sidebar topics list
         topicsContainer.appendChild(anchorLink);
     });
+    const DecorativeTitleLine = document.createElement('div.decorative-title-line');
+    topicsContainer.append(DecorativeTitleLine);
 }
+

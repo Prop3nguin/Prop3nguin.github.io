@@ -92,7 +92,6 @@ p{
   min-height: 100vh;
   display:flex;
   flex-direction: column;
-  max-width: 5000px;
 }
 .rights-reserved {
   padding-top: 1rem;
@@ -111,6 +110,7 @@ p{
   align-content: center;
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 .navbar div, .navbar ul {
   list-style: none;
@@ -144,12 +144,13 @@ p{
   display: block;
   grid-template-columns: 12rem minmax(0, 1fr) 12rem;
   flex-grow: 1;
+  max-width: 2500px;
+  align-self: center;
 }
 
 .trifold-layout-left{
   display: none;
-  margin-top: 3rem;
-  padding: 1rem;
+  margin-top: 1rem;
   height: fit-content;
 }
 
@@ -159,8 +160,7 @@ p{
 
 .trifold-layout-right{
   display: none;
-  padding: 1rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
   height: fit-content;
 }
 .page-topic-indented {
@@ -234,53 +234,6 @@ p{
   list-style: none;
 }
 
-
-
-
-
-
-
-
-.crimson-text-regular {
-  font-family: "Crimson Text", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.crimson-text-semibold {
-  font-family: "Crimson Text", serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.crimson-text-bold {
-  font-family: "Crimson Text", serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.crimson-text-regular-italic {
-  font-family: "Crimson Text", serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.crimson-text-semibold-italic {
-  font-family: "Crimson Text", serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.crimson-text-bold-italic {
-  font-family: "Crimson Text", serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-
-
-
-
 @media (min-width: 1000px) {
 
   .navbar {
@@ -299,7 +252,7 @@ p{
   .trifold-layout-right {
     display: block;
     position: sticky;
-    top: 4rem; 
+    top: 3.75rem; 
   }
 
   .footer h3 {
@@ -324,7 +277,7 @@ p{
   .trifold-layout-left {
     display: block;
     position: sticky;
-    top: 4rem; 
+    top: 3.75rem; 
   }
 
 }
