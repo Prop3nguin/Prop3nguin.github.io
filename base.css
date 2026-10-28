@@ -1,5 +1,5 @@
 :root {
-    --Foreground-color: #151210;
+    --Foreground-color: #291c1c;
     --Background-Color: #0c0a09;
     --Title-Color: #fff;
     --Light-Paragraph: #ccc;
@@ -68,7 +68,7 @@ h1.title {
   width:80%;
   margin: 0 10%;
   margin-bottom: 1rem;
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--Dark-Paragraph);
   min-width: fit-content;
 }
 h2.title {
@@ -142,7 +142,7 @@ p{
 
 .footer{
   background-color: var(--Foreground-color);
-  border-top: 2px solid var(--border);
+  border-top: 2px solid var(--Dark-Paragraph);
   border-radius: 10px;
   margin-top: auto;
   padding: 1rem;
