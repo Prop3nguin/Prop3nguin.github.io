@@ -79,6 +79,7 @@ p{
 .web-title{
   font-weight: 600;
   font-style: italic;
+  text-align: center;
 }
 
 /* Page Layout */
@@ -112,8 +113,8 @@ p{
   display: flex;
 }
 .nav-pages {
-  display: none;
-  border-right: 1px solid var(--border);
+  display: flex;
+  margin-top: 2rem;
 }
 .nav-links {
   display: none;
@@ -279,9 +280,8 @@ p{
     grid-template-columns: 1fr 1fr;
   }
 
-  .nav-links {
-    display: flex;
-    border-left: 2px solid var(--border);
+  .nav-pages {
+    margin-top: 0;
   }
 
   .page-body {
@@ -325,11 +325,11 @@ p{
   }
 
   .nav-pages {
-    display: flex;
     border-right: 1px solid var(--border);
   }
 
   .nav-links {
+    display: flex;
     border-left: 1px solid var(--border);
   }
 
