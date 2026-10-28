@@ -32,6 +32,9 @@ body{
   margin: 0;
   min-height: 100vh;
 }
+h5 {
+  line-height: 2rem;
+}
 a{
   text-decoration: none;
   color: var(--Vibrant-Link);
@@ -40,14 +43,19 @@ a:hover {
   transition: 0.3s;
   color: var(--Dull-Link);
 }
+a h5{
+  text-decoration: none;
+  color: var(--Vibrant-Link);
+}
+a h5:hover {
+  transition: 0.3s;
+  color: var(--Dull-Link);
+}
 hr{
   margin: 1rem;
 }
 i {
   font-style: italic;
-}
-h5 {
-  line-height: 2rem;
 }
 .title{
   color:var(--Title-Color);
@@ -96,7 +104,7 @@ p{
 .rights-reserved {
   padding-top: 1rem;
 }
-.nav-icon {
+.icon {
   width: 2rem;
   margin-right: 2rem;
 }
@@ -169,6 +177,18 @@ p{
 }
 
 /* Smaller Alignments */
+
+.card {
+  display: block;
+  border-radius: 10px;
+  border: 2px solid var(--Dark-Paragraph);
+  background-color: var(--Foreground-color);
+}
+.card div{
+  margin-left: 1rem;
+  display : grid;
+  grid-template-columns: min-content 1fr;
+}
 .descreet-collection {
   display: block;
   padding: 1rem;
