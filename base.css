@@ -89,6 +89,7 @@ p{
   padding: 1rem; 
 }
 .web-title{
+  width: 100%;
   font-weight: 600;
   font-style: italic;
   text-align: center;
@@ -106,7 +107,6 @@ p{
 }
 .icon {
   width: 2rem;
-  margin-right: 2rem;
 }
 .profile-icon-image {
   border-radius: 50%;
@@ -124,7 +124,7 @@ p{
   grid-template-columns: 1fr;
   border-bottom: 2px solid var(--Dark-Paragraph);
   background-color: var(--Foreground-color);
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
   padding: 1rem;
   align-content: center;
   position: sticky;
@@ -154,7 +154,7 @@ p{
 .footer{
   background-color: var(--Foreground-color);
   border-top: 2px solid var(--Dark-Paragraph);
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
   margin-top: auto;
   padding: 1rem;
 }
@@ -208,6 +208,9 @@ p{
   display : grid;
   grid-template-columns: min-content 1fr;
 }
+.card h5 {
+  margin-left: 1rem;
+}
 .descreet-collection {
   display: block;
   padding: 1rem;
@@ -242,7 +245,7 @@ p{
   border-bottom: 2px solid var(--border);
 }
 .decorative-title-line {
-  margin-left:37.5%;
+  justify-self: center;
   width: 25%;
   border-bottom: 2px solid var(--border);
 }
@@ -288,10 +291,6 @@ p{
     grid-template-columns: minmax(0, 1fr) 13rem;
   }
 
-  .feature-loss-disclaimer {
-    display: none;
-  }
-
   .trifold-layout-right {
     display: block;
     position: sticky;
@@ -321,6 +320,10 @@ p{
     display: block;
     position: sticky;
     top: 3.75rem; 
+  }
+
+  .feature-loss-disclaimer {
+    display: none;
   }
 
 }
