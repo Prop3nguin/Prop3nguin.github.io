@@ -144,7 +144,7 @@ p{
   display: block;
   grid-template-columns: 12rem minmax(0, 1fr) 12rem;
   flex-grow: 1;
-  max-width: 2500px;
+  max-width: 1800px;
   align-self: center;
 }
 
