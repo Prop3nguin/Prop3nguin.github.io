@@ -272,7 +272,7 @@ p{
 
 
 
-@media (min-width: 888px) {
+@media (min-width: 1000px) {
 
   .navbar {
     grid-template-columns: 1fr 1fr;
@@ -288,7 +288,7 @@ p{
     grid-template-columns: 12rem minmax(0, 1fr);
   }
 
-  .trifold-layout-left {
+  .trifold-layout-right {
     display: block;
   }
 }
@@ -299,7 +299,7 @@ p{
     grid-template-columns: 12rem minmax(0, 1fr) 12rem;
   }
 
-  .trifold-layout-right {
+  .trifold-layout-left {
     display: block;
   }
 
