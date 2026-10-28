@@ -174,7 +174,7 @@ p{
   margin-left: 1rem;
 }
 .feature-loss-disclaimer {
-  display: none;
+  display: block;
 }
 .trifold-layout-left a h5 {
   text-indent: 1rem;
@@ -289,7 +289,7 @@ p{
   }
 
   .feature-loss-disclaimer {
-    display: block;
+    display: none;
   }
 
   .trifold-layout-right {
