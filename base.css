@@ -160,6 +160,7 @@ p{
   display: none;
   margin-top: 1rem;
   height: fit-content;
+  margin-left: 1rem;
 }
 .trifold-layout-left a h5 {
   text-indent: 1rem;
@@ -172,6 +173,7 @@ p{
 .trifold-layout-right{
   display: none;
   margin-top: 1rem;
+  margin-right: 1rem;
   height: fit-content;
 }
 .page-topic-indented {
@@ -269,7 +271,7 @@ p{
 
   .page-body {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 12rem;
+    grid-template-columns: minmax(0, 1fr) 13rem;
   }
 
   .trifold-layout-right {
@@ -294,7 +296,7 @@ p{
 @media (min-width: 1200px) {
 
   .page-body {
-    grid-template-columns: 12rem minmax(0, 1fr) 12rem;
+    grid-template-columns: 13rem minmax(0, 1fr) 13rem;
   }
 
   .trifold-layout-left {
