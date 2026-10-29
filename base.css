@@ -212,17 +212,19 @@ p{
 .card h5 {
   margin-left: 1rem;
 }
-.descreet-collection {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 1rem;
-}
-
+.descreet-collection,
 .descreet-collection-left,
 .descreet-collection-right {
   display: grid;
   grid-template-columns: 1fr;
   padding: 1rem;
+}
+.descreet-collection div,
+.descreet-collection-left div,
+.descreet-collection-right div {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
 }
 
 .collection-paragraph {
