@@ -219,13 +219,6 @@ p{
   grid-template-columns: 1fr;
   padding: 1rem;
 }
-.descreet-collection div,
-.descreet-collection-left div,
-.descreet-collection-right div {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-}
 
 .collection-paragraph {
   line-height: 2rem;
@@ -251,6 +244,8 @@ p{
   border-bottom: 2px solid var(--border);
 }
 .decorative-title-line {
+  display: grid;
+  grid-template-columns: 1fr;
   justify-self: center;
   width: 25%;
   border-bottom: 2px solid var(--border);
@@ -262,7 +257,7 @@ p{
 
 /* Footer Styling */
 .footer i {
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--Dark-Paragraph);
   padding: 0.25rem;
 }
 
