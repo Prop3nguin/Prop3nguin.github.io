@@ -213,13 +213,15 @@ p{
   margin-left: 1rem;
 }
 .descreet-collection {
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr;
   padding: 1rem;
 }
 
 .descreet-collection-left,
 .descreet-collection-right {
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr;
   padding: 1rem;
 }
 
