@@ -1,6 +1,7 @@
 :root {
-    --Foreground-color: #442626;
+    --Foreground-color: #1d0404;
     --Background-Color: #0c0a09;
+    --Shadow: #000;
     --Title-Color: #fff;
     --Light-Paragraph: #ccc;
     --Dark-Paragraph: #999;
@@ -62,6 +63,8 @@ i {
   text-align: center;
   line-height: 2rem;
   padding: 10px;
+  text-shadow: 2px 2px var(--Dark-Paragraph);
+  text-wrap-mode: nowrap;
 }
 h1.title {
   padding: 2rem 0;
@@ -131,6 +134,7 @@ p{
   position: sticky;
   top: 0;
   z-index: 2;
+  box-shadow: 0 0 40px var(--Shadow);
 }
 .navbar div, .navbar ul {
   list-style: none;
@@ -173,6 +177,7 @@ p{
   margin-top: 1rem;
   height: fit-content;
   margin-left: 1rem;
+  padding-right: 1rem;
 }
 .feature-loss-disclaimer {
   display: block;
@@ -183,6 +188,13 @@ p{
 
 .trifold-layout-center{
   padding-top: 1rem;
+  background-color: var(--Background-Color);
+  box-shadow: 0 0 40px var(--Shadow);
+}
+
+.trifold-layout-center h2.title,
+.trifold-layout-center h3.title {
+  scroll-margin-top: 4rem;
 }
 
 .trifold-layout-right{
@@ -190,6 +202,7 @@ p{
   margin-top: 1rem;
   margin-right: 1rem;
   height: fit-content;
+  padding-left: 1rem;
 }
 .page-topic-indented {
   text-indent: 1rem;
@@ -200,9 +213,11 @@ p{
 
 .card {
   display: block;
+  padding: 1rem 0;
   border-radius: 10px;
-  border: 2px solid var(--Dark-Paragraph);
   background-color: var(--Foreground-color);
+  box-shadow: inset 0 0 40px var(--Shadow);
+  margin-top: 1rem;
 }
 .card div{
   margin-left: 1rem;
@@ -268,6 +283,7 @@ p{
   grid-template-columns: 60% 1fr;
   font-size: 0.6rem;
   line-height: 1rem;
+  box-shadow: 0 0 40px var(--Shadow);
 }
 .footer-creator-links {
   display: grid;
@@ -295,7 +311,7 @@ p{
   .trifold-layout-right {
     display: block;
     position: sticky;
-    top: 3.75rem; 
+    top: 5.4rem; 
   }
 
   .footer h3 {
@@ -320,7 +336,7 @@ p{
   .trifold-layout-left {
     display: block;
     position: sticky;
-    top: 3.75rem; 
+    top: 5.4rem; 
   }
 
   .feature-loss-disclaimer {
