@@ -63,7 +63,7 @@ i {
   text-align: center;
   line-height: 2rem;
   padding: 10px;
-  text-shadow: 2px 2px var(--Dark-Paragraph);
+  text-shadow: 2px 2px var(--Foreground-color);
   text-wrap-mode: nowrap;
 }
 h1.title {
@@ -92,10 +92,11 @@ p{
   padding: 1rem; 
 }
 .web-title{
-  width: 100%;
+  margin-left: 0.45rem;
+  color: var(--Title-Color);
   font-weight: 600;
-  font-style: italic;
   text-align: center;
+  align-self: center;
 }
 
 /* Page Layout */
@@ -145,7 +146,7 @@ p{
 }
 .nav-pages {
   display: flex;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
 .nav-links {
   display: none;
@@ -216,8 +217,10 @@ p{
   padding: 1rem 0;
   border-radius: 10px;
   background-color: var(--Foreground-color);
-  box-shadow: inset 0 0 40px var(--Shadow);
+  box-shadow: 0 0 40px var(--Shadow);
   margin-top: 1rem;
+  border-top: 2px solid var(--Dark-Paragraph);
+  border-bottom: 2px solid var(--Dark-Paragraph);
 }
 .card div{
   margin-left: 1rem;
@@ -287,7 +290,15 @@ p{
 }
 .footer-creator-links {
   display: grid;
+  gap: 2rem;
   grid-template-columns: 1fr 1fr;
+}
+.footer-creator-links div {
+  width: fit-content; 
+  padding: 0 1rem 1rem 1rem;
+  background-color: var(--Background-Color);
+  box-shadow: inset 0 0 10px var(--Shadow);
+  border-radius: 10px;
 }
 .footer ul {
   list-style: none;
