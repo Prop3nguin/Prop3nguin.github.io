@@ -141,16 +141,21 @@ p{
   list-style: none;
   align-self: center;
 }
+.navbar ul {
+  border-radius: 10px;
+  background-color: var(--Background-Color);
+}
 .navbar div {
   display: flex;
 }
 .nav-pages {
   display: flex;
   margin-top: 0.5rem;
+  padding: 0.5rem;
 }
 .nav-links {
   display: none;
-  border-left: 2px solid var(--Dark-Paragraph);
+  padding: 0.5rem;
 }
 .navbar ul li {
   width: 33%;
@@ -283,7 +288,7 @@ p{
 /* Footer Structuring */
 .footer {
   display: grid;
-  grid-template-columns: 60% 1fr;
+  grid-template-columns: 1fr 1fr;
   font-size: 0.6rem;
   line-height: 1rem;
   box-shadow: 0 0 40px var(--Shadow);
@@ -363,12 +368,12 @@ p{
   }
 
   .nav-pages {
-    border-right: 1px solid var(--Dark-Paragraph);
+    margin-right: 1rem;
   }
 
   .nav-links {
     display: flex;
-    border-left: 1px solid var(--Dark-Paragraph);
+    margin-left: 1rem;
   }
 
 }
