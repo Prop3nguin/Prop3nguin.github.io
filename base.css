@@ -144,6 +144,8 @@ p{
 .navbar ul {
   border-radius: 10px;
   background-color: var(--Background-Color);
+  box-shadow: inset 0 0 10px var(--Shadow);
+  padding: 0.5rem;
 }
 .navbar div {
   display: flex;
@@ -151,11 +153,9 @@ p{
 .nav-pages {
   display: flex;
   margin-top: 0.5rem;
-  padding: 0.5rem;
 }
 .nav-links {
   display: none;
-  padding: 0.5rem;
 }
 .navbar ul li {
   width: 33%;
@@ -368,12 +368,12 @@ p{
   }
 
   .nav-pages {
-    margin-right: 1rem;
+    margin-right: 0.5rem;
   }
 
   .nav-links {
     display: flex;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
   }
 
 }
