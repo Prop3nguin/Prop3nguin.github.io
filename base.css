@@ -5,8 +5,8 @@
     --Title-Color: #fff;
     --Light-Paragraph: #ccc;
     --Dark-Paragraph: #999;
-    --Vibrant-Link: rgb(255, 112, 112);
-    --Dull-Link: rgb(161, 58, 58);
+    --Vibrant-Link: rgb(194, 66, 66);
+    --Dull-Link: var(--Dark-Paragraph); 
     --border: #500;
 }
 
@@ -312,7 +312,7 @@ p{
 @media (min-width: 1000px) {
 
   .navbar {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 40% 1fr;
   }
 
   .nav-pages {
@@ -364,7 +364,7 @@ p{
 @media (min-width: 1300px) {
 
   .navbar {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 30% 1fr 1fr;
   }
 
   .nav-pages {

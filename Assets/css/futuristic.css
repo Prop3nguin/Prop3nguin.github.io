@@ -1,5 +1,14 @@
-:root {
 
+/* The Custom CSS for the Understanding AI page*/
+:root {
+    --Foreground-color: #1d0404;
+    --Background-Color: #0c0a09;
+    --Shadow: #000;
+    --Title-Color: #fff;
+    --Dark-Paragraph: #999;
+    --Vibrant-Link: rgb(255, 112, 112);
+    --Dull-Link: rgb(161, 58, 58);
+    --border: #500;
 }
 
 * {
@@ -7,4 +16,13 @@
     padding: 0;
     box-sizing: border-box;
     
+}
+
+body {
+    background-color: var(--Background-Color);
+    color: var(--Title-Color);
+}
+
+h1.title {
+    text-align: center;
 }
