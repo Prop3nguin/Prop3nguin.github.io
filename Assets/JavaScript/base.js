@@ -3,7 +3,7 @@
 // Create The Page Topics List
 // 1. Target your containers
 const mainBody = document.querySelector('#MainBody');
-const topicsContainer = document.querySelector('#PageTopics'); // Change this selector to match your HTML sidebar container
+const topicsContainer = document.querySelector('#PageTopics'); // Id of the sidebar bookmark container
 
 if (mainBody && topicsContainer) {
     // 2. Query all h2 and h3 elements with class "title" inside #MainBody
