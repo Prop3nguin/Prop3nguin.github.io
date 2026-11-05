@@ -5,7 +5,7 @@
     --Background-Color: #0c0a09;
     --Shadow: #000;
     --Title-Color: #fff;
-    --Dark-Paragraph: #999;
+    --Dark-Paragraph: #bbb;
     --Vibrant-Link: rgb(112, 186, 255);
     --Dull-Link: rgb(58, 94, 161);
     --border: rgb(112, 186, 255);
@@ -16,6 +16,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Quantico;
+    color: var(--Dark-Paragraph);
 }
 
 body {
@@ -29,9 +30,11 @@ body {
 }
 
 nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
 nav div {
@@ -41,12 +44,14 @@ nav div {
 }
 
 nav .title {
-    padding: 1rem;
+    padding: 0;
+    padding-left: 1rem;
 }
 
 .title {
     text-align: center;
     padding: 1rem;
+    color: var(--Title-Color);
 }
 
 .icon {
@@ -60,7 +65,11 @@ nav .title {
     min-height: 500px;
     justify-self: center;
     background-color: var(--Foreground-color);
-    border: 2px solid var(--Dark-Paragraph);
+    border: 2px solid var(--border);
+}
+#PageTopics h2, 
+#PageTopics p {
+    color: var(--Title-Color);
 }
 #MainBody {
     display: block;
@@ -69,7 +78,7 @@ nav .title {
     height: 100%;
     justify-self: center;
     background-color: var(--Foreground-color);
-    border: 2px solid var(--Dark-Paragraph);
+    border: 2px solid var(--border);
 }
 
 .PageFold {
@@ -78,6 +87,8 @@ nav .title {
 
 footer {
     padding: 2rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
     display: grid;
     grid-template-columns: 1fr auto auto;
     gap: 1rem; 
@@ -100,9 +111,21 @@ a {
     text-decoration: none;
     transition: 0.3s;
 }
+
 a:hover {
     color: var(--Dull-Link);
 }
+
+button {
+    padding: 0.5rem;
+    border: none;
+    background-color: var(--Background-Color);
+}
+
+.menu-icon {
+    color: var(--border);
+}
+
 @media (min-width: 1000px) {
     #PageTopics {
         display: block;
