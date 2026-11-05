@@ -23,16 +23,16 @@ if (mainBody && topicsContainer) {
         const anchorLink = document.createElement('a');
         anchorLink.href = `#${heading.id}`;
 
-        // 5. Create the h5 container element for the sidebar text
-        const sidebarText = document.createElement('h5');
+        // 5. Create the p container element for the sidebar text
+        const sidebarText = document.createElement('p');
         sidebarText.textContent = heading.textContent;
 
         // 6. Apply your specific conditional styling rules
         if (heading.tagName.toLowerCase() === 'h2') {
-            // h2 elements get a standard h5 container with no extra class
+            // h2 elements get a standard p container with no extra class
             anchorLink.appendChild(sidebarText);
         } else if (heading.tagName.toLowerCase() === 'h3') {
-            // h3 elements get an h5 container with the .page-topic-indented class
+            // h3 elements get an p container with the .page-topic-indented class
             sidebarText.classList.add('page-topic-indented');
             anchorLink.appendChild(sidebarText);
         }
