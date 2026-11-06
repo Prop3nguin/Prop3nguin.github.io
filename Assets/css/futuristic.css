@@ -27,6 +27,41 @@ body {
     min-height: 100vh;
     gap: 1rem;
     grid-template-rows: auto 1fr auto;
+    max-width: 1200px;
+    justify-self: center;
+}
+
+a {
+    color: var(--Vibrant-Link);
+    font-style: italic;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--Dull-Link);
+}
+
+.dropdown-content {
+    display: none;
+    margin-top: 4rem;
+    margin-right: 1.5rem;
+    padding: 1rem;
+    border: 2px solid var(--border);
+    background-color: var(--Foreground-color);
+    top: 0;
+    right: 0;
+    position: absolute;
+    min-width: min(250px, 90vw);
+}
+.dropdown-content p,
+#PageTopics p {
+    color: var(--Vibrant-Link);
+    transition: 0.3s;
+}
+.dropdown-content p:hover,
+#PageTopics p:hover {
+    color: var(--Dull-Link);
 }
 
 nav {
@@ -67,8 +102,7 @@ nav .title {
     background-color: var(--Foreground-color);
     border: 2px solid var(--border);
 }
-#PageTopics h2, 
-#PageTopics p {
+#PageTopics h2 {
     color: var(--Title-Color);
 }
 #MainBody {
@@ -105,25 +139,35 @@ footer p.title {
     border-bottom: 2px solid var(--border);
 }
 
-a {
-    color: var(--Vibrant-Link);
-    font-style: italic;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-a:hover {
-    color: var(--Dull-Link);
-}
-
 button {
     padding: 0.5rem;
     border: none;
-    background-color: var(--Background-Color);
+    background-color: transparent;
+    appearance: none;
+    align-self: center;
+    z-index: 3;
 }
 
 .menu-icon {
     color: var(--border);
+    align-self: center;
+    pointer-events: none;
+}
+
+.page-topic-indented {
+    padding-left: 0.5rem;
+    border-left: 2px solid var(--Title-Color);
+}
+
+#MainBody p {
+    text-indent: 1rem;
+    padding: 1rem;
+    line-height: 2rem;
+}
+
+i {
+    line-height: 2rem;
+    color: var(--Title-Color);
 }
 
 @media (min-width: 1000px) {

@@ -4,6 +4,22 @@
 // 1. Target your containers
 const mainBody = document.querySelector('#MainBody');
 const topicsContainer = document.querySelector('#PageTopics'); // Id of the sidebar bookmark container
+const menuContainer = document.querySelector('#DropdownContent'); // Id of the dropdown menu.
+// target the button
+const dropdownButton = document.querySelector('#MenuButton');
+
+dropdownButton.addEventListener('click', () => {
+    // toggle visibility
+    menuContainer.style.display = menuContainer.style.display === 'block' ? 'none' : 'block';
+});
+
+// close the window if user clicks off of dropdown.
+window.addEventListener('click', (event) => {
+    if (!event.target.matches('.dropdown-button')) {
+        menuContainer.style.display = 'none';
+    }
+});
+
 
 if (mainBody && topicsContainer) {
     // 2. Query all h2 and h3 elements with class "title" inside #MainBody
@@ -21,26 +37,32 @@ if (mainBody && topicsContainer) {
 
         // 4. Create the clickable anchor link wrapper
         const anchorLink = document.createElement('a');
+        const menuLink = document.createElement('a');
         anchorLink.href = `#${heading.id}`;
+        menuLink.href = `#${heading.id}`;
 
         // 5. Create the p container element for the sidebar text
         const sidebarText = document.createElement('p');
+        const menuText = document.createElement('p');
         sidebarText.textContent = heading.textContent;
+        menuText.textContent = heading.textContent;
 
         // 6. Apply your specific conditional styling rules
         if (heading.tagName.toLowerCase() === 'h2') {
             // h2 elements get a standard p container with no extra class
             anchorLink.appendChild(sidebarText);
+            menuLink.appendChild(menuText);
         } else if (heading.tagName.toLowerCase() === 'h3') {
             // h3 elements get an p container with the .page-topic-indented class
             sidebarText.classList.add('page-topic-indented');
+            menuText.classList.add('page-topic-indented');
             anchorLink.appendChild(sidebarText);
+            menuLink.appendChild(menuText);
         }
 
         // 7. Append the structured link into your sidebar topics list
         topicsContainer.appendChild(anchorLink);
+        menuContainer.appendChild(menuLink);
     });
-    const DecorativeTitleLine = document.createElement('div.decorative-title-line');
-    topicsContainer.append(DecorativeTitleLine);
 }
 
